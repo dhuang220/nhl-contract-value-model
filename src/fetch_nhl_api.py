@@ -14,6 +14,7 @@ def _fetch_all_pages(url: str, season_id: str) -> list[dict]:
         response = requests.get(url, params={
             "limit": limit,
             "start": start,
+            "sort": "playerId",
             "cayenneExp": f"seasonId={season_id} and gameTypeId=2",
         })
         page = response.json()["data"]
