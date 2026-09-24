@@ -52,7 +52,9 @@ def clean_capwages_signings(raw_csv_path: str, offseason_year: int) -> pd.DataFr
     captured more than once, or interleaved with nav/sidebar text, when the
     whole page is selected and copied. Duplicate rows (from a repeated
     capture) are dropped. contract_type is left blank - CapWages doesn't
-    expose UFA/RFA status, that has to be filled in separately.
+    expose UFA/RFA status; that's computed separately from age + NHL debut
+    year (see features.infer_contract_type), which is why `age` is kept in
+    the output even though our template doesn't otherwise need it.
     """
     with open(raw_csv_path, newline="", encoding="utf-8-sig") as f:
         rows = list(csv.reader(f))
@@ -66,9 +68,10 @@ def clean_capwages_signings(raw_csv_path: str, offseason_year: int) -> pd.DataFr
 
     cleaned = pd.DataFrame({
         "player_name": df["player_raw"].apply(_reformat_name),
+        "age": df["age"].astype(int),
         "signing_date": df["date_raw"].apply(lambda d: _parse_date(d, offseason_year)),
         "offseason_year": offseason_year,
-        "contract_type": "",  # fill in manually from PuckPedia/Spotrac (UFA/RFA)
+        "contract_type": "",  # computed separately, see features.infer_contract_type
         "term_years": df["term_years"],
         "cap_hit": df["cap_hit_raw"].apply(_parse_cap_hit),
         "team_signed": df["team_signed"],
