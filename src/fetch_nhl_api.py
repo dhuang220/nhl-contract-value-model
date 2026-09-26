@@ -2,6 +2,7 @@ import requests
 
 SKATER_SUMMARY_URL = "https://api.nhle.com/stats/rest/en/skater/summary"
 SKATER_BIOS_URL = "https://api.nhle.com/stats/rest/en/skater/bios"
+GOALIE_BIOS_URL = "https://api.nhle.com/stats/rest/en/goalie/bios"
 
 
 def _fetch_all_pages(url: str, season_id: str) -> list[dict]:
@@ -39,3 +40,8 @@ def fetch_skater_summary(season_id: str) -> list[dict]:
 def fetch_skater_bios(season_id: str) -> list[dict]:
     """Fetch every skater's bio info (birth date, etc.) for a season."""
     return _fetch_all_pages(SKATER_BIOS_URL, season_id)
+
+
+def fetch_goalie_bios(season_id: str) -> list[dict]:
+    """Fetch every goalie's bio info (incl. firstSeasonForGameType) for a season."""
+    return _fetch_all_pages(GOALIE_BIOS_URL, season_id)

@@ -14,6 +14,14 @@ FEATURES = [
     "is_ufa",
     "is_defense",
 ]
+GOALIE_FEATURES = [
+    "save_pct",
+    "gaa",
+    "games_started",
+    "gsaa",
+    "age",
+    "is_ufa",
+]
 TARGET = "log_cap_hit_pct"
 
 
@@ -26,10 +34,19 @@ def prepare(df: pd.DataFrame, min_gp: int = 20) -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
-def cross_validated_scores(df: pd.DataFrame, model=None) -> dict:
+def prepare_goalies(df: pd.DataFrame, min_gp: int = 25) -> pd.DataFrame:
+    """Goalie analog of prepare(): filter low-GP, impute GSAA, encode + log."""
+    df = df[df["games_played"] >= min_gp].copy()
+    df["is_ufa"] = (df["contract_type"] == "UFA").astype(int)
+    df["gsaa"] = df["gsaa"].fillna(0.0)  # NaN -> league-average (neutral)
+    df["log_cap_hit_pct"] = np.log(df["cap_hit_pct"])
+    return df.reset_index(drop=True)
+
+
+def cross_validated_scores(df: pd.DataFrame, model=None, features=FEATURES) -> dict:
     """Honest out-of-sample error via 5-fold CV, reported in $ AAV terms."""
     model = model or make_pipeline(StandardScaler(), LinearRegression())
-    X, y = df[FEATURES], df[TARGET]
+    X, y = df[features], df[TARGET]
     cv = KFold(n_splits=5, shuffle=True, random_state=0)
 
     pred_log = cross_val_predict(model, X, y, cv=cv)
@@ -47,19 +64,24 @@ def cross_validated_scores(df: pd.DataFrame, model=None) -> dict:
     }
 
 
-def fit_and_rank(df: pd.DataFrame, model=None) -> pd.DataFrame:
-    """Fit on all rows and rank by residual (actual - predicted) cap-hit %.
+def fit_and_rank(train_df, rank_df=None, model=None, features=FEATURES, ceiling=104_000_000):
+    """Fit on train_df and rank rank_df by residual (actual - predicted) cap hit.
 
-    In-sample residuals: descriptive of this class's deals relative to the
-    fitted market, not an out-of-sample prediction. Positive residual =
-    paid more than the model expects (overpaid); negative = underpaid.
+    Residuals are descriptive (paid more/less than the fitted market expects),
+    not out-of-sample predictions. Positive = overpaid, negative = underpaid.
+    rank_df defaults to train_df (in-sample ranking). `ceiling` converts the
+    predicted cap% back to dollars against the ranked season's cap.
     """
+    if rank_df is None:
+        rank_df = train_df
     model = model or make_pipeline(StandardScaler(), LinearRegression())
-    X, y = df[FEATURES], df[TARGET]
-    model.fit(X, y)
+    model.fit(train_df[features], train_df[TARGET])
 
-    pred_pct = np.exp(model.predict(X))
-    out = df[["player_name", "position", "age", "contract_type", "cap_hit"]].copy()
-    out["predicted_cap_hit"] = (pred_pct * 104_000_000).round(0)
+    pred_pct = np.exp(model.predict(rank_df[features]))
+    cols = [c for c in ["player_name", "position", "age", "contract_type", "cap_hit"] if c in rank_df]
+    out = rank_df[cols].copy()
+    if "position" not in out:
+        out["position"] = "G"
+    out["predicted_cap_hit"] = (pred_pct * ceiling).round(0)
     out["residual"] = out["cap_hit"] - out["predicted_cap_hit"]
     return out.sort_values("residual", ascending=False).reset_index(drop=True)

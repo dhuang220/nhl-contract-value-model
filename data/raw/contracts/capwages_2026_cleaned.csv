@@ -1,0 +1,346 @@
+player_name,age,signing_date,offseason_year,contract_type,term_years,cap_hit,team_signed,position,contract_structure
+Samu Salminen,23,2026-09-21,2026,,2,980000,FLA,C,ELC
+Sam Steel,28,2026-09-21,2026,,4,3700000,DAL,"LW, C",Std (Ext)
+Tim Washe,25,2026-09-19,2026,,4,2250000,ANA,C,Std (Ext)
+Brennan Othmann,23,2026-09-18,2026,,1,975000,CGY,"LW, RW",Std (2-way)
+Ethan Del Mastro,23,2026-09-16,2026,,2,950000,CHI,"LD, RD",Std
+Matthew Poitras,22,2026-09-16,2026,,1,850000,BOS,C,Std (2-way)
+Drake Batherson,28,2026-09-15,2026,,8,10750000,OTT,"RW, LW",Std (Ext)
+Luke Evangelista,24,2026-09-15,2026,,5,7250000,NJD,RW,Std (Ext)
+Cutter Gauthier,22,2026-09-15,2026,,6,13500000,ANA,"LW, RW",Std
+Ryan Leonard,21,2026-09-15,2026,,8,10500000,WSH,RW,Std (Ext)
+Alex Newhook,25,2026-09-15,2026,,4,5550000,MTL,"LW, C",Std (Ext)
+Justin Sourdif,24,2026-09-15,2026,,8,6350000,WSH,"C, RW",Std (Ext)
+Jordan Staal,38,2026-09-15,2026,,1,4900000,CAR,C,Std (Ext)
+Cam Talbot,39,2026-09-15,2026,,1,950000,CBJ,G,35+ Contract
+Arber Xhekaj,25,2026-09-15,2026,,1,1500000,MTL,"LD, RD",Std
+Noah Ostlund,22,2026-09-14,2026,,8,6600000,BUF,"C, LW",Std (Ext)
+Zack Bolduc,23,2026-09-13,2026,,4,4200000,MTL,"LW, RW",Std
+Chris Kreider,35,2026-09-12,2026,,1,2150000,MTL,LW,35+ Contract
+Mark Stone,34,2026-09-12,2026,,2,9000000,VGK,RW,Std (Ext)
+Braeden Bowman,23,2026-09-10,2026,,6,3400000,VGK,"RW, LW",Std (Ext)
+Mike Reilly,33,2026-09-10,2026,,1,850000,CAR,"LD, RD",Std (2-way)
+Skyler Brind'Amour,27,2026-09-09,2026,,1,850000,CAR,C,Std (2-way)
+Alex Formenton,27,2026-09-09,2026,,1,850000,EDM,LW,Std
+Cayden Primeau,27,2026-09-09,2026,,2,912500,CAR,G,Std
+Justin Robidas,23,2026-09-09,2026,,1,850000,CAR,C,Std (2-way)
+Pierre-Olivier Joseph,27,2026-09-08,2026,,1,850000,CAR,"LD, RD",Std
+Fraser Minten,22,2026-09-08,2026,,7,7200000,BOS,C,Std (Ext)
+Ilya Samsonov,29,2026-09-08,2026,,1,850000,SJS,G,Std (2-way)
+Brendan Brisson,24,2026-09-04,2026,,1,850000,TOR,"RW, LW, C",Std (2-way)
+Zeev Buium,20,2026-09-04,2026,,8,9380000,VAN,LD,Std (Ext)
+Jacob Melanson,23,2026-09-04,2026,,3,1450000,SEA,RW,Std
+Zach Metsa,27,2026-09-04,2026,,1,900000,BUF,"RD, LD",Std (Ext)
+Eeli Tolvanen,27,2026-09-01,2026,,1,1500000,NYR,"RW, LW",Std
+Kevin Korchinski,22,2026-08-29,2026,,2,1325000,CHI,"LD, RD",Std
+Cale Makar,27,2026-08-28,2026,,8,20400000,COL,RD,Std (Ext)
+Vincent Iorio,23,2026-08-21,2026,,1,850000,NYR,RD,Std (2-way)
+Cruz Lucius,22,2026-08-20,2026,,2,1050000,ANA,RW,ELC
+Sutter Muzzatti,23,2026-08-20,2026,,2,1050000,DET,C,ELC
+Hunter McDonald,24,2026-08-19,2026,,2,912500,PHI,LD,Std (2-way)
+Scott Morrow,23,2026-08-19,2026,,1,850000,NYR,RD,Std (2-way)
+Sasha Pastujov,23,2026-08-13,2026,,1,850000,MTL,RW,Std (2-way)
+Adam Novotny,18,2026-08-11,2026,,3,1075000,VAN,LW,ELC
+Tyrel Bauer,24,2026-08-10,2026,,2,875000,WPG,RD,Std (2-way)
+Nikita Grebenkin,23,2026-08-06,2026,,2,1100000,PHI,"LW, RW",Std
+Ville Koivunen,23,2026-08-06,2026,,8,4000000,PIT,"RW, LW",Std
+Maksymilian Szuber,24,2026-08-03,2026,,1,850000,MTL,"RD, LD",Std (2-way)
+Collin Graf,24,2026-07-31,2026,,3,4250000,SJS,"LW, RW",Std
+Tommy Novak,29,2026-07-31,2026,,3,4650000,PIT,"C, LW",Std (Ext)
+Colin White,29,2026-07-30,2026,,1,900000,NJD,C,Std (2-way)
+Macklin Celebrini,20,2026-07-29,2026,,5,18800000,SJS,C,Std (Ext)
+Topias Vilen,23,2026-07-29,2026,,1,850000,NJD,LD,Std (2-way)
+Sean Farrell,24,2026-07-28,2026,,1,850000,ANA,C,Std (2-way)
+Carter Gylander,25,2026-07-28,2026,,1,850000,DET,G,Std (2-way)
+Nikita Klepov,18,2026-07-25,2026,,3,1075000,ANA,"RW, LW",ELC
+Alex Jefferies,24,2026-07-24,2026,,1,850000,NYI,LW,Std (2-way)
+Akira Schmid,26,2026-07-24,2026,,2,2000000,FLA,G,Std
+Cole Sillinger,23,2026-07-24,2026,,3,4625000,CBJ,"LW, RW, C",Std
+Jet Greaves,25,2026-07-23,2026,,3,5000000,CBJ,G,Std
+Patrick Kane,37,2026-07-23,2026,,2,8000000,CHI,RW,35+ Contract
+Max Psenicka,19,2026-07-23,2026,,3,997500,UTA,RD,ELC
+Ronan Seeley,24,2026-07-23,2026,,1,850000,CAR,LD,Std (2-way)
+Danton Heinen,31,2026-07-22,2026,,1,1000000,CBJ,"RW, LW",Std (2-way)
+Mikulas Hovorka,25,2026-07-22,2026,,1,850000,FLA,"RD, LD",Std (2-way)
+Joey Larson,25,2026-07-22,2026,,2,875000,NYI,RW,Std (2-way)
+John Marino,29,2026-07-21,2026,,8,6750000,UTA,RD,Std (Ext)
+Jason Robertson,27,2026-07-21,2026,,1,12000000,DAL,LW,Std
+Jared Davidson,24,2026-07-20,2026,,1,850000,MTL,"LW, C",Std (2-way)
+Hunter McKown,24,2026-07-20,2026,,1,850000,MTL,C,Std (2-way)
+Georgii Merkulov,25,2026-07-20,2026,,1,850000,COL,"RW, C",Std (2-way)
+Connor Bedard,21,2026-07-18,2026,,5,15000000,CHI,C,Std
+Jamie Drysdale,24,2026-07-17,2026,,4,6500000,PHI,RD,Std
+Viktor Neuchev,22,2026-07-17,2026,,1,850000,CAR,LW,Std (2-way)
+Kirby Dach,25,2026-07-16,2026,,1,3600000,MTL,"RW, C",Std
+Connor McMichael,25,2026-07-16,2026,,6,6750000,STL,"LW, C",Std
+Henrik Tikkanen,25,2026-07-16,2026,,1,850000,NYI,G,Std (2-way)
+William Hakansson,18,2026-07-15,2026,,3,996000,CAR,LD,ELC
+Elton Hermansson,18,2026-07-15,2026,,3,1075000,LAK,RW,ELC
+Anthony Mantha,32,2026-07-15,2026,,2,4750000,NJD,"LW, RW",Std
+Marcus Nordmark,18,2026-07-15,2026,,3,1075000,ANA,LW,ELC
+Cole Perfetti,24,2026-07-15,2026,,5,6000000,WPG,"LW, RW, C",Std
+Juho Piiparinen,18,2026-07-15,2026,,3,1075000,VGK,RD,ELC
+Alberts Smits,18,2026-07-15,2026,,3,1075000,NYR,LD,ELC
+Luke Tuch,24,2026-07-15,2026,,2,875000,CBJ,LW,Std (2-way)
+Trevor Zegras,25,2026-07-15,2026,,4,9125000,PHI,"LW, C",Std
+Ronnie Attard,27,2026-07-14,2026,,1,850000,DET,RD,Std (2-way)
+Malte Gustafsson,18,2026-07-14,2026,,3,1075000,NYI,LD,ELC
+Nicholas Robertson,25,2026-07-14,2026,,2,3250000,PIT,"RW, LW",Std
+Oliver Suvanto,18,2026-07-14,2026,,3,1075000,WSH,C,ELC
+Viggo Bjorck,18,2026-07-13,2026,,3,1075000,WPG,C,ELC
+Peyton Krebs,25,2026-07-13,2026,,4,4500000,BUF,"LW, C",Std
+Fabian Lysell,23,2026-07-13,2026,,1,850000,COL,RW,Std (2-way)
+Filip Ruzicka,18,2026-07-13,2026,,3,987500,MIN,G,ELC
+Braden Schneider,25,2026-07-13,2026,,1,5500000,NYR,"RD, LD",Std
+Colton Dach,23,2026-07-12,2026,,2,1200000,EDM,"LW, C, RW",Std
+Oskar Sundqvist,32,2026-07-11,2026,,1,850000,STL,"C, RW",Std (2-way)
+Tyler Boucher,23,2026-07-10,2026,,1,850000,OTT,RW,Std (2-way)
+Bogdan Konyushkov,23,2026-07-10,2026,,2,1013750,MTL,RD,ELC
+Carson Lambos,23,2026-07-10,2026,,1,850000,MIN,LD,Std (2-way)
+Victor Ostman,25,2026-07-10,2026,,1,850000,SEA,G,Std (2-way)
+Ville Ottavainen,24,2026-07-10,2026,,1,850000,SEA,RD,Std (2-way)
+Caedan Bankier,23,2026-07-09,2026,,1,850000,MIN,C,Std (2-way)
+Brett Berard,24,2026-07-09,2026,,1,850000,MTL,"RW, LW",Std (2-way)
+Xavier Bourgault,23,2026-07-09,2026,,1,850000,OTT,"LW, RW",Std (2-way)
+Riley Duran,24,2026-07-09,2026,,1,850000,BOS,C,Std (2-way)
+Tomas Galvas,20,2026-07-09,2026,,3,1007500,PIT,LD,ELC
+Aleksi Heimosalmi,23,2026-07-09,2026,,1,850000,CAR,RD,Std (2-way)
+David Spacek,23,2026-07-09,2026,,1,850000,MIN,RD,Std (2-way)
+Libor Hajek,28,2026-07-08,2026,,1,850000,SJS,LD,Std (2-way)
+Sergei Ivanov,22,2026-07-08,2026,,2,970000,CBJ,G,ELC
+William Villeneuve,24,2026-07-08,2026,,2,875000,TOR,"RD, LD",Std (2-way)
+Reilly Walsh,27,2026-07-08,2026,,1,850000,MTL,RD,Std (2-way)
+Kyle Burroughs,31,2026-07-07,2026,,1,850000,DAL,"RD, LD",Std
+Lukas Cormier,24,2026-07-07,2026,,1,850000,VGK,"RD, LD",Std (2-way)
+Claude Giroux,38,2026-07-07,2026,,1,2000000,OTT,RW,35+ Contract
+Tyson Hinds,23,2026-07-07,2026,,2,900000,ANA,LD,Std (2-way)
+Jacob Quillan,24,2026-07-07,2026,,1,850000,TOR,C,Std (2-way)
+Roman Schmidt,23,2026-07-07,2026,,1,850000,MIN,RD,Std (2-way)
+William Trudeau,23,2026-07-07,2026,,1,850000,NYR,LD,Std (2-way)
+Justin Barron,24,2026-07-06,2026,,1,1575000,NSH,"RD, LD",Std
+Drew Commesso,24,2026-07-06,2026,,2,875000,CHI,G,Std (2-way)
+Daemon Hunt,24,2026-07-06,2026,,1,900000,MIN,"LD, RD",Std
+Jakub Malek,24,2026-07-06,2026,,2,875000,NJD,G,Std (2-way)
+Owen Michaels,24,2026-07-06,2026,,2,900000,EDM,RW,Std (2-way)
+Simon Nemec,22,2026-07-06,2026,,5,7250000,CGY,RD,Std
+Ben Steeves,24,2026-07-06,2026,,1,850000,NJD,LW,Std (2-way)
+Colton White,29,2026-07-06,2026,,2,875000,CBJ,"RD, LD",Std (2-way)
+Joel Blomqvist,24,2026-07-05,2026,,2,875000,PIT,G,Std
+Yegor Chinakhov,25,2026-07-05,2026,,3,6250000,PIT,"LW, RW",Std
+David Gustafsson,26,2026-07-05,2026,,1,850000,PIT,C,Std
+Jacob MacDonald,33,2026-07-05,2026,,1,850000,WSH,"RD, LD",Std (2-way)
+Pavel Mintyukov,22,2026-07-05,2026,,5,7200000,ANA,LD,Std
+Arturs Silovs,25,2026-07-05,2026,,1,2800000,PIT,G,Std
+Spencer Stastney,26,2026-07-05,2026,,1,1525000,EDM,"LD, RD",Std
+Emil Andrae,24,2026-07-04,2026,,2,1550000,TOR,"LD, RD",Std
+Mavrik Bourque,24,2026-07-04,2026,,6,5500000,NSH,"RW, C",Std
+Shakir Mukhamadullin,24,2026-07-04,2026,,2,1750000,EDM,"RD, LD",Std
+Zach Sawchenko,28,2026-07-04,2026,,1,850000,CAR,G,Std
+Chase Stillman,23,2026-07-04,2026,,1,850000,DET,RW,Std
+Ryan Tverberg,24,2026-07-04,2026,,1,850000,TOR,"RW, C",Std (2-way)
+Matt Villalta,27,2026-07-04,2026,,1,850000,BUF,G,Std (2-way)
+Christian Wolanin,31,2026-07-04,2026,,1,850000,COL,LD,Std
+Jamie Benn,37,2026-07-03,2026,,1,850000,DAL,"RW, LW",Std
+Chase Bradley,24,2026-07-03,2026,,2,875000,NSH,LW,Std (2-way)
+Leo Carlsson,21,2026-07-03,2026,,5,18000000,PHI,C,Std
+Nolan Foote,25,2026-07-03,2026,,1,850000,PHI,LW,Std (2-way)
+Jansen Harkins,29,2026-07-03,2026,,1,850000,TBL,"C, RW, LW",Std (2-way)
+Barrett Hayton,26,2026-07-03,2026,,1,4775000,NJD,C,Std
+Samuel Hlavaj,25,2026-07-03,2026,,1,850000,TOR,G,Std (2-way)
+Tomas Kralovic,21,2026-07-03,2026,,3,1007500,TBL,RD,ELC
+Hendrix Lapierre,24,2026-07-03,2026,,2,1300000,PIT,C,Std
+Vinni Lettieri,31,2026-07-03,2026,,1,850000,TOR,C,Std (2-way)
+Amadeus Lombardi,23,2026-07-03,2026,,2,875000,NJD,"LW, C",Std (2-way)
+Gavin McKenna,18,2026-07-03,2026,,3,1075000,TOR,LW,ELC
+Andrew Peeke,28,2026-07-03,2026,,1,1000000,UTA,RD,Std
+Alex Barré-Boulet,29,2026-07-02,2026,,2,875000,SJS,"RW, C",Std (2-way)
+Dennis Cholowski,28,2026-07-02,2026,,2,875000,NYR,"LD, RD",Std (2-way)
+Jakub Dobes,25,2026-07-02,2026,,3,5357575,MTL,G,Std (Ext)
+Tye Felhaber,28,2026-07-02,2026,,1,850000,SJS,LW,Std
+Nick Foligno,38,2026-07-02,2026,,1,900000,MIN,"C, LW, RW",Std
+Erik Gudbranson,34,2026-07-02,2026,,1,1750000,CBJ,RD,Std
+Kyle Keyser,27,2026-07-02,2026,,1,850000,SJS,G,Std (2-way)
+Brett Leason,27,2026-07-02,2026,,1,850000,SJS,RW,Std (2-way)
+Matt Luff,29,2026-07-02,2026,,1,850000,NYI,RW,Std (2-way)
+Aidan McDonough,26,2026-07-02,2026,,1,850000,BUF,LW,Std (2-way)
+Cole McWard,25,2026-07-02,2026,,2,875000,TOR,"LD, RD",Std
+Leevi Merilainen,24,2026-07-02,2026,,1,1100000,OTT,G,Std
+Travis Mitchell,26,2026-07-02,2026,,1,850000,ANA,LD,Std (2-way)
+Alex Ovechkin,41,2026-07-02,2026,,1,4250000,WSH,"LW, RW",Std
+David Rittich,34,2026-07-02,2026,,1,1000000,NJD,G,Std
+Henrik Rybinski,25,2026-07-02,2026,,2,875000,TOR,RW,Std
+Maxim Shabanov,25,2026-07-02,2026,,1,1600000,MIN,"LW, RW",Std
+Ivar Stenberg,18,2026-07-02,2026,,3,1075000,SJS,LW,ELC
+Matt Stienburg,25,2026-07-02,2026,,1,850000,VAN,C,Std (2-way)
+Henry Thrun,25,2026-07-02,2026,,1,850000,WPG,RD,Std (2-way)
+Noel Acciari,34,2026-07-01,2026,,2,2800000,PHI,"RW, C",Std
+Jack Ahcan,29,2026-07-01,2026,,2,875000,NSH,"LD, RD",Std (2-way)
+Frederik Andersen,36,2026-07-01,2026,,1,1000000,EDM,G,35+ Contract
+Rasmus Andersson,29,2026-07-01,2026,,7,8500000,VGK,RD,Std
+Dylan Anhorn,27,2026-07-01,2026,,1,850000,CHI,LD,Std (2-way)
+Viktor Arvidsson,33,2026-07-01,2026,,2,5000000,DET,"RW, LW",Std
+Zach Aston-Reese,32,2026-07-01,2026,,2,875000,PHI,"LW, RW",Std (2-way)
+Adam Beckman,25,2026-07-01,2026,,2,875000,COL,LW,Std (2-way)
+John Beecher,25,2026-07-01,2026,,1,850000,FLA,"C, LW",Std (2-way)
+Alex Belzile,35,2026-07-01,2026,,1,850000,MTL,RW,Std (2-way)
+Mike Benning,24,2026-07-01,2026,,1,850000,CGY,RD,Std (2-way)
+Jonatan Berggren,26,2026-07-01,2026,,1,2000000,STL,"RW, LW",Std
+Riley Bezeau,24,2026-07-01,2026,,1,940000,CBJ,RW,ELC
+Oliver Bjorkstrand,31,2026-07-01,2026,,1,4500000,NYR,"RW, LW",Std
+Tobias Bjornfot,25,2026-07-01,2026,,1,850000,FLA,LD,Std (2-way)
+Sammy Blais,30,2026-07-01,2026,,2,925000,OTT,"LW, RW",Std (2-way)
+Teddy Blueger,32,2026-07-01,2026,,2,2500000,TOR,C,Std
+Sergei Bobrovsky,38,2026-07-01,2026,,3,7000000,TOR,G,Std
+Zach Bogosian,36,2026-07-01,2026,,1,1250000,MIN,"RD, LD",Std
+Dillon Boucher,29,2026-07-01,2026,,1,850000,CHI,LW,Std (2-way)
+Jonny Brodzinski,33,2026-07-01,2026,,1,850000,WSH,"RW, LW, C",Std
+Laurent Brossoit,33,2026-07-01,2026,,1,1100000,ANA,G,Std
+Jacob Bryson,28,2026-07-01,2026,,1,850000,DET,"LD, RD",Std
+Cameron Butler,24,2026-07-01,2026,,1,850000,DET,RW,Std (2-way)
+Bowen Byram,25,2026-07-01,2026,,6,12500000,CHI,"LD, RD",Std (Ext)
+Michael Callahan,27,2026-07-01,2026,,1,850000,TBL,"LD, RD",Std (2-way)
+Atley Calvert,23,2026-07-01,2026,,2,930000,PIT,C,ELC
+Declan Carlile,26,2026-07-01,2026,,2,1500000,PIT,"LD, RD",Std
+John Carlson,36,2026-07-01,2026,,2,8500000,TBL,RD,Std
+Judd Caulfield,25,2026-07-01,2026,,2,875000,ANA,RW,Std (2-way)
+Luke Cavallin,25,2026-07-01,2026,,1,850000,BOS,G,Std (2-way)
+Mitchell Chaffee,28,2026-07-01,2026,,1,850000,NYI,"RW, LW",Std
+Connor Clifton,31,2026-07-01,2026,,2,2250000,BOS,RD,Std
+Dylan Coghlan,28,2026-07-01,2026,,2,875000,VGK,RD,Std
+Ian Cole,37,2026-07-01,2026,,1,4000000,CHI,LD,Std
+Eric Comrie,31,2026-07-01,2026,,2,1150000,SJS,G,Std
+Pheonix Copley,34,2026-07-01,2026,,1,850000,CBJ,G,Std
+Paul Cotter,26,2026-07-01,2026,,1,2150000,VAN,"LW, C",Std
+Philippe Daoust,24,2026-07-01,2026,,1,850000,OTT,C,Std (2-way)
+Nico Daws,25,2026-07-01,2026,,2,1100000,NJD,G,Std
+Marc Del Gaizo,26,2026-07-01,2026,,2,875000,NYR,LD,Std
+Jakub Demek,23,2026-07-01,2026,,1,850000,VGK,C,Std (2-way)
+Ivan Demidov,20,2026-07-01,2026,,8,9150000,MTL,RW,Std (Ext)
+Vincent Desharnais,30,2026-07-01,2026,,4,4200000,WSH,RD,Std
+Cam Dineen,28,2026-07-01,2026,,2,875000,PHI,LD,Std (2-way)
+Curtis Douglas,26,2026-07-01,2026,,2,1250000,SEA,"LW, RW, C",Std
+Dillon Dube,28,2026-07-01,2026,,1,850000,STL,C,Std
+Brandon Duhaime,29,2026-07-01,2026,,3,2600000,TOR,"LW, RW",Std
+Josh Dunne,27,2026-07-01,2026,,1,850000,WSH,"LW, C",Std
+Lars Eller,37,2026-07-01,2026,,1,850000,FLA,C,Std
+Andreas Englund,30,2026-07-01,2026,,1,900000,CGY,LD,Std (2-way)
+Samuel Ersson,26,2026-07-01,2026,,2,2200000,OTT,G,Std
+Domenick Fensore,25,2026-07-01,2026,,1,850000,COL,"RD, LD",Std
+Mario Ferraro,28,2026-07-01,2026,,3,4000000,WPG,"LD, RD",Std
+Casey Fitzgerald,29,2026-07-01,2026,,1,850000,FLA,RD,Std (2-way)
+Trey Fix-Wolansky,27,2026-07-01,2026,,1,900000,VAN,RW,Std (2-way)
+Joe Fleming,23,2026-07-01,2026,,1,850000,VGK,RW,Std (2-way)
+Tyson Foerster,24,2026-07-01,2026,,8,7100000,PHI,"LW, RW",Std (Ext)
+Dylan Gambrell,30,2026-07-01,2026,,1,850000,MIN,C,Std (2-way)
+Andre Gasseau,23,2026-07-01,2026,,2,1050000,SJS,C,ELC
+Marc Gatcomb,27,2026-07-01,2026,,2,875000,VGK,"RW, C",Std (2-way)
+Brendan Gaunce,32,2026-07-01,2026,,2,875000,BOS,C,Std (2-way)
+Glenn Gawdin,29,2026-07-01,2026,,2,875000,NYR,C,Std (2-way)
+Dennis Gilbert,29,2026-07-01,2026,,1,850000,BUF,LD,Std
+Adam Ginning,26,2026-07-01,2026,,2,875000,VGK,LD,Std
+A.J. Greer,29,2026-07-01,2026,,4,4250000,ANA,"RW, LW",Std
+Noah Gregor,28,2026-07-01,2026,,1,850000,WPG,"RW, LW",Std (2-way)
+Radko Gudas,36,2026-07-01,2026,,6,1500000,FLA,RD,Std
+Maxence Guenette,25,2026-07-01,2026,,1,850000,BOS,RD,Std (2-way)
+Erik Gustafsson,34,2026-07-01,2026,,1,1000000,LAK,LD,Std
+Brian Halonen,27,2026-07-01,2026,,2,875000,BOS,"RW, LW",Std (2-way)
+Brandon Halverson,30,2026-07-01,2026,,1,850000,DAL,G,Std (2-way)
+James Hamblin,27,2026-07-01,2026,,2,875000,ANA,LW,Std (2-way)
+Jordan Harris,26,2026-07-01,2026,,1,850000,BOS,"LD, RD",Std
+Erik Haula,35,2026-07-01,2026,,2,3600000,LAK,"C, LW",Std
+Ville Heinola,25,2026-07-01,2026,,1,850000,VGK,"LD, RD",Std
+Vinnie Hinostroza,32,2026-07-01,2026,,2,875000,COL,"RW, LW, C",Std
+Nico Hischier,27,2026-07-01,2026,,5,11700000,NJD,C,Std (Ext)
+Justin Holl,34,2026-07-01,2026,,1,900000,WSH,RD,Std
+Arttu Hyry,25,2026-07-01,2026,,2,875000,DAL,"C, RW",Std
+Bokondji Imama,30,2026-07-01,2026,,1,850000,FLA,"RW, LW",Std (2-way)
+Jan Jenik,26,2026-07-01,2026,,1,850000,LAK,C,Std (2-way)
+Boone Jenner,33,2026-07-01,2026,,4,5750000,WSH,"LW, C",Std
+Nick Jensen,36,2026-07-01,2026,,2,2250000,ANA,RD,Std
+Ross Johnston,32,2026-07-01,2026,,3,2000000,STL,LW,Std
+Ben Jones,27,2026-07-01,2026,,1,850000,CGY,"C, LW",Std (2-way)
+Max Jones,28,2026-07-01,2026,,1,850000,EDM,"LW, RW",Std
+Zac Jones,25,2026-07-01,2026,,2,875000,UTA,LD,Std (2-way)
+Mathieu Joseph,29,2026-07-01,2026,,1,1000000,EDM,"RW, LW",Std
+Jagger Joshua,27,2026-07-01,2026,,2,875000,MIN,LW,Std (2-way)
+Noah Juulsen,29,2026-07-01,2026,,2,1100000,COL,RD,Std
+Kaapo Kahkonen,30,2026-07-01,2026,,1,1000000,MTL,G,Std
+Kasperi Kapanen,30,2026-07-01,2026,,1,2600000,EDM,RW,Std
+Alex Kerfoot,32,2026-07-01,2026,,2,3500000,NSH,"C, LW, RW",Std
+Matthew Kessel,26,2026-07-01,2026,,1,850000,NYI,"RD, LD",Std
+Justin Kirkland,30,2026-07-01,2026,,1,850000,MIN,C,Std (2-way)
+Joel Kiviranta,30,2026-07-01,2026,,1,1000000,DAL,"RW, LW",Std
+Danila Klimovich,23,2026-07-01,2026,,1,850000,PHI,RW,Std (2-way)
+Vladislav Kolyachonok,25,2026-07-01,2026,,1,850000,NJD,"LD, RD",Std
+Trevor Kuntar,25,2026-07-01,2026,,2,875000,BUF,"LW, C",Std (2-way)
+Andrei Kuzmenko,30,2026-07-01,2026,,1,5000000,PIT,"LW, RW",Std
+Christian Kyrou,23,2026-07-01,2026,,1,850000,OTT,RD,Std (2-way)
+Tanner Laczynski,29,2026-07-01,2026,,3,900000,VGK,C,Std
+Sam Lafferty,31,2026-07-01,2026,,1,850000,FLA,"RW, C",Std (2-way)
+Scott Laughton,32,2026-07-01,2026,,3,3500000,LAK,C,Std
+Raphael Lavoie,25,2026-07-01,2026,,1,900000,VGK,"RW, C",Std (2-way)
+Anders Lee,36,2026-07-01,2026,,3,5400000,UTA,LW,Std
+Jake Livingstone,27,2026-07-01,2026,,1,850000,CGY,RD,Std (2-way)
+Ryan Lomberg,31,2026-07-01,2026,,2,1300000,CBJ,LW,Std
+Eetu Luostarinen,28,2026-07-01,2026,,8,5000000,FLA,"LW, C",Std (Ext)
+Matias Maccelli,25,2026-07-01,2026,,1,2250000,NYI,"LW, RW",Std
+Zack MacEwen,30,2026-07-01,2026,,2,875000,TOR,"RW, C",Std
+Connor Mackey,30,2026-07-01,2026,,2,937500,CHI,"LD, RD",Std (2-way)
+Jeff Malott,30,2026-07-01,2026,,3,1850000,ANA,LW,Std
+Mason Marchment,31,2026-07-01,2026,,5,6750000,SJS,LW,Std
+Carter Mazur,24,2026-07-01,2026,,2,875000,DET,"RW, LW",Std
+Marc McLaughlin,27,2026-07-01,2026,,1,850000,NJD,C,Std (2-way)
+Ilya Mikheyev,31,2026-07-01,2026,,4,3850000,TBL,RW,Std
+Connor Mylymok,26,2026-07-01,2026,,1,850000,CHI,LW,Std (2-way)
+Jamie Oleksiak,33,2026-07-01,2026,,2,5000000,VAN,"RD, LD",Std
+Victor Olofsson,31,2026-07-01,2026,,1,1638330,VGK,"RW, LW",Std
+Xavier Parent,25,2026-07-01,2026,,1,850000,NJD,"LW, RW, C",Std (2-way)
+Jiri Patera,27,2026-07-01,2026,,1,850000,BOS,G,Std (2-way)
+Lane Pederson,29,2026-07-01,2026,,2,875000,LAK,C,Std (2-way)
+Corey Perry,41,2026-07-01,2026,,1,1000000,LAK,"RW, LW",35+ Contract
+Scott Perunovich,28,2026-07-01,2026,,1,850000,LAK,"LD, RD",Std (2-way)
+Alexander Petrovic,34,2026-07-01,2026,,2,875000,FLA,RD,Std
+Calvin Pickard,34,2026-07-01,2026,,1,1000000,MIN,G,Std
+Jason Polin,27,2026-07-01,2026,,1,850000,BUF,"LW, RW, C",Std (2-way)
+Sam Poulin,25,2026-07-01,2026,,1,850000,MTL,RW,Std (2-way)
+Olivier Rodrigue,26,2026-07-01,2026,,1,850000,TBL,G,Std (2-way)
+Jonas Rondbjerg,27,2026-07-01,2026,,1,850000,VGK,"LW, RW",Std (2-way)
+Jack Roslovic,29,2026-07-01,2026,,2,4000000,TOR,"RW, C",Std
+Mackie Samoskevich,23,2026-07-01,2026,,3,3850000,SEA,"LW, RW",Std
+Ethan Samson,23,2026-07-01,2026,,1,850000,MTL,RD,Std (2-way)
+Luke Schenn,36,2026-07-01,2026,,1,2250000,VAN,RD,Std
+Corey Schueneman,31,2026-07-01,2026,,2,875000,ANA,"LD, RD",Std (2-way)
+Jaden Schwartz,34,2026-07-01,2026,,3,3250000,COL,"LW, C",Std
+Cole Schwindt,25,2026-07-01,2026,,2,875000,FLA,"C, LW",Std
+Donovan Sebrango,24,2026-07-01,2026,,1,850000,FLA,LD,Std
+Mason Shaw,27,2026-07-01,2026,,1,850000,MIN,C,Std (2-way)
+Ryan Shea,29,2026-07-01,2026,,5,4000000,EDM,LD,Std
+Conor Sheary,34,2026-07-01,2026,,1,850000,BUF,"RW, LW",Std
+Artem Shlaine,24,2026-07-01,2026,,1,952500,DAL,C,ELC
+Owen Sillinger,29,2026-07-01,2026,,1,850000,CBJ,C,Std (2-way)
+Colton Sissons,32,2026-07-01,2026,,2,4250000,TOR,"C, RW",Std
+Hunter Skinner,25,2026-07-01,2026,,1,850000,NSH,RD,Std (2-way)
+Stuart Skinner,27,2026-07-01,2026,,2,3750000,WPG,G,Std
+Wilmer Skoog,27,2026-07-01,2026,,1,850000,DET,"LW, C",Std (2-way)
+Cole Smith,30,2026-07-01,2026,,3,3000000,CHI,"LW, RW",Std
+Mads Sogaard,25,2026-07-01,2026,,1,850000,TBL,G,Std (2-way)
+Kevin Stenlund,30,2026-07-01,2026,,1,2750000,UTA,C,Std
+William Stromgren,23,2026-07-01,2026,,1,850000,CGY,"RW, LW",Std (2-way)
+Jack Studnicka,27,2026-07-01,2026,,2,875000,PHI,"RW, C",Std (2-way)
+Ryan Suzuki,25,2026-07-01,2026,,1,850000,OTT,C,Std (2-way)
+Daniil Tarasov,27,2026-07-01,2026,,1,2000000,DET,G,Std
+Akil Thomas,26,2026-07-01,2026,,1,900000,VAN,C,Std (2-way)
+Philip Tomasino,25,2026-07-01,2026,,1,900000,OTT,RW,Std (2-way)
+Eduards Tralmaks,29,2026-07-01,2026,,1,850000,EDM,RW,Std (2-way)
+Jacob Trouba,32,2026-07-01,2026,,4,8250000,SJS,RD,Std
+Riley Tufte,28,2026-07-01,2026,,1,850000,NJD,LW,Std
+Antti Tuomisto,25,2026-07-01,2026,,2,875000,VGK,RD,Std (2-way)
+Trevor van Riemsdyk,35,2026-07-01,2026,,2,4000000,PIT,"RD, LD",Std
+Vitek Vanecek,30,2026-07-01,2026,,1,1000000,NYI,G,Std
+Joe Veleno,26,2026-07-01,2026,,1,1200000,NYR,"C, RW, LW",Std
+Jeffrey Viel,29,2026-07-01,2026,,5,2500000,TBL,"LW, RW",Std
+Sandis Vilmanis,22,2026-07-01,2026,,2,925000,FLA,"LW, RW",Std (Ext)
+Dan Vladar,29,2026-07-01,2026,,5,5500000,PHI,G,Std (Ext)
+Jett Woo,26,2026-07-01,2026,,2,875000,ANA,RD,Std (2-way)
+Olen Zellweger,23,2026-07-01,2026,,3,3100000,BUF,LD,Std
+Mats Zuccarello,39,2026-07-01,2026,,1,1000000,LAK,RW,35+ Contract

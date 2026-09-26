@@ -85,3 +85,14 @@ def build_skater_dataset(
         })
 
     return pd.DataFrame(rows)
+
+
+if __name__ == "__main__":
+    # Build and save the 2026-offseason skater dataset (walk year 2025-26).
+    df = build_skater_dataset(
+        "data/raw/contracts/capwages_2026_cleaned.csv",
+        walk_year_season="20252026",
+        contract_effective_season="20262027",
+    )
+    df.to_csv("data/processed/skaters_2026_dataset.csv", index=False)
+    print(f"skaters 2026: {len(df)} rows -> data/processed/skaters_2026_dataset.csv")

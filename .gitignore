@@ -6,3 +6,11 @@ __pycache__/
 data/raw/stats/*.csv
 data/raw/stats/*.json
 data/processed/*.csv
+
+# Third-party raw data dumps - not republished to the public repo (see README).
+# CapFriendly data reused with permission; CapWages/MoneyPuck prohibit redistribution.
+# Kept locally so the pipeline runs; documented sources make it reproducible.
+data/raw/capfriendly_historical/
+data/raw/contracts/2025-2027_signings.csv
+data/raw/contracts/2025-2027_signings.xlsx
+notebooks/test.py

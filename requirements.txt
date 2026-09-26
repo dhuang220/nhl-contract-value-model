@@ -5,4 +5,6 @@ scikit-learn
 matplotlib
 rapidfuzz
 beautifulsoup4
+streamlit
+altair
 jupyter
