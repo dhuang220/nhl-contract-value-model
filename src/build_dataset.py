@@ -108,13 +108,14 @@ if __name__ == "__main__":
     df.to_csv("data/processed/skaters_current_dataset.csv", index=False)
     print(f"current skaters: {len(df)} rows -> data/processed/skaters_current_dataset.csv")
 
-    # Also build the 2026-offseason SIGNINGS-only set (fresh-market pricing) from
-    # the cleaned signings tracker collected earlier this session.
-    signings = build_skater_dataset(
-        "data/raw/contracts/capwages_2026_cleaned.csv",
-        walk_year_season="20252026",
-        contract_effective_season="20262027",
-        moneypuck_csv="data/raw/stats/2026.csv",
-    )
-    signings.to_csv("data/processed/skaters_2026signings_dataset.csv", index=False)
-    print(f"2026 signings: {len(signings)} rows -> data/processed/skaters_2026signings_dataset.csv")
+    # Fresh-market training set: 2025 and 2026 offseason signings (scraped per
+    # season from the CapWages tracker), each paired with its own walk year.
+    s26 = build_skater_dataset(
+        "data/raw/contracts/signings_2026.csv", "20252026", "20262027", "data/raw/stats/2026.csv")
+    s26.to_csv("data/processed/skaters_2026signings_dataset.csv", index=False)
+    print(f"2026 signings: {len(s26)} rows -> data/processed/skaters_2026signings_dataset.csv")
+
+    s25 = build_skater_dataset(
+        "data/raw/contracts/signings_2025.csv", "20242025", "20252026", "data/raw/stats/2025.csv")
+    s25.to_csv("data/processed/skaters_2025signings_dataset.csv", index=False)
+    print(f"2025 signings: {len(s25)} rows -> data/processed/skaters_2025signings_dataset.csv")

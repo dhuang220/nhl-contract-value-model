@@ -15,3 +15,5 @@ data/raw/contracts/2025-2027_signings.csv
 data/raw/contracts/2025-2027_signings.xlsx
 notebooks/test.py
 data/raw/contracts/capwages_current_2026.csv
+data/raw/contracts/signings_2025.csv
+data/raw/contracts/signings_2026.csv

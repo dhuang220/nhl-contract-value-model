@@ -17,8 +17,8 @@ CONTRACT_SETS = {
         "Skaters": "data/processed/skaters_current_residual_ranking.csv",
         "Goalies": "data/processed/goalies_current_residual_ranking.csv",
     },
-    "2026 signings only": {
-        "Skaters": "data/processed/skaters_2026signings_residual_ranking.csv",
+    "2025-26 signings": {
+        "Skaters": "data/processed/skaters_signings_residual_ranking.csv",
     },
 }
 
@@ -54,9 +54,9 @@ if not sets_avail:
 with st.sidebar:
     st.header("Filters")
     contract_set = st.radio("Contract set", list(sets_avail.keys()))
-    st.caption("Model is fit on 2026 fresh-market signings. "
+    st.caption("Model is fit on 2025+2026 fresh-market signings. "
                "All current = every current player valued at those rates; "
-               "2026 signings = just this offseason's deals.")
+               "2025-26 signings = just those fresh deals.")
     available = sets_avail[contract_set]
     group = st.radio("Player type", list(available.keys()))
     df = load(available[group]).copy()
