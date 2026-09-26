@@ -54,8 +54,9 @@ if not sets_avail:
 with st.sidebar:
     st.header("Filters")
     contract_set = st.radio("Contract set", list(sets_avail.keys()))
-    st.caption("All current = every deal on the books (whole-league market). "
-               "2026 signings = this offseason's fresh deals only (current market rate).")
+    st.caption("Model is fit on 2026 fresh-market signings. "
+               "All current = every current player valued at those rates; "
+               "2026 signings = just this offseason's deals.")
     available = sets_avail[contract_set]
     group = st.radio("Player type", list(available.keys()))
     df = load(available[group]).copy()

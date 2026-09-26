@@ -13,7 +13,7 @@ from sklearn.model_selection import cross_val_predict, KFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from src.model import prepare, prepare_goalies, cross_validated_scores, FEATURES, GOALIE_FEATURES, TARGET
+from src.model import prepare, prepare_goalies, fit_and_rank, cross_validated_scores, FEATURES, GOALIE_FEATURES, TARGET
 
 SKATER_IN = "data/processed/skaters_current_dataset.csv"
 GOALIE_IN = "data/processed/goalies_current_dataset.csv"
@@ -40,10 +40,17 @@ def _ranking(df, features):
 
 
 def generate_skater_ranking():
-    df = prepare(pd.read_csv(SKATER_IN))
-    r = _ranking(df, FEATURES)
+    """Fit on the 2026 fresh-market signings, then value EVERY current skater.
+
+    Training on fresh deals prices star/upside production properly (the whole-
+    league fit under-valued it, diluted by cheap legacy/RFA/ELC contracts).
+    Predictions for players who didn't sign in 2026 are out-of-sample.
+    """
+    train = prepare(pd.read_csv(SIGNINGS_IN))
+    current = prepare(pd.read_csv(SKATER_IN))
+    r = fit_and_rank(train, current, features=FEATURES)
     r.to_csv(SKATER_OUT, index=False)
-    return df, r
+    return train, current, r
 
 
 def generate_goalie_ranking():
@@ -62,9 +69,10 @@ def generate_signings_ranking():
 
 
 if __name__ == "__main__":
-    sdf, sk = generate_skater_ranking()
-    s = cross_validated_scores(sdf, features=FEATURES)
-    print(f"skaters (all current): {len(sk)} -> {SKATER_OUT}  CV R2={s['r2_log']:.3f}  MAE=${s['mae_dollars']:,.0f}")
+    train, current, sk = generate_skater_ranking()
+    s = cross_validated_scores(train, features=FEATURES)
+    print(f"skaters: fit on {len(train)} 2026 signings (CV R2={s['r2_log']:.3f}), "
+          f"valued all {len(sk)} current -> {SKATER_OUT}")
 
     gdf, gg = generate_goalie_ranking()
     gs = cross_validated_scores(gdf, features=GOALIE_FEATURES)
