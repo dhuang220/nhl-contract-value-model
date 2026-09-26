@@ -19,8 +19,10 @@ from src.model import prepare, prepare_goalies, cross_validated_scores, FEATURES
 
 SKATER_IN = "data/processed/skaters_current_dataset.csv"
 GOALIE_IN = "data/processed/goalies_current_dataset.csv"
+SIGNINGS_IN = "data/processed/skaters_2026signings_dataset.csv"
 SKATER_OUT = "data/processed/skaters_current_residual_ranking.csv"
 GOALIE_OUT = "data/processed/goalies_current_residual_ranking.csv"
+SIGNINGS_OUT = "data/processed/skaters_2026signings_residual_ranking.csv"
 
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
 CEIL = 104_000_000
@@ -67,6 +69,14 @@ def generate_goalie_ranking():
     return df, r
 
 
+def generate_signings_ranking():
+    """Skaters trained only on 2026-offseason signings - fresh-market pricing."""
+    df = prepare(pd.read_csv(SIGNINGS_IN))
+    r = _combined_ranking(df, FEATURES)
+    r.to_csv(SIGNINGS_OUT, index=False)
+    return df, r
+
+
 if __name__ == "__main__":
     sdf, sk = generate_skater_ranking()
     lin = cross_validated_scores(sdf, features=FEATURES)
@@ -77,3 +87,13 @@ if __name__ == "__main__":
 
     gdf, gg = generate_goalie_ranking()
     print(f"goalies: {len(gg)} ranked (both models) -> {GOALIE_OUT}")
+
+    sdf2, ss = generate_signings_ranking()
+    lin2 = cross_validated_scores(sdf2, features=FEATURES)
+    g2 = cross_validated_scores(sdf2, model=gbt(), features=FEATURES)
+    print(f"2026 signings: {len(ss)} ranked -> {SIGNINGS_OUT}")
+    print(f"  Linear CV R2={lin2['r2_log']:.3f} | GBT CV R2={g2['r2_log']:.3f}")
+    car = ss[ss.player_name == "Leo Carlsson"]
+    if len(car):
+        c = car.iloc[0]
+        print(f"  Carlsson: actual ${c.cap_hit/1e6:.1f}M | linear ${c.predicted_linear/1e6:.1f}M | gbt ${c.predicted_gbt/1e6:.1f}M")

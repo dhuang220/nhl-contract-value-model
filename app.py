@@ -1,8 +1,10 @@
 """NHL Contract Value dashboard.
 
-Interactive view of the residual ranking: which 2026-offseason signings the
-model reads as over- or under-paid, given the player's walk-year performance.
-Reads pre-computed ranking CSVs produced by src/generate_rankings.py.
+Interactive view of the residual ranking: which contracts the model reads as
+over- or under-paid, given 2025-26 performance. Sidebar toggles: contract set
+(all current deals vs 2026 signings only), player type, model (linear vs GBT),
+plus player search and team/position/contract-type filters. Reads pre-computed
+ranking CSVs produced by src/generate_rankings.py.
 """
 import os
 
@@ -10,9 +12,14 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-RANKINGS = {
-    "Skaters": "data/processed/skaters_current_residual_ranking.csv",
-    "Goalies": "data/processed/goalies_current_residual_ranking.csv",
+CONTRACT_SETS = {
+    "All current contracts": {
+        "Skaters": "data/processed/skaters_current_residual_ranking.csv",
+        "Goalies": "data/processed/goalies_current_residual_ranking.csv",
+    },
+    "2026 signings only": {
+        "Skaters": "data/processed/skaters_2026signings_residual_ranking.csv",
+    },
 }
 
 st.set_page_config(page_title="NHL Contract Value Model", layout="wide")
@@ -29,16 +36,18 @@ def load(path: str) -> pd.DataFrame:
 
 st.title("NHL Contract Value Model")
 st.caption(
-    "Predicted cap hit vs. actual, for **every current NHL contract**. "
-    "The model estimates a fair AAV from the player's 2025-26 performance "
-    "(scoring rate, ice time, durability, age, and free-agency status). "
-    "Positive residual = paid more than the model expects (**overpaid**); "
-    "negative = **underpaid**. A descriptive value tool, not a crystal ball - "
-    "it can't see prospect upside, intangibles, or negotiation leverage."
+    "Predicted cap hit vs. actual. The model estimates a fair AAV from the player's "
+    "2025-26 performance (scoring rate, shot quality, ice time, durability, age, status). "
+    "Positive residual = paid more than the model expects (**overpaid**); negative = "
+    "**underpaid**. A descriptive value tool, not a crystal ball - it can't see prospect "
+    "upside, intangibles, or negotiation leverage."
 )
 
-available = {k: v for k, v in RANKINGS.items() if os.path.exists(v)}
-if not available:
+# keep only contract sets / player types whose ranking files exist
+sets_avail = {cs: {pt: p for pt, p in d.items() if os.path.exists(p)}
+              for cs, d in CONTRACT_SETS.items()}
+sets_avail = {cs: d for cs, d in sets_avail.items() if d}
+if not sets_avail:
     st.warning("No ranking data found. Run `python -m src.generate_rankings` first.")
     st.stop()
 
@@ -46,6 +55,10 @@ MODELS = {"Gradient-boosted trees": "gbt", "Linear regression": "linear"}
 
 with st.sidebar:
     st.header("Filters")
+    contract_set = st.radio("Contract set", list(sets_avail.keys()))
+    st.caption("All current = every deal on the books (whole-league market). "
+               "2026 signings = this offseason's fresh deals only (current market rate).")
+    available = sets_avail[contract_set]
     group = st.radio("Player type", list(available.keys()))
     df = load(available[group]).copy()
 
