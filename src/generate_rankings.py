@@ -24,7 +24,17 @@ SIGNINGS_OUT = "data/processed/skaters_2026signings_residual_ranking.csv"
 
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
 CEIL = 104_000_000
+MAX_CONTRACT = 20_800_000  # CBA max: 20% of the $104M cap (2026-27) - caps the
+                           # log model's top-end extrapolation at a realistic ceiling
 BASE_COLS = ["player_name", "team", "position", "age", "contract_type", "cap_hit"]
+
+
+def _apply_cap(r):
+    """Clip predicted cap hit at the max-contract limit and re-rank on residual."""
+    r = r.copy()
+    r["predicted_cap_hit"] = r["predicted_cap_hit"].clip(upper=MAX_CONTRACT)
+    r["residual"] = r["cap_hit"] - r["predicted_cap_hit"]
+    return r.sort_values("residual", ascending=False).reset_index(drop=True)
 
 
 def _ranking(df, features):
@@ -48,14 +58,14 @@ def generate_skater_ranking():
     """
     train = prepare(pd.read_csv(SIGNINGS_IN))
     current = prepare(pd.read_csv(SKATER_IN))
-    r = fit_and_rank(train, current, features=FEATURES)
+    r = _apply_cap(fit_and_rank(train, current, features=FEATURES))
     r.to_csv(SKATER_OUT, index=False)
     return train, current, r
 
 
 def generate_goalie_ranking():
     df = prepare_goalies(pd.read_csv(GOALIE_IN))
-    r = _ranking(df, GOALIE_FEATURES)
+    r = _apply_cap(_ranking(df, GOALIE_FEATURES))
     r.to_csv(GOALIE_OUT, index=False)
     return df, r
 
@@ -63,7 +73,7 @@ def generate_goalie_ranking():
 def generate_signings_ranking():
     """Skaters trained only on 2026-offseason signings - fresh-market pricing."""
     df = prepare(pd.read_csv(SIGNINGS_IN))
-    r = _ranking(df, FEATURES)
+    r = _apply_cap(_ranking(df, FEATURES))
     r.to_csv(SIGNINGS_OUT, index=False)
     return df, r
 
