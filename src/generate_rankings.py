@@ -1,11 +1,11 @@
 """Produce the residual-ranking CSVs the Streamlit app reads.
 
 Ranks EVERY current NHL contract (skaters and goalies) by how far its cap hit
-sits above/below what 2025-26 performance predicts. Both models are trained
-in-sample on the current-market data itself - a contemporaneous value model -
-which sidesteps the flat-cap-era vs boom-era distribution shift (all rows are
-the same season). Residuals are descriptive (over/under-paid relative to the
-current market), not out-of-sample predictions.
+sits above/below what 2025-26 performance predicts - a contemporaneous value
+model (all rows the same season, which sidesteps the flat-cap-era vs boom-era
+distribution shift). Each player's predicted cap hit comes from 5-fold
+cross-validation (fit_and_rank cv=True), so the model never saw that player when
+predicting him - a genuinely out-of-sample "was he fairly paid" estimate.
 
 Reads the processed datasets built by src/build_dataset.py (skaters) and
 src/build_goalie_2026.py (goalies).
@@ -25,14 +25,14 @@ GOALIE_OUT = "data/processed/goalies_current_residual_ranking.csv"
 
 def generate_skater_ranking() -> tuple[pd.DataFrame, pd.DataFrame]:
     df = prepare(pd.read_csv(SKATER_IN))
-    ranking = fit_and_rank(df, features=FEATURES)
+    ranking = fit_and_rank(df, features=FEATURES, cv=True)
     ranking.to_csv(SKATER_OUT, index=False)
     return df, ranking
 
 
 def generate_goalie_ranking() -> tuple[pd.DataFrame, pd.DataFrame]:
     df = prepare_goalies(pd.read_csv(GOALIE_IN))
-    ranking = fit_and_rank(df, features=GOALIE_FEATURES)
+    ranking = fit_and_rank(df, features=GOALIE_FEATURES, cv=True)
     ranking.to_csv(GOALIE_OUT, index=False)
     return df, ranking
 

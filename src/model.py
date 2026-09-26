@@ -67,20 +67,31 @@ def cross_validated_scores(df: pd.DataFrame, model=None, features=FEATURES) -> d
     }
 
 
-def fit_and_rank(train_df, rank_df=None, model=None, features=FEATURES, ceiling=104_000_000):
-    """Fit on train_df and rank rank_df by residual (actual - predicted) cap hit.
+def fit_and_rank(train_df, rank_df=None, model=None, features=FEATURES,
+                 ceiling=104_000_000, cv=False):
+    """Rank rank_df by residual (actual - predicted) cap hit.
 
-    Residuals are descriptive (paid more/less than the fitted market expects),
-    not out-of-sample predictions. Positive = overpaid, negative = underpaid.
-    rank_df defaults to train_df (in-sample ranking). `ceiling` converts the
-    predicted cap% back to dollars against the ranked season's cap.
+    Positive residual = overpaid, negative = underpaid. `ceiling` converts the
+    predicted cap% back to dollars. rank_df defaults to train_df.
+
+    cv=False: in-sample fitted predictions (descriptive - the market the model
+    was fit on). cv=True (only when ranking the training set itself): each row's
+    prediction comes from 5-fold cross-validation, so the model never saw that
+    player - a genuinely out-of-sample "was he fairly paid" estimate (noisier).
     """
+    same = rank_df is None
     if rank_df is None:
         rank_df = train_df
     model = model or make_pipeline(StandardScaler(), LinearRegression())
-    model.fit(train_df[features], train_df[TARGET])
 
-    pred_pct = np.exp(model.predict(rank_df[features]))
+    if cv and same:
+        kf = KFold(n_splits=5, shuffle=True, random_state=0)
+        pred_log = cross_val_predict(model, train_df[features], train_df[TARGET], cv=kf)
+    else:
+        model.fit(train_df[features], train_df[TARGET])
+        pred_log = model.predict(rank_df[features])
+
+    pred_pct = np.exp(pred_log)
     cols = [c for c in ["player_name", "position", "age", "contract_type", "cap_hit"] if c in rank_df]
     out = rank_df[cols].copy()
     if "position" not in out:
