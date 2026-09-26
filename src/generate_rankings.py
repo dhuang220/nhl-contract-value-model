@@ -1,15 +1,13 @@
 """Produce the residual-ranking CSVs the Streamlit app reads.
 
-Ranks every current NHL contract by how far its cap hit sits above/below what
-2025-26 performance predicts - a contemporaneous value model (all rows the same
-season, sidestepping the flat-cap-era vs boom-era shift). Each row gets BOTH a
-linear-regression prediction and a gradient-boosted-tree prediction, so the app
-can toggle between them and compare side by side. All predictions come from
-5-fold cross-validation, so the model never saw that player when predicting him.
+Ranks contracts by how far the cap hit sits above/below what 2025-26 performance
+predicts - a contemporaneous linear value model. Predictions come from 5-fold
+cross-validation, so the model never saw that player when predicting him.
+Two skater populations: all current contracts, and 2026 signings only
+(fresh-market pricing). Residuals are descriptive, not out-of-sample forecasts.
 """
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import cross_val_predict, KFold
 from sklearn.pipeline import make_pipeline
@@ -29,42 +27,28 @@ CEIL = 104_000_000
 BASE_COLS = ["player_name", "team", "position", "age", "contract_type", "cap_hit"]
 
 
-def gbt():
-    """Tuned GBT from src/experiment_gbt.py - shallow/subsampled to limit overfit."""
-    return GradientBoostingRegressor(
-        learning_rate=0.02, max_depth=3, min_samples_leaf=10,
-        n_estimators=400, subsample=0.7, random_state=0,
-    )
-
-
-def _cv_dollars(df, features, model):
-    pred_log = cross_val_predict(model, df[features], df[TARGET], cv=KF)
-    return np.exp(pred_log) * CEIL
-
-
-def _combined_ranking(df, features):
-    """One row per player with both models' predicted cap hit + residual."""
+def _ranking(df, features):
+    """One row per player with the linear model's predicted cap hit + residual."""
     out = df[[c for c in BASE_COLS if c in df.columns]].copy()
     if "position" not in out:
         out["position"] = "G"
-    cap = df["cap_hit"].values
-    for label, model in [("linear", make_pipeline(StandardScaler(), LinearRegression())), ("gbt", gbt())]:
-        pred = _cv_dollars(df, features, model).round()
-        out[f"predicted_{label}"] = pred
-        out[f"residual_{label}"] = cap - pred
-    return out.sort_values("residual_gbt", ascending=False).reset_index(drop=True)
+    model = make_pipeline(StandardScaler(), LinearRegression())
+    pred = (np.exp(cross_val_predict(model, df[features], df[TARGET], cv=KF)) * CEIL).round()
+    out["predicted_cap_hit"] = pred
+    out["residual"] = df["cap_hit"].values - pred
+    return out.sort_values("residual", ascending=False).reset_index(drop=True)
 
 
 def generate_skater_ranking():
     df = prepare(pd.read_csv(SKATER_IN))
-    r = _combined_ranking(df, FEATURES)
+    r = _ranking(df, FEATURES)
     r.to_csv(SKATER_OUT, index=False)
     return df, r
 
 
 def generate_goalie_ranking():
     df = prepare_goalies(pd.read_csv(GOALIE_IN))
-    r = _combined_ranking(df, GOALIE_FEATURES)
+    r = _ranking(df, GOALIE_FEATURES)
     r.to_csv(GOALIE_OUT, index=False)
     return df, r
 
@@ -72,28 +56,20 @@ def generate_goalie_ranking():
 def generate_signings_ranking():
     """Skaters trained only on 2026-offseason signings - fresh-market pricing."""
     df = prepare(pd.read_csv(SIGNINGS_IN))
-    r = _combined_ranking(df, FEATURES)
+    r = _ranking(df, FEATURES)
     r.to_csv(SIGNINGS_OUT, index=False)
     return df, r
 
 
 if __name__ == "__main__":
     sdf, sk = generate_skater_ranking()
-    lin = cross_validated_scores(sdf, features=FEATURES)
-    g = cross_validated_scores(sdf, model=gbt(), features=FEATURES)
-    print(f"skaters: {len(sk)} ranked (both models) -> {SKATER_OUT}")
-    print(f"  Linear CV R2={lin['r2_log']:.3f}  MAE=${lin['mae_dollars']:,.0f}")
-    print(f"  GBT    CV R2={g['r2_log']:.3f}  MAE=${g['mae_dollars']:,.0f}")
+    s = cross_validated_scores(sdf, features=FEATURES)
+    print(f"skaters (all current): {len(sk)} -> {SKATER_OUT}  CV R2={s['r2_log']:.3f}  MAE=${s['mae_dollars']:,.0f}")
 
     gdf, gg = generate_goalie_ranking()
-    print(f"goalies: {len(gg)} ranked (both models) -> {GOALIE_OUT}")
+    gs = cross_validated_scores(gdf, features=GOALIE_FEATURES)
+    print(f"goalies: {len(gg)} -> {GOALIE_OUT}  CV R2={gs['r2_log']:.3f}")
 
     sdf2, ss = generate_signings_ranking()
-    lin2 = cross_validated_scores(sdf2, features=FEATURES)
-    g2 = cross_validated_scores(sdf2, model=gbt(), features=FEATURES)
-    print(f"2026 signings: {len(ss)} ranked -> {SIGNINGS_OUT}")
-    print(f"  Linear CV R2={lin2['r2_log']:.3f} | GBT CV R2={g2['r2_log']:.3f}")
-    car = ss[ss.player_name == "Leo Carlsson"]
-    if len(car):
-        c = car.iloc[0]
-        print(f"  Carlsson: actual ${c.cap_hit/1e6:.1f}M | linear ${c.predicted_linear/1e6:.1f}M | gbt ${c.predicted_gbt/1e6:.1f}M")
+    s2 = cross_validated_scores(sdf2, features=FEATURES)
+    print(f"skaters (2026 signings): {len(ss)} -> {SIGNINGS_OUT}  CV R2={s2['r2_log']:.3f}")
