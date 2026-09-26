@@ -42,10 +42,17 @@ if not available:
     st.warning("No ranking data found. Run `python -m src.generate_rankings` first.")
     st.stop()
 
+MODELS = {"Gradient-boosted trees": "gbt", "Linear regression": "linear"}
+
 with st.sidebar:
     st.header("Filters")
     group = st.radio("Player type", list(available.keys()))
-    df = load(available[group])
+    df = load(available[group]).copy()
+
+    model_label = st.radio("Model", list(MODELS.keys()))
+    suffix = MODELS[model_label]
+    df["predicted_cap_hit"] = df[f"predicted_{suffix}"]
+    df["residual"] = df[f"residual_{suffix}"]
 
     search = st.text_input("Search player", placeholder="e.g. McDavid")
 
@@ -103,19 +110,22 @@ scatter = (
     )
 )
 fair_line = alt.Chart(diag).mark_line(color="#888", strokeDash=[4, 4]).encode(x="x:Q", y="y:Q")
-st.subheader("Predicted vs. actual cap hit")
-st.caption("Points above the dashed fair-value line are paid more than predicted; points below, less.")
+st.subheader(f"Predicted vs. actual cap hit - {model_label}")
+st.caption("Points above the dashed fair-value line are paid more than predicted; points below, less. "
+           "Switch the Model in the sidebar to compare; tables show both models' residuals side by side.")
 st.altair_chart((fair_line + scatter).properties(height=460).interactive(), use_container_width=True)
 
 
 def show_table(frame: pd.DataFrame) -> pd.DataFrame:
-    out = frame[["player_name", "team", "position", "age", "contract_type", "cap_hit", "predicted_cap_hit", "residual"]].copy()
-    for col in ["cap_hit", "predicted_cap_hit", "residual"]:
+    # both models' residuals side by side; the selected one drives sorting/scatter
+    out = frame[["player_name", "team", "position", "age", "contract_type",
+                 "cap_hit", "predicted_cap_hit", "residual_linear", "residual_gbt"]].copy()
+    for col in ["cap_hit", "predicted_cap_hit", "residual_linear", "residual_gbt"]:
         out[col] = out[col].apply(millions)
     return out.rename(columns={
         "player_name": "Player", "team": "Team", "position": "Pos", "age": "Age",
-        "contract_type": "Type", "cap_hit": "Actual",
-        "predicted_cap_hit": "Predicted", "residual": "Residual",
+        "contract_type": "Type", "cap_hit": "Actual", "predicted_cap_hit": "Predicted",
+        "residual_linear": "Resid (Linear)", "residual_gbt": "Resid (GBT)",
     })
 
 
