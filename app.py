@@ -47,6 +47,11 @@ with st.sidebar:
     group = st.radio("Player type", list(available.keys()))
     df = load(available[group])
 
+    search = st.text_input("Search player", placeholder="e.g. McDavid")
+
+    teams = sorted(t for t in df["team"].dropna().unique() if t)
+    picked_teams = st.multiselect("Team (blank = all)", teams)
+
     types = sorted(df["contract_type"].dropna().unique())
     picked_types = st.multiselect("Contract type", types, default=types)
 
@@ -56,6 +61,10 @@ with st.sidebar:
     top_n = st.slider("Show top N per side", 5, 30, 12)
 
 view = df[df["contract_type"].isin(picked_types) & df["position"].isin(picked_pos)].copy()
+if picked_teams:
+    view = view[view["team"].isin(picked_teams)]
+if search:
+    view = view[view["player_name"].str.contains(search.strip(), case=False, na=False)]
 
 if view.empty:
     st.info("No players match the current filters.")
@@ -84,6 +93,7 @@ scatter = (
         color=alt.Color("Verdict:N", scale=alt.Scale(domain=["Overpaid", "Underpaid"], range=["#d1495b", "#2e86ab"])),
         tooltip=[
             alt.Tooltip("player_name:N", title="Player"),
+            alt.Tooltip("team:N", title="Team"),
             alt.Tooltip("position:N", title="Pos"),
             alt.Tooltip("contract_type:N", title="Type"),
             alt.Tooltip("cap_hit:Q", title="Actual", format="$,.0f"),
@@ -99,20 +109,24 @@ st.altair_chart((fair_line + scatter).properties(height=460).interactive(), use_
 
 
 def show_table(frame: pd.DataFrame) -> pd.DataFrame:
-    out = frame[["player_name", "position", "age", "contract_type", "cap_hit", "predicted_cap_hit", "residual"]].copy()
+    out = frame[["player_name", "team", "position", "age", "contract_type", "cap_hit", "predicted_cap_hit", "residual"]].copy()
     for col in ["cap_hit", "predicted_cap_hit", "residual"]:
         out[col] = out[col].apply(millions)
     return out.rename(columns={
-        "player_name": "Player", "position": "Pos", "age": "Age",
+        "player_name": "Player", "team": "Team", "position": "Pos", "age": "Age",
         "contract_type": "Type", "cap_hit": "Actual",
         "predicted_cap_hit": "Predicted", "residual": "Residual",
     })
 
 
-left, right = st.columns(2)
-with left:
-    st.subheader("Most overpaid")
-    st.dataframe(show_table(view.nlargest(top_n, "residual")), hide_index=True, use_container_width=True)
-with right:
-    st.subheader("Most underpaid")
-    st.dataframe(show_table(view.nsmallest(top_n, "residual")), hide_index=True, use_container_width=True)
+if search:
+    st.subheader(f"Search results ({len(view)})")
+    st.dataframe(show_table(view.sort_values("residual", ascending=False)), hide_index=True, use_container_width=True)
+else:
+    left, right = st.columns(2)
+    with left:
+        st.subheader("Most overpaid")
+        st.dataframe(show_table(view.nlargest(top_n, "residual")), hide_index=True, use_container_width=True)
+    with right:
+        st.subheader("Most underpaid")
+        st.dataframe(show_table(view.nsmallest(top_n, "residual")), hide_index=True, use_container_width=True)

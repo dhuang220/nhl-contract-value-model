@@ -92,7 +92,7 @@ def fit_and_rank(train_df, rank_df=None, model=None, features=FEATURES,
         pred_log = model.predict(rank_df[features])
 
     pred_pct = np.exp(pred_log)
-    cols = [c for c in ["player_name", "position", "age", "contract_type", "cap_hit"] if c in rank_df]
+    cols = [c for c in ["player_name", "team", "position", "age", "contract_type", "cap_hit"] if c in rank_df]
     out = rank_df[cols].copy()
     if "position" not in out:
         out["position"] = "G"

@@ -2,7 +2,7 @@ import pandas as pd
 
 from src.fetch_nhl_api import fetch_skater_summary, fetch_skater_bios
 from src.match_names import match_contracts_to_bios
-from src.features import fill_in_contract_types
+from src.features import fill_in_contract_types, pretty_team
 from src.cap_ceilings import CAP_CEILING
 
 HISTORICAL_CSV = "data/processed/skaters_historical_dataset.csv"
@@ -71,6 +71,7 @@ def build_skater_dataset(
 
         rows.append({
             "player_name": contract["player_name"],
+            "team": pretty_team(contract.get("team") or contract.get("team_signed")),
             "position": bio["positionCode"],
             "age": contract["age"],
             "contract_type": contract["contract_type"],

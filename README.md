@@ -72,8 +72,9 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Toggle skaters/goalies, filter by contract type and position, and read the predicted-vs-actual
-scatter (points above the fair-value line are overpaid) alongside the most over/under-paid tables.
+Toggle skaters/goalies, **search by player name**, and filter by **team**, contract type, and
+position. Read the predicted-vs-actual scatter (points above the fair-value line are overpaid)
+alongside the most over/under-paid tables.
 
 ## Reproduce the data pipeline
 

@@ -12,7 +12,7 @@ from rapidfuzz import fuzz, process
 
 from src.fetch_hockeyref import fetch_goalie_stats_page, parse_goalie_stats
 from src.fetch_nhl_api import fetch_goalie_bios
-from src.features import infer_contract_type
+from src.features import infer_contract_type, pretty_team
 from src.cap_ceilings import CAP_CEILING
 
 CONTRACTS_CSV = "data/raw/contracts/capwages_2026_cleaned.csv"
@@ -58,6 +58,7 @@ def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRAC
 
         rows.append({
             "player_name": g["player_name"],
+            "team": pretty_team(g.get("team") or g.get("team_signed")),
             "age": _num(s["age"]),
             "contract_type": ctype,
             "term_years": g["term_years"],

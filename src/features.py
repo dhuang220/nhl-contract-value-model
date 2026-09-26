@@ -1,5 +1,17 @@
 import pandas as pd
 
+
+def pretty_team(team) -> str:
+    """CapWages slug -> display name: 'edmonton_oilers' -> 'Edmonton Oilers'.
+
+    Passes through abbreviations (e.g. 'TOR') and blanks/NaN unchanged.
+    """
+    if team is None or (isinstance(team, float) and pd.isna(team)):
+        return ""
+    team = str(team)
+    return team.replace("_", " ").title() if "_" in team else team
+
+
 def infer_contract_type(age_at_signing: int, debut_year: int, offseason_year: int) -> str:
      """Approximate UFA/RFA status: UFA at 27+ or ~7 seasons since NHL debut, else RFA."""
      years_since_debut = offseason_year - debut_year
