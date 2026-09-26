@@ -11,8 +11,8 @@ import pandas as pd
 import streamlit as st
 
 RANKINGS = {
-    "Skaters": "data/processed/skaters_2026_residual_ranking.csv",
-    "Goalies": "data/processed/goalies_2026_residual_ranking.csv",
+    "Skaters": "data/processed/skaters_current_residual_ranking.csv",
+    "Goalies": "data/processed/goalies_current_residual_ranking.csv",
 }
 
 st.set_page_config(page_title="NHL Contract Value Model", layout="wide")
@@ -29,8 +29,8 @@ def load(path: str) -> pd.DataFrame:
 
 st.title("NHL Contract Value Model")
 st.caption(
-    "Predicted cap hit vs. actual, for 2026-offseason signings. "
-    "The model estimates a fair AAV from the player's prior-season performance "
+    "Predicted cap hit vs. actual, for **every current NHL contract**. "
+    "The model estimates a fair AAV from the player's 2025-26 performance "
     "(scoring rate, ice time, durability, age, and free-agency status). "
     "Positive residual = paid more than the model expects (**overpaid**); "
     "negative = **underpaid**. A descriptive value tool, not a crystal ball - "

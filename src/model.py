@@ -25,9 +25,12 @@ GOALIE_FEATURES = [
 TARGET = "log_cap_hit_pct"
 
 
+LEAGUE_MIN = 775_000  # cap hits below this are buried/retained figures, not AAVs
+
+
 def prepare(df: pd.DataFrame, min_gp: int = 20) -> pd.DataFrame:
     """Filter noisy low-GP rows and add encoded features + log target."""
-    df = df[df["games_played"] >= min_gp].copy()
+    df = df[(df["games_played"] >= min_gp) & (df["cap_hit"] >= LEAGUE_MIN)].copy()
     df["is_ufa"] = (df["contract_type"] == "UFA").astype(int)
     df["is_defense"] = (df["position"] == "D").astype(int)
     df["log_cap_hit_pct"] = np.log(df["cap_hit_pct"])
@@ -36,7 +39,7 @@ def prepare(df: pd.DataFrame, min_gp: int = 20) -> pd.DataFrame:
 
 def prepare_goalies(df: pd.DataFrame, min_gp: int = 25) -> pd.DataFrame:
     """Goalie analog of prepare(): filter low-GP, impute GSAA, encode + log."""
-    df = df[df["games_played"] >= min_gp].copy()
+    df = df[(df["games_played"] >= min_gp) & (df["cap_hit"] >= LEAGUE_MIN)].copy()
     df["is_ufa"] = (df["contract_type"] == "UFA").astype(int)
     df["gsaa"] = df["gsaa"].fillna(0.0)  # NaN -> league-average (neutral)
     df["log_cap_hit_pct"] = np.log(df["cap_hit_pct"])

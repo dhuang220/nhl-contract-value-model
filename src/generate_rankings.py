@@ -1,45 +1,55 @@
 """Produce the residual-ranking CSVs the Streamlit app reads.
 
-Skaters: ranked with a 2026-only in-sample model (n=137 is enough, and the
-season-split analysis showed pooling flat-cap-era data hurts boom-year fit).
-Goalies: only ~12 of the 2026 signings played enough in 2025-26 to stand alone,
-so the goalie model is trained on pooled 2018-23 + 2026 goalie-seasons and the
-2026 class is ranked against it (heavier small-sample caveat - a secondary result).
-Both rankings are in-sample/descriptive, not out-of-sample predictions.
+Ranks EVERY current NHL contract (skaters and goalies) by how far its cap hit
+sits above/below what 2025-26 performance predicts. Both models are trained
+in-sample on the current-market data itself - a contemporaneous value model -
+which sidesteps the flat-cap-era vs boom-era distribution shift (all rows are
+the same season). Residuals are descriptive (over/under-paid relative to the
+current market), not out-of-sample predictions.
 
-Assumes the processed datasets already exist (see the src/build_*.py modules).
+Reads the processed datasets built by src/build_dataset.py (skaters) and
+src/build_goalie_2026.py (goalies).
 """
 import pandas as pd
 
-from src.model import prepare, prepare_goalies, fit_and_rank, FEATURES, GOALIE_FEATURES
+from src.model import (
+    prepare, prepare_goalies, fit_and_rank, cross_validated_scores,
+    FEATURES, GOALIE_FEATURES,
+)
 
-SKATER_OUT = "data/processed/skaters_2026_residual_ranking.csv"
-GOALIE_OUT = "data/processed/goalies_2026_residual_ranking.csv"
+SKATER_IN = "data/processed/skaters_current_dataset.csv"
+GOALIE_IN = "data/processed/goalies_current_dataset.csv"
+SKATER_OUT = "data/processed/skaters_current_residual_ranking.csv"
+GOALIE_OUT = "data/processed/goalies_current_residual_ranking.csv"
 
 
-def generate_skater_ranking() -> pd.DataFrame:
-    sk = prepare(pd.read_csv("data/processed/skaters_2026_dataset.csv"))
-    ranking = fit_and_rank(sk, features=FEATURES)
+def generate_skater_ranking() -> tuple[pd.DataFrame, pd.DataFrame]:
+    df = prepare(pd.read_csv(SKATER_IN))
+    ranking = fit_and_rank(df, features=FEATURES)
     ranking.to_csv(SKATER_OUT, index=False)
-    return ranking
+    return df, ranking
 
 
-def generate_goalie_ranking() -> pd.DataFrame:
-    hist = pd.read_csv("data/processed/goalies_historical_dataset.csv")
-    hist["season"] = hist["season"].astype(str)
-    cur = pd.read_csv("data/processed/goalies_2026_dataset.csv")
-    cur["season"] = cur["season"].astype(str)
-    pooled = prepare_goalies(pd.concat([hist, cur], ignore_index=True))
-    rank_rows = pooled[pooled["season"] == "20262027"]
-    ranking = fit_and_rank(pooled, rank_rows, features=GOALIE_FEATURES)
+def generate_goalie_ranking() -> tuple[pd.DataFrame, pd.DataFrame]:
+    df = prepare_goalies(pd.read_csv(GOALIE_IN))
+    ranking = fit_and_rank(df, features=GOALIE_FEATURES)
     ranking.to_csv(GOALIE_OUT, index=False)
-    return ranking
+    return df, ranking
 
 
 if __name__ == "__main__":
-    sk = generate_skater_ranking()
+    sdf, sk = generate_skater_ranking()
+    s = cross_validated_scores(sdf, features=FEATURES)
     print(f"skaters: {len(sk)} ranked -> {SKATER_OUT}")
-    g = generate_goalie_ranking()
+    print(f"  CV R2(log)={s['r2_log']:.3f}  MAE=${s['mae_dollars']:,.0f}")
+
+    gdf, g = generate_goalie_ranking()
+    gs = cross_validated_scores(gdf, features=GOALIE_FEATURES)
     print(f"goalies: {len(g)} ranked -> {GOALIE_OUT}")
-    print("\nTop 5 overpaid goalies:")
-    print(g.head(5)[["player_name", "cap_hit", "predicted_cap_hit", "residual"]].to_string(index=False))
+    print(f"  CV R2(log)={gs['r2_log']:.3f}  MAE=${gs['mae_dollars']:,.0f}")
+
+    fmt = lambda d: d.assign(**{c: (d[c] / 1e6).round(1) for c in ["cap_hit", "predicted_cap_hit", "residual"]})
+    print("\nMost overpaid skaters ($M):")
+    print(fmt(sk.head(6))[["player_name", "position", "cap_hit", "predicted_cap_hit", "residual"]].to_string(index=False))
+    print("\nMost underpaid skaters ($M):")
+    print(fmt(sk.tail(6).iloc[::-1])[["player_name", "position", "cap_hit", "predicted_cap_hit", "residual"]].to_string(index=False))

@@ -27,8 +27,8 @@ def _best(name: str, choices: list[str], threshold: int = 85):
     return idx if score >= threshold else None
 
 
-def build_goalie_2026(save_path: str | None = None) -> pd.DataFrame:
-    contracts = pd.read_csv(CONTRACTS_CSV)
+def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRACTS_CSV) -> pd.DataFrame:
+    contracts = pd.read_csv(contracts_csv)
     goalies = contracts[contracts["position"] == "G"].reset_index(drop=True)
 
     stats = parse_goalie_stats(fetch_goalie_stats_page(2026))  # 2025-26 walk year
