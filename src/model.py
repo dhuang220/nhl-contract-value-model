@@ -7,6 +7,7 @@ from sklearn.model_selection import cross_val_predict, KFold
 
 FEATURES = [
     "points_per_60",
+    "ixg_per_60",
     "toi_per_gp_min",
     "games_played",
     "plus_minus",
@@ -48,7 +49,8 @@ def prepare_goalies(df: pd.DataFrame, min_gp: int = 25) -> pd.DataFrame:
 
 def cross_validated_scores(df: pd.DataFrame, model=None, features=FEATURES) -> dict:
     """Honest out-of-sample error via 5-fold CV, reported in $ AAV terms."""
-    model = model or make_pipeline(StandardScaler(), LinearRegression())
+    if model is None:
+        model = make_pipeline(StandardScaler(), LinearRegression())
     X, y = df[features], df[TARGET]
     cv = KFold(n_splits=5, shuffle=True, random_state=0)
 
@@ -82,7 +84,8 @@ def fit_and_rank(train_df, rank_df=None, model=None, features=FEATURES,
     same = rank_df is None
     if rank_df is None:
         rank_df = train_df
-    model = model or make_pipeline(StandardScaler(), LinearRegression())
+    if model is None:
+        model = make_pipeline(StandardScaler(), LinearRegression())
 
     if cv and same:
         kf = KFold(n_splits=5, shuffle=True, random_state=0)

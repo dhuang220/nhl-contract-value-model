@@ -3,6 +3,7 @@ import pandas as pd
 from src.fetch_nhl_api import fetch_skater_summary, fetch_skater_bios
 from src.match_names import match_contracts_to_bios
 from src.features import fill_in_contract_types, pretty_team
+from src.fetch_moneypuck import load_moneypuck_ixg
 from src.cap_ceilings import CAP_CEILING
 
 HISTORICAL_CSV = "data/processed/skaters_historical_dataset.csv"
@@ -34,6 +35,7 @@ def build_skater_dataset(
     contracts_csv: str,
     walk_year_season: str,
     contract_effective_season: str,
+    moneypuck_csv: str | None = None,
 ) -> pd.DataFrame:
     """Assemble a training-ready skater dataset for one offseason.
 
@@ -52,6 +54,7 @@ def build_skater_dataset(
 
     # playerId -> walk-year stat line, so we can attach performance by ID
     summary = {row["playerId"]: row for row in fetch_skater_summary(walk_year_season)}
+    ixg = load_moneypuck_ixg(moneypuck_csv) if moneypuck_csv else {}
 
     ceiling = CAP_CEILING[contract_effective_season]
     rows = []
@@ -81,19 +84,26 @@ def build_skater_dataset(
             "points_per_60": stats["points"] / total_toi_hours,
             "toi_per_gp_min": toi_per_gp_sec / 60,
             "plus_minus": stats["plusMinus"],
+            "ixg_per_60": ixg.get(bio["playerId"], float("nan")) / total_toi_hours,
             "cap_hit": contract["cap_hit"],
             "cap_hit_pct": contract["cap_hit"] / ceiling,
         })
 
-    return pd.DataFrame(rows)
+    df = pd.DataFrame(rows)
+    if moneypuck_csv and "ixg_per_60" in df:
+        # a handful of players have NHL stats but no MoneyPuck row - neutral-impute
+        df["ixg_per_60"] = df["ixg_per_60"].fillna(df["ixg_per_60"].median())
+    return df
 
 
 if __name__ == "__main__":
-    # Build and save the 2026-offseason skater dataset (walk year 2025-26).
+    # Build the full-league current skater dataset (walk year 2025-26), with
+    # individual xG from the 2025-26 MoneyPuck file.
     df = build_skater_dataset(
-        "data/raw/contracts/capwages_2026_cleaned.csv",
+        "data/raw/contracts/capwages_current_2026.csv",
         walk_year_season="20252026",
         contract_effective_season="20262027",
+        moneypuck_csv="data/raw/stats/2026.csv",
     )
-    df.to_csv("data/processed/skaters_2026_dataset.csv", index=False)
-    print(f"skaters 2026: {len(df)} rows -> data/processed/skaters_2026_dataset.csv")
+    df.to_csv("data/processed/skaters_current_dataset.csv", index=False)
+    print(f"current skaters: {len(df)} rows -> data/processed/skaters_current_dataset.csv")
