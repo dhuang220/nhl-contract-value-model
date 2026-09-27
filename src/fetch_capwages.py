@@ -6,12 +6,15 @@ rate-limited with an identifying user-agent. The raw output is NOT redistributed
 (kept out of the public repo per .gitignore), which keeps clear of the ToS's
 concern (bulk redistribution to third parties).
 """
+import json
 import re
 import time
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+
+_NEXT = re.compile(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
 
 HEADERS = {
     "User-Agent": "nhl-contract-value-model personal non-commercial project (github.com/dhuang220)"
@@ -108,8 +111,43 @@ def fetch_current_contracts(save_path: str | None = None) -> pd.DataFrame:
     return df
 
 
+def _iter_players(pp):
+    for group in ("roster", "non-roster"):
+        for bucket in pp.get("data", {}).get(group, {}).values():
+            if isinstance(bucket, list):
+                yield from bucket
+
+
+def fetch_pending_free_agents(save_path: str | None = None) -> pd.DataFrame:
+    """Players whose current contract expires after 2026-27 (pending FAs, i.e.
+    eligible to sign a new deal this year). From team-page __NEXT_DATA__: a
+    player's active contract whose last covered season is 2026-27.
+    """
+    rows = []
+    for slug in TEAM_SLUGS:
+        r = requests.get(f"https://capwages.com/teams/{slug}", headers=HEADERS)
+        r.raise_for_status()
+        m = _NEXT.search(r.text)
+        if m:
+            pp = json.loads(m.group(1))["props"]["pageProps"]
+            for pl in _iter_players(pp):
+                cs = pl.get("contracts") or []
+                if not cs:
+                    continue
+                seasons = [x["season"] for x in cs[0].get("details", [])]
+                if seasons and max(seasons) == "2026-27" and "2026-27" in seasons:
+                    rows.append({
+                        "player_name": _reformat_name(pl["name"]),
+                        "expiry": cs[0].get("expiryStatus", ""),
+                    })
+        time.sleep(CRAWL_DELAY)
+    df = pd.DataFrame(rows).drop_duplicates(subset="player_name")
+    if save_path:
+        df.to_csv(save_path, index=False)
+    return df
+
+
 if __name__ == "__main__":
-    df = fetch_current_contracts("data/raw/contracts/capwages_current_2026.csv")
-    print(f"scraped {len(df)} current contracts across {df['team'].nunique()} teams")
-    print("positions:", df["position"].value_counts().to_dict())
-    print(df.nlargest(5, "cap_hit")[["player_name", "position", "age", "cap_hit", "team"]].to_string(index=False))
+    fa = fetch_pending_free_agents("data/raw/contracts/pending_fa_2026.csv")
+    print(f"pending free agents: {len(fa)}")
+    print(fa["expiry"].str.extract(r"(UFA|RFA)")[0].value_counts().to_dict())

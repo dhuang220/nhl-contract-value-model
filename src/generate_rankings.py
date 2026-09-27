@@ -29,6 +29,16 @@ def _training_signings():
     """Combined 2025 + 2026 fresh-market signings (each on its own walk year)."""
     return pd.concat([prepare(pd.read_csv(p)) for p in SIGNINGS_INS], ignore_index=True)
 
+
+def _add_segment_flags(r):
+    """Flag each ranked player: signed this year (2026), and/or a pending free
+    agent (current contract expires after 2026-27). Lets the app show subsets."""
+    signed = set(pd.read_csv("data/raw/contracts/signings_2026.csv")["player_name"])
+    fa = set(pd.read_csv("data/raw/contracts/pending_fa_2026.csv")["player_name"])
+    r["just_signed"] = r["player_name"].isin(signed)
+    r["pending_fa"] = r["player_name"].isin(fa)
+    return r
+
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
 CEIL = 104_000_000
 BASE_COLS = ["player_name", "team", "position", "age", "contract_type", "cap_hit"]
@@ -58,14 +68,14 @@ def generate_skater_ranking():
     """
     train = _training_signings()
     current = prepare(pd.read_csv(SKATER_IN))
-    r = fit_and_rank(train, current, features=FEATURES)
+    r = _add_segment_flags(fit_and_rank(train, current, features=FEATURES))
     r.to_csv(SKATER_OUT, index=False)
     return train, current, r
 
 
 def generate_goalie_ranking():
     df = prepare_goalies(pd.read_csv(GOALIE_IN))
-    r = _ranking(df, GOALIE_FEATURES)
+    r = _add_segment_flags(_ranking(df, GOALIE_FEATURES))
     r.to_csv(GOALIE_OUT, index=False)
     return df, r
 

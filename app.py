@@ -12,14 +12,15 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-CONTRACT_SETS = {
-    "All current contracts": {
-        "Skaters": "data/processed/skaters_current_residual_ranking.csv",
-        "Goalies": "data/processed/goalies_current_residual_ranking.csv",
-    },
-    "2025-26 signings": {
-        "Skaters": "data/processed/skaters_signings_residual_ranking.csv",
-    },
+RANKINGS = {
+    "Skaters": "data/processed/skaters_current_residual_ranking.csv",
+    "Goalies": "data/processed/goalies_current_residual_ranking.csv",
+}
+# each segment filters the same ranking by a flag column (None = all players)
+SEGMENTS = {
+    "All current contracts": None,
+    "Just signed this year (2026)": "just_signed",
+    "Pending free agents (2027)": "pending_fa",
 }
 
 st.set_page_config(page_title="NHL Contract Value Model", layout="wide")
@@ -43,23 +44,23 @@ st.caption(
     "upside, intangibles, or negotiation leverage."
 )
 
-# keep only contract sets / player types whose ranking files exist
-sets_avail = {cs: {pt: p for pt, p in d.items() if os.path.exists(p)}
-              for cs, d in CONTRACT_SETS.items()}
-sets_avail = {cs: d for cs, d in sets_avail.items() if d}
-if not sets_avail:
+avail = {pt: p for pt, p in RANKINGS.items() if os.path.exists(p)}
+if not avail:
     st.warning("No ranking data found. Run `python -m src.generate_rankings` first.")
     st.stop()
 
 with st.sidebar:
     st.header("Filters")
-    contract_set = st.radio("Contract set", list(sets_avail.keys()))
-    st.caption("Model is fit on 2025+2026 fresh-market signings. "
-               "All current = every current player valued at those rates; "
-               "2025-26 signings = just those fresh deals.")
-    available = sets_avail[contract_set]
-    group = st.radio("Player type", list(available.keys()))
-    df = load(available[group]).copy()
+    group = st.radio("Player type", list(avail.keys()))
+    df = load(avail[group]).copy()
+
+    segment = st.radio("Segment", list(SEGMENTS.keys()))
+    st.caption("All = every current player valued at 2026 fresh-market rates. "
+               "Just signed = deals inked this offseason. Pending FAs = players whose "
+               "contract expires after this season (eligible for a new deal).")
+    flag = SEGMENTS[segment]
+    if flag and flag in df.columns:
+        df = df[df[flag]]
 
     search = st.text_input("Search player", placeholder="e.g. McDavid")
 
