@@ -101,7 +101,9 @@ def fetch_current_contracts(save_path: str | None = None) -> pd.DataFrame:
 
     df = pd.DataFrame(all_rows)
     df["age"] = pd.to_numeric(df["age"], errors="coerce")
-    df = df.dropna(subset=["age"]).drop_duplicates(subset=["player_name"])
+    # dedupe on name+team+position (not name alone) so distinct same-name players
+    # survive - e.g. Vancouver's two Elias Petterssons (a C and a D)
+    df = df.dropna(subset=["age"]).drop_duplicates(subset=["player_name", "team", "position"])
     df["age"] = df["age"].astype(int)
     df["contract_type"] = ""       # computed downstream (features.infer_contract_type)
     df["term_years"] = pd.NA       # not used as a feature

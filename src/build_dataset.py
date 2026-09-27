@@ -1,8 +1,8 @@
 import pandas as pd
 
 from src.fetch_nhl_api import fetch_skater_summary, fetch_skater_bios
-from src.match_names import match_contracts_to_bios
-from src.features import fill_in_contract_types, pretty_team
+from src.match_names import match_rows_to_bios
+from src.features import infer_contract_type, pretty_team
 from src.fetch_moneypuck import load_moneypuck_ixg
 from src.cap_ceilings import CAP_CEILING
 
@@ -49,8 +49,9 @@ def build_skater_dataset(
     skaters = contracts[contracts["position"] != "G"].reset_index(drop=True)
 
     bios = fetch_skater_bios(walk_year_season)
-    matches = match_contracts_to_bios(skaters["player_name"].tolist(), bios)
-    skaters = fill_in_contract_types(skaters, matches)
+    # per-row match, disambiguating same-name players (e.g. the two Sebastian
+    # Ahos / Elias Petterssons) by position
+    matched = match_rows_to_bios(skaters, bios)
 
     # playerId -> walk-year stat line, so we can attach performance by ID
     summary = {row["playerId"]: row for row in fetch_skater_summary(walk_year_season)}
@@ -58,8 +59,8 @@ def build_skater_dataset(
 
     ceiling = CAP_CEILING[contract_effective_season]
     rows = []
-    for _, contract in skaters.iterrows():
-        bio = matches.get(contract["player_name"])
+    for i, (_, contract) in enumerate(skaters.iterrows()):
+        bio = matched[i]
         if bio is None:
             continue
         stats = summary.get(bio["playerId"])
@@ -72,12 +73,15 @@ def build_skater_dataset(
         if total_toi_hours == 0:
             continue
 
+        debut_year = int(str(bio["firstSeasonForGameType"])[:4])
+        contract_type = infer_contract_type(int(contract["age"]), debut_year, int(contract["offseason_year"]))
+
         rows.append({
             "player_name": contract["player_name"],
             "team": pretty_team(contract.get("team") or contract.get("team_signed")),
             "position": bio["positionCode"],
             "age": contract["age"],
-            "contract_type": contract["contract_type"],
+            "contract_type": contract_type,
             "term_years": contract["term_years"],
             "games_played": gp,
             "points": stats["points"],
