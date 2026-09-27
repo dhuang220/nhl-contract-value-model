@@ -8,6 +8,8 @@ from sklearn.model_selection import cross_val_predict, KFold
 FEATURES = [
     "points_per_60",
     "ixg_per_60",
+    "xga_per_60",     # on-ice expected goals against / 60 (defense; every skater)
+    "xgf_pct",        # on-ice xG share for/(for+against) (two-way; every skater)
     "toi_per_gp_min",
     "games_played",
     "plus_minus",
@@ -15,9 +17,6 @@ FEATURES = [
     "is_ufa",
     "is_defense",
 ]
-# xgf_pct / xga_per_60 stay in the datasets but are NOT regression features - the
-# market prices defense too weakly for them to matter. Defense is instead applied
-# as an explicit overlay (see generate_rankings._defensive_adjust).
 GOALIE_FEATURES = [
     "save_pct",
     "gaa",
