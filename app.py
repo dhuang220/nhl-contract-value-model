@@ -37,7 +37,7 @@ TRICODE = {
     "Washington Capitals": "WSH", "Winnipeg Jets": "WPG",
 }
 
-st.set_page_config(page_title="NHL Contract Value Model", layout="wide", page_icon="🏒")
+st.set_page_config(page_title="NHL Contract Value Model", layout="wide")
 
 st.markdown(f"""
 <style>
@@ -82,7 +82,7 @@ def load(path):
 
 
 st.markdown(
-    "<div id='hero'><h1>🏒 NHL Contract Value Model</h1>"
+    "<div id='hero'><h1>NHL Contract Value Model</h1>"
     "<p>A linear model estimates each player's fair cap hit from his 2025-26 performance "
     "(scoring rate, shot quality, ice time, durability, age, free-agency status), fit on "
     "the 2024-2026 free-market signings. <b>Residual = actual − predicted</b>: "
@@ -206,10 +206,10 @@ if search:
 else:
     left, right = st.columns(2)
     with left:
-        st.markdown(f"### 🔴 Most overpaid")
+        st.markdown(f"### <span style='color:{OVER}'>Most overpaid</span>", unsafe_allow_html=True)
         st.dataframe(table(view.nlargest(top_n, "residual")),
                      column_config=COLCFG, hide_index=True, width='stretch')
     with right:
-        st.markdown(f"### 🔵 Most underpaid")
+        st.markdown(f"### <span style='color:{UNDER}'>Most underpaid</span>", unsafe_allow_html=True)
         st.dataframe(table(view.nsmallest(top_n, "residual")),
                      column_config=COLCFG, hide_index=True, width='stretch')
