@@ -78,6 +78,7 @@ def build_skater_dataset(
 
         rows.append({
             "player_name": contract["player_name"],
+            "player_id": bio["playerId"],
             "team": pretty_team(contract.get("team") or contract.get("team_signed")),
             "position": bio["positionCode"],
             "age": contract["age"],

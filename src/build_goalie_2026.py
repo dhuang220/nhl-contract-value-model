@@ -50,6 +50,7 @@ def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRAC
             continue
 
         bi = _best(g["player_name"], bio_names)
+        player_id = bios[bi]["playerId"] if bi is not None else np.nan
         if bi is not None:
             debut = int(str(bios[bi]["firstSeasonForGameType"])[:4])
             ctype = infer_contract_type(int(g["age"]), debut, int(g["offseason_year"]))
@@ -60,6 +61,7 @@ def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRAC
 
         rows.append({
             "player_name": g["player_name"],
+            "player_id": player_id,
             "team": pretty_team(g.get("team") or g.get("team_signed")),
             "age": _num(s["age"]),
             "contract_type": ctype,

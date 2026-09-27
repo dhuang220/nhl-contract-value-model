@@ -49,7 +49,7 @@ def _add_segment_flags(r):
 
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
 CEIL = 104_000_000
-BASE_COLS = ["player_name", "team", "position", "age", "contract_type", "cap_hit"]
+BASE_COLS = ["player_name", "player_id", "team", "position", "age", "contract_type", "cap_hit"]
 # NB: predictions are intentionally NOT capped at the max-contract limit, so an
 # elite player's modeled value can run above the cap - the amount over $20.8M
 # shows how far his production outstrips what any contract can legally pay.
