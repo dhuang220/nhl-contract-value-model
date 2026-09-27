@@ -12,6 +12,7 @@ from rapidfuzz import fuzz, process
 
 from src.fetch_hockeyref import fetch_goalie_stats_page, parse_goalie_stats
 from src.fetch_nhl_api import fetch_goalie_bios
+from src.fetch_nst import fetch_goalie_gsax, _norm
 from src.features import infer_contract_type, pretty_team
 from src.cap_ceilings import CAP_CEILING
 
@@ -36,6 +37,7 @@ def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRAC
 
     bios = fetch_goalie_bios("20252026")
     bio_names = [b["goalieFullName"] for b in bios]
+    gsax = fetch_goalie_gsax("20252026")  # {normalized name: GSAx} from Natural Stat Trick
 
     rows = []
     for _, g in goalies.iterrows():
@@ -67,6 +69,7 @@ def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRAC
             "save_pct": _num(s["save_pct_goalie"]),
             "gaa": _num(s["goals_against_avg"]),
             "gsaa": _num(s["gs_above_avg"]),
+            "gsax": gsax.get(_norm(g["player_name"]), np.nan),  # goals saved above EXPECTED (NST)
             "gsax60": np.nan,  # CapFriendly-only; gone after 2024
             "cap_hit": g["cap_hit"],
             "cap_hit_pct": g["cap_hit"] / CAP_CEILING["20262027"],
@@ -80,7 +83,8 @@ def build_goalie_2026(save_path: str | None = None, contracts_csv: str = CONTRAC
 
 
 if __name__ == "__main__":
-    df = build_goalie_2026("data/processed/goalies_2026_dataset.csv")
-    print("2026 goalie rows:", len(df))
-    print("contract_type:", df["contract_type"].value_counts(dropna=False).to_dict())
-    print(df[["player_name", "age", "contract_type", "games_played", "save_pct", "gaa", "cap_hit", "cap_hit_pct"]].to_string(index=False))
+    # the current-league goalies are what the goalie model trains/ranks on
+    df = build_goalie_2026("data/processed/goalies_current_dataset.csv",
+                           contracts_csv="data/raw/contracts/capwages_current_2026.csv")
+    print("current goalie rows:", len(df), "| GSAx matched:", int(df["gsax"].notna().sum()))
+    print(df.nlargest(5, "gsax")[["player_name", "games_started", "gsaa", "gsax", "cap_hit"]].to_string(index=False))

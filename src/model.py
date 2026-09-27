@@ -18,13 +18,15 @@ FEATURES = [
 # dominant Colorado team past McDavid's); removing it improved MAE and fixed the
 # ranking. Still computed in the datasets, just not used as a feature.
 GOALIE_FEATURES = [
-    "save_pct",
-    "gaa",
-    "games_started",
-    "gsaa",
+    "games_started",  # workload / clear #1 status - the dominant driver of goalie pay
     "age",
     "is_ufa",
 ]
+# Quality metrics (save%/gaa/gsaa, and even shot-quality-adjusted GSAx from NST)
+# were tested and dropped: goalie pay is driven by workload, not quality. GSAx
+# added ~nothing (R2 0.437 -> 0.441) with a backwards coefficient - the market
+# pays goalies for being the #1, not for GSAx. GSAx is still computed in the
+# dataset (see fetch_nst) and available if the goal ever shifts to value vs pay.
 TARGET = "log_cap_hit_pct"
 
 
@@ -44,7 +46,6 @@ def prepare_goalies(df: pd.DataFrame, min_gp: int = 25) -> pd.DataFrame:
     """Goalie analog of prepare(): filter low-GP, impute GSAA, encode + log."""
     df = df[(df["games_played"] >= min_gp) & (df["cap_hit"] >= LEAGUE_MIN)].copy()
     df["is_ufa"] = (df["contract_type"] == "UFA").astype(int)
-    df["gsaa"] = df["gsaa"].fillna(0.0)  # NaN -> league-average (neutral)
     df["log_cap_hit_pct"] = np.log(df["cap_hit_pct"])
     return df.reset_index(drop=True)
 
