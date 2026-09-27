@@ -13,18 +13,3 @@ def load_moneypuck_ixg(csv_path: str) -> dict:
     df = pd.read_csv(csv_path)
     allx = df[df["situation"] == "all"]
     return dict(zip(allx["playerId"], allx["I_F_xGoals"]))
-
-
-def load_moneypuck_advanced(csv_path: str) -> dict:
-    """Map playerId -> on-ice metrics (per skater, forwards and defensemen alike):
-      ixg    - individual expected goals (offense)
-      xga_on - expected goals AGAINST while on ice (defense; lower = better)
-      xgf_pct- on-ice xG share, for/(for+against) (two-way impact)
-    """
-    df = pd.read_csv(csv_path)
-    a = df[df["situation"] == "all"]
-    return {
-        r.playerId: {"ixg": r.I_F_xGoals, "xga_on": r.OnIce_A_xGoals,
-                     "xgf_pct": r.onIce_xGoalsPercentage}
-        for r in a.itertuples()
-    }

@@ -3,7 +3,7 @@ import pandas as pd
 from src.fetch_nhl_api import fetch_skater_summary, fetch_skater_bios
 from src.match_names import match_contracts_to_bios
 from src.features import fill_in_contract_types, pretty_team
-from src.fetch_moneypuck import load_moneypuck_advanced
+from src.fetch_moneypuck import load_moneypuck_ixg
 from src.cap_ceilings import CAP_CEILING
 
 HISTORICAL_CSV = "data/processed/skaters_historical_dataset.csv"
@@ -54,7 +54,7 @@ def build_skater_dataset(
 
     # playerId -> walk-year stat line, so we can attach performance by ID
     summary = {row["playerId"]: row for row in fetch_skater_summary(walk_year_season)}
-    mp = load_moneypuck_advanced(moneypuck_csv) if moneypuck_csv else {}
+    ixg = load_moneypuck_ixg(moneypuck_csv) if moneypuck_csv else {}
 
     ceiling = CAP_CEILING[contract_effective_season]
     rows = []
@@ -84,18 +84,15 @@ def build_skater_dataset(
             "points_per_60": stats["points"] / total_toi_hours,
             "toi_per_gp_min": toi_per_gp_sec / 60,
             "plus_minus": stats["plusMinus"],
-            "ixg_per_60": (m["ixg"] / total_toi_hours) if (m := mp.get(bio["playerId"])) else float("nan"),
-            "xga_per_60": (m["xga_on"] / total_toi_hours) if m else float("nan"),
-            "xgf_pct": m["xgf_pct"] if m else float("nan"),
+            "ixg_per_60": ixg.get(bio["playerId"], float("nan")) / total_toi_hours,
             "cap_hit": contract["cap_hit"],
             "cap_hit_pct": contract["cap_hit"] / ceiling,
         })
 
     df = pd.DataFrame(rows)
-    if moneypuck_csv:
-        # a few players have NHL stats but no MoneyPuck row - neutral-impute
-        for col in ["ixg_per_60", "xga_per_60", "xgf_pct"]:
-            df[col] = df[col].fillna(df[col].median())
+    if moneypuck_csv and "ixg_per_60" in df:
+        # a handful of players have NHL stats but no MoneyPuck row - neutral-impute
+        df["ixg_per_60"] = df["ixg_per_60"].fillna(df["ixg_per_60"].median())
     return df
 
 
