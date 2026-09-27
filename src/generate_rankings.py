@@ -32,9 +32,25 @@ def _training_signings():
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
 CEIL = 104_000_000
 BASE_COLS = ["player_name", "team", "position", "age", "contract_type", "cap_hit"]
-# NB: predictions are intentionally NOT capped at the max-contract limit, so an
-# elite player's modeled value can run above the cap - the amount over $20.8M
-# shows how far his production outstrips what any contract can legally pay.
+DEF_STRENGTH = 0.15  # how hard the defensive overlay pushes (0 = off)
+# NB: predictions are intentionally NOT capped at the max-contract limit.
+
+
+def _defensive_adjust(ranking, df):
+    """Explicit defensive overlay: multiply predicted cap hit by exp(k * z), where
+    z is on-ice xGF% standardized WITHIN position. Boosts strong-defense skaters,
+    docks weak ones - beyond what the salary market pays. A deliberate, subjective
+    adjustment on top of the market model; the input metric is deployment-biased.
+    """
+    d = df[["player_name", "position", "xgf_pct"]].copy()
+    d["is_d"] = (d["position"] == "D").astype(int)
+    d["z"] = d.groupby("is_d")["xgf_pct"].transform(lambda s: (s - s.mean()) / s.std(ddof=0))
+    zmap = dict(zip(d["player_name"], d["z"]))
+    r = ranking.copy()
+    factor = r["player_name"].map(zmap).fillna(0.0).apply(lambda z: np.exp(DEF_STRENGTH * z))
+    r["predicted_cap_hit"] = (r["predicted_cap_hit"] * factor).round()
+    r["residual"] = r["cap_hit"] - r["predicted_cap_hit"]
+    return r.sort_values("residual", ascending=False).reset_index(drop=True)
 
 
 def _ranking(df, features):
@@ -58,7 +74,7 @@ def generate_skater_ranking():
     """
     train = _training_signings()
     current = prepare(pd.read_csv(SKATER_IN))
-    r = fit_and_rank(train, current, features=FEATURES)
+    r = _defensive_adjust(fit_and_rank(train, current, features=FEATURES), current)
     r.to_csv(SKATER_OUT, index=False)
     return train, current, r
 
@@ -73,7 +89,7 @@ def generate_goalie_ranking():
 def generate_signings_ranking():
     """The 2024-2026 signings themselves, ranked in-sample (out-of-sample CV)."""
     df = _training_signings()
-    r = _ranking(df, FEATURES)
+    r = _defensive_adjust(_ranking(df, FEATURES), df)
     r.to_csv(SIGNINGS_OUT, index=False)
     return df, r
 
