@@ -173,8 +173,8 @@ pts = (
     )
 )
 st.caption("Above the dashed fair-value line = paid more than predicted (overpaid); below = underpaid.")
-# fixed view locked to [0, max] on both axes - no pan/zoom into negative cap hits
-st.altair_chart((fair + pts).properties(height=440).configure_view(strokeOpacity=0),
+# zoom/pan enabled, starting at the [0, max] view (Vega can't hard-bound the pan)
+st.altair_chart((fair + pts).properties(height=440).configure_view(strokeOpacity=0).interactive(),
                 width='stretch')
 
 # ---- tables with headshots + logos ----
