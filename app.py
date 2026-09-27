@@ -163,8 +163,8 @@ fair = alt.Chart(diag).mark_line(color="#9aa4b2", strokeDash=[5, 5]).encode(x="x
 pts = (
     alt.Chart(v).mark_circle(size=95, opacity=0.78, stroke="white", strokeWidth=0.6)
     .encode(
-        x=alt.X("Predicted ($M):Q", scale=alt.Scale(domain=[0, lim]), axis=alt.Axis(format="$.0f", grid=False)),
-        y=alt.Y("Actual ($M):Q", scale=alt.Scale(domain=[0, lim]), axis=alt.Axis(format="$.0f", grid=False)),
+        x=alt.X("Predicted ($M):Q", scale=alt.Scale(domain=[0, lim], clamp=True, nice=False), axis=alt.Axis(format="$.0f", grid=False)),
+        y=alt.Y("Actual ($M):Q", scale=alt.Scale(domain=[0, lim], clamp=True, nice=False), axis=alt.Axis(format="$.0f", grid=False)),
         color=alt.Color("Verdict:N", scale=alt.Scale(domain=["Overpaid", "Underpaid"], range=[OVER, UNDER]),
                         legend=alt.Legend(orient="top-left", title=None)),
         tooltip=[alt.Tooltip("player_name:N", title="Player"), alt.Tooltip("team:N", title="Team"),
@@ -173,7 +173,8 @@ pts = (
     )
 )
 st.caption("Above the dashed fair-value line = paid more than predicted (overpaid); below = underpaid.")
-st.altair_chart((fair + pts).properties(height=440).configure_view(strokeOpacity=0).interactive(),
+# fixed view locked to [0, max] on both axes - no pan/zoom into negative cap hits
+st.altair_chart((fair + pts).properties(height=440).configure_view(strokeOpacity=0),
                 width='stretch')
 
 # ---- tables with headshots + logos ----
