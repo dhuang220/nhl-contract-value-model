@@ -10,11 +10,13 @@ FEATURES = [
     "ixg_per_60",
     "toi_per_gp_min",
     "games_played",
-    "plus_minus",
     "age",
     "is_ufa",
     "is_defense",
 ]
+# plus_minus dropped: team-dependent noise (it inflated MacKinnon's value on a
+# dominant Colorado team past McDavid's); removing it improved MAE and fixed the
+# ranking. Still computed in the datasets, just not used as a feature.
 GOALIE_FEATURES = [
     "save_pct",
     "gaa",
