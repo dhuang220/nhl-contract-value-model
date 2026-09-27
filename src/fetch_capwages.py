@@ -140,10 +140,11 @@ def fetch_pending_free_agents(save_path: str | None = None) -> pd.DataFrame:
                 if seasons and max(seasons) == "2026-27" and "2026-27" in seasons:
                     rows.append({
                         "player_name": _reformat_name(pl["name"]),
+                        "position": pl.get("pos"),
                         "expiry": cs[0].get("expiryStatus", ""),
                     })
         time.sleep(CRAWL_DELAY)
-    df = pd.DataFrame(rows).drop_duplicates(subset="player_name")
+    df = pd.DataFrame(rows).drop_duplicates(subset=["player_name", "position"])
     if save_path:
         df.to_csv(save_path, index=False)
     return df

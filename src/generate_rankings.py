@@ -32,11 +32,19 @@ def _training_signings():
 
 def _add_segment_flags(r):
     """Flag each ranked player: signed this year (2026), and/or a pending free
-    agent (current contract expires after 2026-27). Lets the app show subsets."""
-    signed = set(pd.read_csv("data/raw/contracts/signings_2026.csv")["player_name"])
-    fa = set(pd.read_csv("data/raw/contracts/pending_fa_2026.csv")["player_name"])
-    r["just_signed"] = r["player_name"].isin(signed)
-    r["pending_fa"] = r["player_name"].isin(fa)
+    agent (current contract expires after 2026-27). Matched on name AND position
+    (D vs forward) so same-name players (the two Petterssons) flag independently."""
+    from src.match_names import _contract_is_defense
+
+    def keyset(path):
+        df = pd.read_csv(path)
+        return {(row.player_name, _contract_is_defense(row.position)) for row in df.itertuples()}
+
+    signed = keyset("data/raw/contracts/signings_2026.csv")
+    fa = keyset("data/raw/contracts/pending_fa_2026.csv")
+    keys = list(zip(r["player_name"], r["position"] == "D"))
+    r["just_signed"] = [k in signed for k in keys]
+    r["pending_fa"] = [k in fa for k in keys]
     return r
 
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
