@@ -12,6 +12,11 @@ is a rendered, end-to-end walkthrough - the data, why the target is `log(cap %)`
 equation with coefficients, cross-validated error, and the over/under-paid rankings - readable
 on GitHub without cloning or running anything.
 
+![Predicted vs. actual cap hit, cross-validated on 2024-2026 signings](docs/predicted_vs_actual.png)
+
+*Each dot is a signing: above the dashed line = paid more than the model predicts (overpaid),
+below = underpaid. Cross-validated so no player was in the model that priced him.*
+
 ## Model
 
 - **Skaters:** linear regression on `log(cap hit ÷ salary cap)` from 7 features - scoring
