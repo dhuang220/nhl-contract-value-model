@@ -17,3 +17,4 @@ notebooks/test.py
 data/raw/contracts/capwages_current_2026.csv
 data/raw/contracts/signings_2025.csv
 data/raw/contracts/signings_2026.csv
+data/raw/contracts/signings_2024.csv

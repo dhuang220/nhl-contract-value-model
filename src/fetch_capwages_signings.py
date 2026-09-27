@@ -72,7 +72,7 @@ def fetch_season(season: str, build_id: str | None = None, save_path: str | None
 
 if __name__ == "__main__":
     bid = _build_id()
-    for season in ["2026-27", "2025-26"]:
+    for season in ["2026-27", "2025-26", "2024-25"]:
         off = SEASON_OFFSEASON[season]
         df = fetch_season(season, bid, f"data/raw/contracts/signings_{off}.csv")
         print(f"{season}: {len(df)} signings -> data/raw/contracts/signings_{off}.csv")

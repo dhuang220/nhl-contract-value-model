@@ -119,3 +119,8 @@ if __name__ == "__main__":
         "data/raw/contracts/signings_2025.csv", "20242025", "20252026", "data/raw/stats/2025.csv")
     s25.to_csv("data/processed/skaters_2025signings_dataset.csv", index=False)
     print(f"2025 signings: {len(s25)} rows -> data/processed/skaters_2025signings_dataset.csv")
+
+    s24 = build_skater_dataset(
+        "data/raw/contracts/signings_2024.csv", "20232024", "20242025", "data/raw/stats/2024.csv")
+    s24.to_csv("data/processed/skaters_2024signings_dataset.csv", index=False)
+    print(f"2024 signings: {len(s24)} rows -> data/processed/skaters_2024signings_dataset.csv")

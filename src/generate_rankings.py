@@ -17,7 +17,8 @@ from src.model import prepare, prepare_goalies, fit_and_rank, cross_validated_sc
 
 SKATER_IN = "data/processed/skaters_current_dataset.csv"
 GOALIE_IN = "data/processed/goalies_current_dataset.csv"
-SIGNINGS_INS = ["data/processed/skaters_2025signings_dataset.csv",
+SIGNINGS_INS = ["data/processed/skaters_2024signings_dataset.csv",
+                "data/processed/skaters_2025signings_dataset.csv",
                 "data/processed/skaters_2026signings_dataset.csv"]
 SKATER_OUT = "data/processed/skaters_current_residual_ranking.csv"
 GOALIE_OUT = "data/processed/goalies_current_residual_ranking.csv"
@@ -30,17 +31,10 @@ def _training_signings():
 
 KF = KFold(n_splits=5, shuffle=True, random_state=0)
 CEIL = 104_000_000
-MAX_CONTRACT = 20_800_000  # CBA max: 20% of the $104M cap (2026-27) - caps the
-                           # log model's top-end extrapolation at a realistic ceiling
 BASE_COLS = ["player_name", "team", "position", "age", "contract_type", "cap_hit"]
-
-
-def _apply_cap(r):
-    """Clip predicted cap hit at the max-contract limit and re-rank on residual."""
-    r = r.copy()
-    r["predicted_cap_hit"] = r["predicted_cap_hit"].clip(upper=MAX_CONTRACT)
-    r["residual"] = r["cap_hit"] - r["predicted_cap_hit"]
-    return r.sort_values("residual", ascending=False).reset_index(drop=True)
+# NB: predictions are intentionally NOT capped at the max-contract limit, so an
+# elite player's modeled value can run above the cap - the amount over $20.8M
+# shows how far his production outstrips what any contract can legally pay.
 
 
 def _ranking(df, features):
@@ -56,7 +50,7 @@ def _ranking(df, features):
 
 
 def generate_skater_ranking():
-    """Fit on 2025+2026 fresh-market signings, then value EVERY current skater.
+    """Fit on 2024-2026 fresh-market signings, then value EVERY current skater.
 
     Training on fresh deals prices star/upside production properly (the whole-
     league fit under-valued it, diluted by cheap legacy/RFA/ELC contracts).
@@ -64,22 +58,22 @@ def generate_skater_ranking():
     """
     train = _training_signings()
     current = prepare(pd.read_csv(SKATER_IN))
-    r = _apply_cap(fit_and_rank(train, current, features=FEATURES))
+    r = fit_and_rank(train, current, features=FEATURES)
     r.to_csv(SKATER_OUT, index=False)
     return train, current, r
 
 
 def generate_goalie_ranking():
     df = prepare_goalies(pd.read_csv(GOALIE_IN))
-    r = _apply_cap(_ranking(df, GOALIE_FEATURES))
+    r = _ranking(df, GOALIE_FEATURES)
     r.to_csv(GOALIE_OUT, index=False)
     return df, r
 
 
 def generate_signings_ranking():
-    """The 2025+2026 signings themselves, ranked in-sample (out-of-sample CV)."""
+    """The 2024-2026 signings themselves, ranked in-sample (out-of-sample CV)."""
     df = _training_signings()
-    r = _apply_cap(_ranking(df, FEATURES))
+    r = _ranking(df, FEATURES)
     r.to_csv(SIGNINGS_OUT, index=False)
     return df, r
 
@@ -87,7 +81,7 @@ def generate_signings_ranking():
 if __name__ == "__main__":
     train, current, sk = generate_skater_ranking()
     s = cross_validated_scores(train, features=FEATURES)
-    print(f"skaters: fit on {len(train)} 2025+2026 signings (CV R2={s['r2_log']:.3f}), "
+    print(f"skaters: fit on {len(train)} 2024-2026 signings (CV R2={s['r2_log']:.3f}), "
           f"valued all {len(sk)} current -> {SKATER_OUT}")
 
     gdf, gg = generate_goalie_ranking()
