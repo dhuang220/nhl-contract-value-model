@@ -4,16 +4,21 @@ Estimates a fair cap hit for every current NHL player from his 2025-26 performan
 ranks contracts by **residual (actual − predicted)** to flag the most over- and under-paid
 deals. Interactive Streamlit dashboard with NHL headshots and team logos.
 
-A value/inefficiency tool, not a crystal ball — it can't see prospect upside, intangibles,
+A value/inefficiency tool, not a crystal ball - it can't see prospect upside, intangibles,
 or negotiation leverage, which is exactly what its biggest residuals are made of.
+
+**Start here:** [`notebooks/contract_value_model.ipynb`](notebooks/contract_value_model.ipynb)
+is a rendered, end-to-end walkthrough - the data, why the target is `log(cap %)`, the fitted
+equation with coefficients, cross-validated error, and the over/under-paid rankings - readable
+on GitHub without cloning or running anything.
 
 ## Model
 
-- **Skaters:** linear regression on `log(cap hit ÷ salary cap)` from 7 features — scoring
+- **Skaters:** linear regression on `log(cap hit ÷ salary cap)` from 7 features - scoring
   rate, individual expected goals/60, ice time, games played, age, UFA/RFA status, and
   position. Fit on the 2024-2026 free-market signings (~645 rows), then applied to every
   current skater. **CV R² ≈ 0.71, MAE ≈ $1.1M.**
-- **Goalies:** a smaller secondary model — games started, age, status (R² ≈ 0.44).
+- **Goalies:** a smaller secondary model - games started, age, status (R² ≈ 0.44).
 
 ## Key findings
 
@@ -21,7 +26,7 @@ or negotiation leverage, which is exactly what its biggest residuals are made of
   caught up to upside-priced deals; "underpaid" is genuine below-market veterans (e.g. Quinn
   Hughes) plus CBA-capped ELC rookies.
 - **A salary model can only value what the market rewards.** Adding defensive metrics
-  (skaters) or GSAx (goalies) barely moved anything — goalie pay tracks *workload* (starts),
+  (skaters) or GSAx (goalies) barely moved anything - goalie pay tracks *workload* (starts),
   not save quality.
 - **Cap-era normalization matters.** Modeling pay as a percent of the cap (not raw dollars)
   keeps rising-cap seasons comparable.
@@ -29,7 +34,7 @@ or negotiation leverage, which is exactly what its biggest residuals are made of
 ## Data & terms
 
 Performance from the **NHL Stats API** and **Hockey-Reference**; individual xG from
-**MoneyPuck** (manual download — its ToS blocks scripts); goalie GSAx from **Natural Stat
+**MoneyPuck** (manual download - its ToS blocks scripts); goalie GSAx from **Natural Stat
 Trick**; current contracts and signings scraped from **CapWages** (robots.txt permits
 crawling; raw data kept out of the repo). PuckPedia/Spotrac prohibit scraping and aren't
 used. Full obstacle log in `NOTES.md`.
