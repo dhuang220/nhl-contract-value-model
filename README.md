@@ -60,6 +60,31 @@ python -m src.build_goalie_2026      # goalies
 python -m src.generate_rankings      # writes the ranking CSVs the app reads
 ```
 
+## Project structure
+
+```text
+src/
+  fetch/                  # data acquisition, one module per source
+    nhl_api.py            #   NHL Stats API (skater/goalie stats + bios)
+    hockeyref.py          #   Hockey-Reference (goalie stats)
+    moneypuck.py          #   MoneyPuck individual-xG loader
+    nst.py                #   Natural Stat Trick (goalie GSAx)
+    capwages.py           #   CapWages current contracts
+    capwages_signings.py  #   CapWages per-season signings
+  build_dataset.py        # assemble skater training + scoring datasets
+  build_goalie_2026.py    # assemble goalie dataset
+  model.py                # features, log(cap %) target, fit + cross-validation
+  generate_rankings.py    # produce the residual-ranking CSVs the app reads
+  features.py             # contract-type inference, team-name helpers
+  cap_ceilings.py         # salary-cap ceiling per season
+  match_names.py          # fuzzy name -> player-id matching (position-aware)
+app.py                    # Streamlit dashboard
+notebooks/                # rendered end-to-end analysis notebook
+archive/                  # off-pipeline exploration + historical builders (see archive/README.md)
+```
+
+The flow is **fetch -> build -> model -> generate_rankings -> app**.
+
 ## Dashboards
 
 - **Tableau Public** (interactive, hosted) - [live dashboard](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/NHLContractValueModel)
