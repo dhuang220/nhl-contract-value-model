@@ -60,6 +60,11 @@ python -m src.build_goalie_2026      # goalies
 python -m src.generate_rankings      # writes the ranking CSVs the app reads
 ```
 
+## Dashboards
+
+- **Tableau Public** (interactive, hosted) - [live dashboard](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/Dashboard1)
+- **Streamlit** (local, Python) - `streamlit run app.py`
+
 ## Limitations
 
 Residuals are descriptive, not causal. ELC rookies look underpaid by construction (their pay
