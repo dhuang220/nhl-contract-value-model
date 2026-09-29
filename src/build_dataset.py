@@ -6,30 +6,6 @@ from src.features import infer_contract_type, pretty_team
 from src.fetch_moneypuck import load_moneypuck_ixg
 from src.cap_ceilings import CAP_CEILING
 
-HISTORICAL_CSV = "data/processed/skaters_historical_dataset.csv"
-PILOT_CSV = "data/processed/skaters_2026_dataset.csv"
-
-
-def load_combined_dataset(
-    historical_csv: str = HISTORICAL_CSV,
-    pilot_csv: str = PILOT_CSV,
-    pilot_season: str = "20262027",
-) -> pd.DataFrame:
-    """Pool historical (2018-23) and pilot (2026) skater rows into one frame.
-
-    Uniform target rule across both: cap_hit_pct = cap_hit / CAP_CEILING[season].
-    The pilot lacks xgf_pct (no 2025-26 MoneyPuck file yet) so that column is NaN
-    for pilot rows; the pooled model uses plus_minus, which both sources share.
-    The pilot's performance is its walk year (2025-26) while its season label is
-    the contract season (2026-27) - the accepted contemporaneous-framing offset.
-    """
-    hist = pd.read_csv(historical_csv)
-    hist["season"] = hist["season"].astype(str)
-    pilot = pd.read_csv(pilot_csv)
-    pilot["season"] = pilot_season
-    pilot["xgf_pct"] = pd.NA
-    return pd.concat([hist, pilot[hist.columns]], ignore_index=True)
-
 
 def build_skater_dataset(
     contracts_csv: str,
