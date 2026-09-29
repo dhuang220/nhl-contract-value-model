@@ -1,6 +1,6 @@
 # NHL salary cap upper limit by season, confirmed from NHL.com announcements
 # and Wikipedia. Used to normalize cap_hit into cap_hit_pct so contracts from
-# different cap eras are comparable (see NOTES.md).
+# different cap eras are comparable.
 CAP_CEILING = {
     "20182019": 79_500_000,
     "20192020": 81_500_000,

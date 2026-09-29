@@ -42,7 +42,7 @@ Performance from the **NHL Stats API** and **Hockey-Reference**; individual xG f
 **MoneyPuck** (manual download - its ToS blocks scripts); goalie GSAx from **Natural Stat
 Trick**; current contracts and signings scraped from **CapWages** (robots.txt permits
 crawling; raw data kept out of the repo). PuckPedia/Spotrac prohibit scraping and aren't
-used. Full obstacle log in `NOTES.md`.
+used.
 
 ## Run
 
@@ -65,4 +65,4 @@ python -m src.generate_rankings      # writes the ranking CSVs the app reads
 Residuals are descriptive, not causal. ELC rookies look underpaid by construction (their pay
 is CBA-capped). The model reflects what the market pays, so it can't value upside, defense, or
 intangibles the market itself underprices. The goalie model is small (55 contracts) and
-secondary. See `NOTES.md` for the full log of decisions and dead ends.
+secondary.
