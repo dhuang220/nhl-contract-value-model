@@ -12,10 +12,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import cross_val_predict, GridSearchCV, cross_val_score
 
-from src.experiment_features import (
+from archive.experiment_features import (
     BASE, NHL_EXTRA, MP, KF, CEIL, WALK, _realtime,
 )
-from src.fetch_nhl_api import fetch_skater_summary, fetch_skater_bios
+from src.fetch.nhl_api import fetch_skater_summary, fetch_skater_bios
 from src.match_names import match_contracts_to_bios
 from src.features import infer_contract_type
 

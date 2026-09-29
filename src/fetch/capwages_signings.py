@@ -15,7 +15,7 @@ import re
 import pandas as pd
 import requests
 
-from src.fetch_capwages import HEADERS
+from src.fetch.capwages import HEADERS
 
 SEASON_OFFSEASON = {"2026-27": 2026, "2025-26": 2025, "2024-25": 2024,
                     "2023-24": 2023, "2022-23": 2022}

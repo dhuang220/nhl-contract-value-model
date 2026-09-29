@@ -1,9 +1,9 @@
 import pandas as pd
 
-from src.fetch_nhl_api import fetch_skater_summary, fetch_skater_bios
+from src.fetch.nhl_api import fetch_skater_summary, fetch_skater_bios
 from src.match_names import match_rows_to_bios
 from src.features import infer_contract_type, pretty_team
-from src.fetch_moneypuck import load_moneypuck_ixg
+from src.fetch.moneypuck import load_moneypuck_ixg
 from src.cap_ceilings import CAP_CEILING
 
 

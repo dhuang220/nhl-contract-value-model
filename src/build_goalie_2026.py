@@ -10,9 +10,9 @@ import numpy as np
 import pandas as pd
 from rapidfuzz import fuzz, process
 
-from src.fetch_hockeyref import fetch_goalie_stats_page, parse_goalie_stats
-from src.fetch_nhl_api import fetch_goalie_bios
-from src.fetch_nst import fetch_goalie_gsax, _norm
+from src.fetch.hockeyref import fetch_goalie_stats_page, parse_goalie_stats
+from src.fetch.nhl_api import fetch_goalie_bios
+from src.fetch.nst import fetch_goalie_gsax, _norm
 from src.features import infer_contract_type, pretty_team
 from src.cap_ceilings import CAP_CEILING
 

@@ -54,7 +54,7 @@ streamlit run app.py                 # dashboard (reads pre-built ranking CSVs)
 Rebuild the data:
 
 ```bash
-python -m src.fetch_capwages         # scrape current contracts (~2 min)
+python -m src.fetch.capwages         # scrape current contracts (~2 min)
 python -m src.build_dataset          # skaters
 python -m src.build_goalie_2026      # goalies
 python -m src.generate_rankings      # writes the ranking CSVs the app reads
