@@ -65,6 +65,8 @@ python -m src.generate_rankings      # writes the ranking CSVs the app reads
 - **Tableau Public** (interactive, hosted) - [live dashboard](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/Dashboard1)
 - **Streamlit** (local, Python) - `streamlit run app.py`
 
+[![Tableau dashboard preview](docs/tableau_dashboard.png)](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/Dashboard1)
+
 ## Limitations
 
 Residuals are descriptive, not causal. ELC rookies look underpaid by construction (their pay
