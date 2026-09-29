@@ -62,10 +62,10 @@ python -m src.generate_rankings      # writes the ranking CSVs the app reads
 
 ## Dashboards
 
-- **Tableau Public** (interactive, hosted) - [live dashboard](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/Dashboard1)
+- **Tableau Public** (interactive, hosted) - [live dashboard](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/NHLContractValueModel)
 - **Streamlit** (local, Python) - `streamlit run app.py`
 
-[![Tableau dashboard preview](docs/tableau_dashboard.png)](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/Dashboard1)
+[![Tableau dashboard preview](docs/tableau_dashboard.png)](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/NHLContractValueModel)
 
 ## Limitations
 
