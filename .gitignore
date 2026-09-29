@@ -19,3 +19,6 @@ data/raw/contracts/signings_2025.csv
 data/raw/contracts/signings_2026.csv
 data/raw/contracts/signings_2024.csv
 data/raw/contracts/pending_fa_2026.csv
+
+# Personal working notes - kept local, not published
+NOTES.md
