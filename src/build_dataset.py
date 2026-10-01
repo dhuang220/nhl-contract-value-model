@@ -7,6 +7,20 @@ from src.fetch.moneypuck import load_moneypuck_ixg
 from src.cap_ceilings import CAP_CEILING
 
 
+def _age_on(birth_date, offseason_year, fallback=None) -> int:
+    """Age as of Sept 15 of the contract's offseason (matches CapWages' convention).
+
+    The CapWages signings tracker stopped populating age (it now returns 0), so age
+    is derived from the NHL bio's birth date rather than trusting the contract CSV.
+    Falls back to the CSV age only if the birth date is unavailable.
+    """
+    try:
+        by, bm, bd = map(int, str(birth_date)[:10].split("-"))
+        return offseason_year - by - ((9, 15) < (bm, bd))
+    except (ValueError, TypeError, AttributeError):
+        return int(fallback) if fallback else 0
+
+
 def build_skater_dataset(
     contracts_csv: str,
     walk_year_season: str,
@@ -50,14 +64,16 @@ def build_skater_dataset(
             continue
 
         debut_year = int(str(bio["firstSeasonForGameType"])[:4])
-        contract_type = infer_contract_type(int(contract["age"]), debut_year, int(contract["offseason_year"]))
+        offseason_year = int(contract["offseason_year"])
+        age = _age_on(bio.get("birthDate"), offseason_year, contract.get("age"))
+        contract_type = infer_contract_type(age, debut_year, offseason_year)
 
         rows.append({
             "player_name": contract["player_name"],
             "player_id": bio["playerId"],
             "team": pretty_team(contract.get("team") or contract.get("team_signed")),
             "position": bio["positionCode"],
-            "age": contract["age"],
+            "age": age,
             "contract_type": contract_type,
             "term_years": contract["term_years"],
             "games_played": gp,
