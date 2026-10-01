@@ -6,6 +6,9 @@ __pycache__/
 data/raw/stats/*.csv
 data/raw/stats/*.json
 data/processed/*.csv
+# except the two ranking outputs the Streamlit app serves (needed for deployment)
+!data/processed/skaters_current_residual_ranking.csv
+!data/processed/goalies_current_residual_ranking.csv
 
 # Third-party raw data dumps - not republished to the public repo (see README).
 # CapFriendly data reused with permission; CapWages/MoneyPuck prohibit redistribution.

@@ -1,0 +1,653 @@
+player_name,player_id,team,position,age,contract_type,cap_hit,predicted_cap_hit,residual,just_signed,pending_fa
+Tyler Seguin,8475794,Dallas Stars,C,34,UFA,9850000,2190803.0,7659197.0,False,True
+Leo Carlsson,8484153,Anaheim Ducks,C,21,RFA,18000000,10689000.0,7311000.0,True,False
+Jonathan Huberdeau,8476456,Calgary Flames,L,33,UFA,10500000,3494532.0,7005468.0,False,False
+Drew Doughty,8474563,Los Angeles Kings,D,36,UFA,11000000,4672551.0,6327449.0,False,True
+Victor Hedman,8475167,Tampa Bay Lightning,D,35,UFA,8000000,2090078.0,5909922.0,False,False
+Pierre-Luc Dubois,8479400,Washington Capitals,C,28,UFA,8500000,3209708.0,5290292.0,False,False
+Jared Spurgeon,8474716,Minnesota Wild,D,36,UFA,7575000,3090375.0,4484625.0,False,True
+Ondrej Palat,8476292,New York Islanders,L,35,UFA,6000000,1656947.0,4343053.0,False,True
+Darnell Nurse,8477498,San Jose Sharks,D,31,UFA,9250000,4973309.0,4276691.0,False,False
+Elias Pettersson,8480012,Vancouver Canucks,C,27,UFA,11600000,7396934.0,4203066.0,False,False
+Sean Couturier,8476461,Philadelphia Flyers,C,33,UFA,7750000,3687537.0,4062463.0,False,False
+Jake Walman,8478013,Edmonton Oilers,D,30,UFA,7000000,3021880.0,3978120.0,False,False
+Cutter Gauthier,8483445,Anaheim Ducks,L,22,RFA,13500000,9649720.0,3850280.0,True,False
+Patrick Kane,8474141,Chicago Blackhawks,R,37,UFA,8000000,4256397.0,3743603.0,True,False
+Josh Norris,8480064,Buffalo Sabres,C,27,UFA,7950000,4237858.0,3712142.0,False,False
+Logan Cooley,8483431,Utah Mammoth,C,22,RFA,10000000,6402452.0,3597548.0,False,False
+Michael Kesselring,8480891,San Jose Sharks,D,26,RFA,4500000,939757.0,3560243.0,False,False
+Jaccob Slavin,8476958,Carolina Hurricanes,D,32,UFA,6395955,2845465.0,3550490.0,False,False
+Ryan Graves,8477435,Pittsburgh Penguins,D,31,UFA,4500000,961445.0,3538555.0,False,False
+Auston Matthews,8479318,Toronto Maple Leafs,C,29,UFA,13250000,9743759.0,3506241.0,False,False
+Dougie Hamilton,8476462,New Jersey Devils,D,33,UFA,9000000,5538748.0,3461252.0,False,False
+Adam Fantilli,8484166,Columbus Blue Jackets,C,21,RFA,13750000,10301184.0,3448816.0,True,False
+Gabriel Landeskog,8476455,Colorado Avalanche,L,33,UFA,7000000,3575555.0,3424445.0,False,False
+Jesperi Kotkaniemi,8480829,Carolina Hurricanes,C,26,UFA,4820000,1432359.0,3387641.0,False,False
+Brayden Point,8478010,Tampa Bay Lightning,C,30,UFA,9500000,6213001.0,3286999.0,False,False
+Frank Vatrano,8478366,Anaheim Ducks,R,32,UFA,4571189,1322997.0,3248192.0,False,False
+Ryan Strome,8476458,Calgary Flames,C,33,UFA,5000000,1754162.0,3245838.0,False,True
+Alex Killorn,8473986,Anaheim Ducks,L,37,UFA,6250000,3077093.0,3172907.0,False,True
+Jordan Kyrou,8479385,Washington Capitals,R,28,UFA,8125000,5006081.0,3118919.0,False,False
+Thomas Harley,8481581,Dallas Stars,D,25,RFA,10587000,7504090.0,3082910.0,False,False
+Phillip Danault,8476479,Montreal Canadiens,C,33,UFA,5500000,2455115.0,3044885.0,False,True
+Sidney Crosby,8471675,Pittsburgh Penguins,C,39,UFA,8700000,5676324.0,3023676.0,False,True
+Brett Pesce,8477488,New Jersey Devils,D,31,UFA,5500000,2501171.0,2998829.0,False,False
+Josh Anderson,8476981,Montreal Canadiens,R,32,UFA,5500000,2528819.0,2971181.0,False,True
+Pavel Mintyukov,8483490,Anaheim Ducks,D,22,RFA,7200000,4310429.0,2889571.0,True,False
+Jordan Greenway,8478413,Chicago Blackhawks,L,29,UFA,4000000,1179574.0,2820426.0,False,True
+Jonas Brodin,8476463,Minnesota Wild,D,33,UFA,6000000,3184517.0,2815483.0,False,False
+Neal Pionk,8480145,Winnipeg Jets,D,31,UFA,7000000,4204583.0,2795417.0,False,False
+Pavel Dorofeyev,8481604,New York Rangers,R,25,RFA,11000000,8208865.0,2791135.0,False,False
+Erik Cernak,8478416,Tampa Bay Lightning,D,29,UFA,5200000,2493579.0,2706421.0,False,False
+Jamie Oleksiak,8476467,Vancouver Canucks,D,33,UFA,5000000,2311499.0,2688501.0,True,False
+Brayden Schenn,8475170,New York Islanders,C,35,UFA,6500000,3811710.0,2688290.0,False,False
+Colton Sissons,8476925,Toronto Maple Leafs,C,32,UFA,4250000,1565410.0,2684590.0,True,False
+Kaiden Guhle,8482087,Montreal Canadiens,D,24,RFA,5550000,2880081.0,2669919.0,False,False
+Marcus Foligno,8475220,Minnesota Wild,L,35,UFA,4000000,1353468.0,2646532.0,False,False
+Matthew Tkachuk,8479314,Florida Panthers,L,28,UFA,9500000,6880281.0,2619719.0,False,False
+Yegor Chinakhov,8482475,Pittsburgh Penguins,R,25,RFA,6250000,3637290.0,2612710.0,True,False
+Roope Hintz,8478449,Dallas Stars,C,29,UFA,8450000,5854118.0,2595882.0,False,False
+Adam Lowry,8476392,Winnipeg Jets,C,33,UFA,5000000,2411550.0,2588450.0,False,False
+Erik Karlsson,8474578,Pittsburgh Penguins,D,36,UFA,10000000,7452601.0,2547399.0,False,True
+Alex Tuch,8477949,Washington Capitals,R,30,UFA,10500000,8009806.0,2490194.0,False,False
+Ville Koivunen,8482758,Pittsburgh Penguins,R,23,RFA,4000000,1524862.0,2475138.0,True,False
+Pavel Buchnevich,8477402,St Louis Blues,L,31,UFA,8000000,5592094.0,2407906.0,False,False
+Jonathan Marchessault,8476539,Nashville Predators,R,35,UFA,5500000,3098254.0,2401746.0,False,False
+Elias Lindholm,8477496,Boston Bruins,C,31,UFA,7750000,5386480.0,2363520.0,False,False
+Kris Letang,8471724,Pittsburgh Penguins,D,39,UFA,6100000,3762357.0,2337643.0,False,False
+Mitch Marner,8478483,Vegas Golden Knights,R,29,UFA,12000000,9667727.0,2332273.0,False,False
+Andrei Kuzmenko,8483808,Pittsburgh Penguins,L,30,UFA,5000000,2690845.0,2309155.0,True,True
+Trevor van Riemsdyk,8477845,Pittsburgh Penguins,D,35,UFA,4000000,1758932.0,2241068.0,True,False
+Morgan Rielly,8476853,Toronto Maple Leafs,D,32,UFA,7500000,5261755.0,2238245.0,False,False
+Trent Frederic,8479365,Edmonton Oilers,C,28,UFA,3850000,1615987.0,2234013.0,False,False
+Steven Stamkos,8474564,Nashville Predators,C,36,UFA,8000000,5773768.0,2226232.0,False,False
+Devon Toews,8478038,Colorado Avalanche,D,32,UFA,7250000,5090798.0,2159202.0,False,False
+Barclay Goodrow,8476624,San Jose Sharks,C,33,UFA,3641667,1487190.0,2154477.0,False,True
+Kevin Fiala,8477942,Los Angeles Kings,L,30,UFA,7875000,5739618.0,2135382.0,False,False
+Simon Nemec,8483495,Calgary Flames,D,22,RFA,7250000,5117027.0,2132973.0,True,False
+William Nylander,8477939,Toronto Maple Leafs,R,30,UFA,11500000,9386700.0,2113300.0,False,False
+Boone Jenner,8476432,Washington Capitals,C,33,UFA,5750000,3644195.0,2105805.0,True,False
+Tyler Toffoli,8475726,San Jose Sharks,C,34,UFA,6000000,3894441.0,2105559.0,False,False
+Nikolaj Ehlers,8477940,Carolina Hurricanes,L,30,UFA,8500000,6427855.0,2072145.0,False,False
+Thomas Chabot,8478469,Ottawa Senators,D,29,UFA,8000000,5966418.0,2033582.0,False,False
+Mikael Granlund,8475798,Anaheim Ducks,C,34,UFA,7000000,4967188.0,2032812.0,False,False
+Johnathan Kovacevic,8480192,New Jersey Devils,D,29,UFA,4000000,1979799.0,2020201.0,False,False
+Nino Niederreiter,8475799,Winnipeg Jets,R,34,UFA,4000000,1986514.0,2013486.0,False,True
+Vincent Desharnais,8479576,Washington Capitals,D,30,UFA,4200000,2202341.0,1997659.0,True,False
+Samuel Girard,8479398,Pittsburgh Penguins,D,28,UFA,5000000,3033566.0,1966434.0,False,True
+Hampus Lindholm,8476854,Boston Bruins,D,32,UFA,6500000,4556259.0,1943741.0,False,False
+Nils Hoglander,8481535,Nashville Predators,L,25,RFA,3000000,1065477.0,1934523.0,False,False
+Dmitry Orlov,8475200,San Jose Sharks,D,35,UFA,6500000,4567365.0,1932635.0,False,True
+Cody Ceci,8476879,Los Angeles Kings,D,32,UFA,4500000,2576612.0,1923388.0,False,False
+Ryan McDonagh,8474151,Tampa Bay Lightning,D,37,UFA,4100000,2201009.0,1898991.0,False,False
+Mason Marchment,8478975,San Jose Sharks,L,31,UFA,6750000,4876704.0,1873296.0,True,False
+Andre Burakovsky,8477444,Ottawa Senators,L,31,UFA,5500000,3643295.0,1856705.0,False,True
+Andrew Mangiapane,8478233,Chicago Blackhawks,L,30,UFA,3600000,1770402.0,1829598.0,False,True
+Mark Stone,8475913,Vegas Golden Knights,R,34,UFA,9500000,7677237.0,1822763.0,True,False
+John Carlson,8474590,Tampa Bay Lightning,D,36,UFA,8500000,6683950.0,1816050.0,True,False
+J.T. Compher,8477456,Detroit Red Wings,L,31,UFA,5100000,3302722.0,1797278.0,False,False
+Brandon Tanev,8479293,Utah Mammoth,L,34,UFA,2500000,707846.0,1792154.0,False,False
+Martin Pospisil,8481028,Calgary Flames,C,26,RFA,2500000,722781.0,1777219.0,False,False
+Artemi Panarin,8478550,Los Angeles Kings,L,34,UFA,11000000,9223771.0,1776229.0,False,False
+Zach Benson,8484145,Buffalo Sabres,L,21,RFA,7500000,5734571.0,1765429.0,False,False
+Conor Garland,8478856,Columbus Blue Jackets,R,30,UFA,6000000,4239351.0,1760649.0,False,False
+Sean Durzi,8480434,New York Rangers,D,27,UFA,6000000,4241376.0,1758624.0,False,False
+Ilya Lyubushkin,8480950,Nashville Predators,D,32,UFA,3250000,1508260.0,1741740.0,False,True
+Colton Parayko,8476892,St Louis Blues,D,33,UFA,6500000,4767579.0,1732421.0,False,False
+Nicolas Hague,8479980,Nashville Predators,D,27,UFA,5500000,3774154.0,1725846.0,False,False
+Jacob Trouba,8476885,San Jose Sharks,D,32,UFA,8250000,6526782.0,1723218.0,True,False
+Mason McTavish,8482745,St Louis Blues,C,23,RFA,7000000,5311229.0,1688771.0,False,False
+Jean-Gabriel Pageau,8476419,New York Islanders,C,33,UFA,4850000,3176660.0,1673340.0,False,False
+Cam Fowler,8475764,St Louis Blues,D,34,UFA,6100000,4462334.0,1637666.0,False,False
+Stefan Noesen,8476474,New Jersey Devils,R,33,UFA,2750000,1120360.0,1629640.0,False,True
+Olli Maatta,8476874,Minnesota Wild,D,32,UFA,3500000,1901219.0,1598781.0,False,False
+Cole Perfetti,8482149,Winnipeg Jets,C,24,RFA,6000000,4405027.0,1594973.0,True,False
+Jason Dickinson,8477450,Edmonton Oilers,C,31,UFA,4000000,2406684.0,1593316.0,False,False
+Dante Fabbro,8479371,Columbus Blue Jackets,D,28,UFA,4125000,2557635.0,1567365.0,False,False
+Rasmus Ristolainen,8477499,Philadelphia Flyers,D,31,UFA,5100000,3539791.0,1560209.0,False,True
+Ryan Pulock,8477506,New York Islanders,D,31,UFA,6150000,4597643.0,1552357.0,False,False
+Brian Dumoulin,8475208,Los Angeles Kings,D,35,UFA,4000000,2447952.0,1552048.0,False,False
+Brenden Dillon,8475455,New Jersey Devils,D,35,UFA,4000000,2452454.0,1547546.0,False,True
+Oliver Bjorkstrand,8477416,New York Rangers,R,31,UFA,4500000,2955098.0,1544902.0,True,True
+Kyle Palmieri,8475151,New York Islanders,C,35,UFA,4750000,3207732.0,1542268.0,False,True
+Brandon Montour,8477986,Seattle Kraken,D,32,UFA,7142857,5612065.0,1530792.0,False,False
+Connor Murphy,8476473,Edmonton Oilers,D,33,UFA,4100000,2574748.0,1525252.0,False,False
+Dakota Joshua,8478057,Toronto Maple Leafs,C,30,UFA,3250000,1759189.0,1490811.0,False,False
+Damon Severson,8476923,Columbus Blue Jackets,D,32,UFA,6250000,4766324.0,1483676.0,False,False
+Casey Mittelstadt,8479999,Boston Bruins,C,27,UFA,5750000,4266888.0,1483112.0,False,True
+Yegor Sharangovich,8481068,Calgary Flames,C,28,UFA,5750000,4273512.0,1476488.0,False,False
+Ian Cole,8474013,Chicago Blackhawks,D,37,UFA,4000000,2549042.0,1450958.0,True,True
+Mikko Rantanen,8478420,Dallas Stars,R,29,UFA,12000000,10572817.0,1427183.0,False,False
+Owen Power,8482671,Buffalo Sabres,D,23,RFA,8350000,6929263.0,1420737.0,False,False
+Anders Lee,8475314,Utah Mammoth,L,36,UFA,5400000,3986313.0,1413687.0,True,False
+Matt Roy,8478911,Washington Capitals,D,31,UFA,5750000,4338630.0,1411370.0,False,False
+Adrian Kempe,8477960,Los Angeles Kings,R,30,UFA,10625000,9225430.0,1399570.0,False,False
+Teuvo Teravainen,8476882,Chicago Blackhawks,C,32,UFA,5400000,4016170.0,1383830.0,False,True
+Jeremy Lauzon,8478468,Vegas Golden Knights,D,29,UFA,4000000,2617977.0,1382023.0,False,False
+Ross Colton,8479525,Nashville Predators,C,30,UFA,4000000,2618900.0,1381100.0,False,True
+Adam Pelech,8476917,New York Islanders,D,32,UFA,5750000,4370984.0,1379016.0,False,False
+Maxim Tsyplakov,8484958,Calgary Flames,R,28,UFA,2250000,874515.0,1375485.0,False,True
+Luke Schenn,8474568,Vancouver Canucks,D,36,UFA,2250000,891166.0,1358834.0,True,True
+Jack Drury,8480835,Nashville Predators,C,26,RFA,4500000,3150514.0,1349486.0,False,False
+Kirby Dach,8481523,Montreal Canadiens,C,25,UFA,3600000,2279478.0,1320522.0,True,True
+Niko Mikkola,8478859,Florida Panthers,D,30,UFA,5000000,3689446.0,1310554.0,False,False
+Scott Mayfield,8476429,New York Islanders,D,33,UFA,3500000,2205673.0,1294327.0,False,False
+Evgeni Malkin,8471215,Pittsburgh Penguins,C,40,UFA,5500000,4207401.0,1292599.0,False,True
+Scott Laughton,8476872,Los Angeles Kings,C,32,UFA,3500000,2213492.0,1286508.0,True,False
+Brett Kulak,8476967,Colorado Avalanche,D,32,UFA,4500000,3224790.0,1275210.0,False,False
+Brendan Gallagher,8475848,Vancouver Canucks,R,34,UFA,3250000,1986025.0,1263975.0,False,True
+Vladislav Namestnikov,8476480,Winnipeg Jets,C,33,UFA,3000000,1741433.0,1258567.0,False,True
+Anthony Duclair,8477407,New York Islanders,L,31,UFA,3500000,2242944.0,1257056.0,False,False
+Ryan Lindgren,8479324,Seattle Kraken,D,28,UFA,4500000,3259244.0,1240756.0,False,False
+Timo Meier,8478414,New Jersey Devils,R,29,UFA,8800000,7566055.0,1233945.0,False,False
+Jack McBain,8480855,Utah Mammoth,C,26,RFA,4250000,3025002.0,1224998.0,False,False
+J.T. Miller,8476468,New York Rangers,C,33,UFA,8000000,6776479.0,1223521.0,False,False
+Roman Josi,8474600,Nashville Predators,D,36,UFA,9059000,7854078.0,1204922.0,False,False
+Brandt Clarke,8482730,Los Angeles Kings,D,23,RFA,7400000,6196421.0,1203579.0,False,False
+Andrew Copp,8477429,Detroit Red Wings,C,32,UFA,5625000,4433422.0,1191578.0,False,True
+Kiefer Sherwood,8480748,San Jose Sharks,L,31,UFA,5750000,4621984.0,1128016.0,False,False
+Warren Foegele,8477998,Ottawa Senators,L,30,UFA,3500000,2379283.0,1120717.0,False,True
+Connor McMichael,8481580,St Louis Blues,L,25,RFA,6750000,5636059.0,1113941.0,True,False
+Carter Verhaeghe,8477409,Florida Panthers,C,31,UFA,7000000,5899642.0,1100358.0,False,False
+Sean Monahan,8477497,Columbus Blue Jackets,C,31,UFA,5500000,4403576.0,1096424.0,False,False
+Zack Ostapchuk,8482859,San Jose Sharks,C,23,RFA,2350000,1254261.0,1095739.0,False,False
+Michael Rasmussen,8479992,Detroit Red Wings,C,27,UFA,3200000,2113092.0,1086908.0,False,False
+Bobby McMann,8482259,Seattle Kraken,C,30,UFA,5750000,4672709.0,1077291.0,False,False
+Nic Dowd,8475343,Vegas Golden Knights,C,36,UFA,3000000,1923379.0,1076621.0,False,True
+Dylan Holloway,8482077,St Louis Blues,L,25,RFA,7750000,6680259.0,1069741.0,False,False
+Beck Malenstyn,8479359,Buffalo Sabres,L,28,UFA,2916667,1855324.0,1061343.0,False,False
+Brady Skjei,8476869,Nashville Predators,D,32,UFA,7000000,5939745.0,1060255.0,False,False
+Cole Smith,8482062,Chicago Blackhawks,R,30,UFA,3000000,1945438.0,1054562.0,True,False
+Justin Faulk,8475753,Detroit Red Wings,D,34,UFA,6500000,5455866.0,1044134.0,False,True
+Mason Appleton,8478891,Detroit Red Wings,C,30,UFA,2900000,1866745.0,1033255.0,False,True
+Tanner Jeannot,8479661,Boston Bruins,L,29,UFA,3400000,2380834.0,1019166.0,False,False
+Peyton Krebs,8481522,Buffalo Sabres,C,25,RFA,4500000,3496900.0,1003100.0,True,False
+Will Borgen,8478840,Boston Bruins,D,29,UFA,4100000,3107899.0,992101.0,False,False
+Miles Wood,8477425,Columbus Blue Jackets,L,31,UFA,2500000,1520935.0,979065.0,False,False
+Noah Hanifin,8478396,Vegas Golden Knights,D,29,UFA,7350000,6372316.0,977684.0,False,False
+Brandon Duhaime,8479520,Toronto Maple Leafs,L,29,UFA,2600000,1635138.0,964862.0,True,False
+Josh Manson,8476312,Colorado Avalanche,D,34,UFA,3950000,3001380.0,948620.0,False,False
+K'Andre Miller,8480817,Carolina Hurricanes,D,26,RFA,7500000,6563330.0,936670.0,False,False
+Ross Johnston,8477527,St Louis Blues,L,32,UFA,2000000,1070177.0,929823.0,True,False
+Matt Duchene,8475168,Dallas Stars,C,35,UFA,4500000,3596525.0,903475.0,False,False
+Kirill Kaprizov,8478864,Minnesota Wild,L,29,UFA,17000000,16104018.0,895982.0,False,False
+Martin Fehervary,8480796,Washington Capitals,D,26,UFA,6000000,5109390.0,890610.0,False,False
+Casey Cizikas,8475231,New York Islanders,C,35,UFA,2500000,1618526.0,881474.0,False,True
+Michael McCarron,8477446,Minnesota Wild,C,31,UFA,3333333,2451884.0,881449.0,False,False
+Luke Hughes,8482684,New Jersey Devils,D,23,RFA,9000000,8131326.0,868674.0,False,False
+Connor Bedard,8484144,Chicago Blackhawks,C,21,RFA,15000000,14140871.0,859129.0,True,False
+Fabian Zetterlund,8480188,Ottawa Senators,L,27,UFA,4275000,3417396.0,857604.0,False,False
+Trevor Zegras,8481533,Philadelphia Flyers,C,25,RFA,9125000,8274867.0,850133.0,True,False
+J.J. Moser,8482655,Tampa Bay Lightning,D,26,RFA,6750000,5910985.0,839015.0,False,False
+Dmitri Voronkov,8481716,Columbus Blue Jackets,L,26,RFA,4175000,3350080.0,824920.0,False,True
+Shea Theodore,8477447,Vegas Golden Knights,D,31,UFA,7425000,6607091.0,817909.0,False,False
+Seth Jones,8477495,Florida Panthers,D,31,UFA,7000000,6188990.0,811010.0,False,False
+Jason Zucker,8475722,Buffalo Sabres,L,34,UFA,4750000,3951010.0,798990.0,False,True
+Jordan Spence,8481606,Ottawa Senators,D,25,RFA,5000000,4218269.0,781731.0,False,False
+Barrett Hayton,8480849,Utah Mammoth,C,26,UFA,4775000,3999053.0,775947.0,True,True
+Yakov Trenin,8478508,Minnesota Wild,C,29,UFA,3500000,2734861.0,765139.0,False,False
+Nico Sturm,8481477,Minnesota Wild,C,31,UFA,2000000,1241601.0,758399.0,False,True
+Brayden McNabb,8475188,Vegas Golden Knights,D,35,UFA,3650000,2903331.0,746669.0,False,False
+Brad Marchand,8473419,Florida Panthers,L,38,UFA,5250000,4503384.0,746616.0,False,False
+Alexey Toropchenko,8480281,St Louis Blues,R,27,UFA,2500000,1756514.0,743486.0,False,False
+Jeff Malott,8482408,Anaheim Ducks,L,30,UFA,1850000,1106725.0,743275.0,True,False
+David Jiricek,8483460,Philadelphia Flyers,D,22,RFA,1500000,778468.0,721532.0,False,False
+Mavrik Bourque,8482145,Nashville Predators,C,24,RFA,5500000,4808872.0,691128.0,True,False
+Marco Rossi,8482079,Vancouver Canucks,C,25,RFA,5000000,4312243.0,687757.0,False,False
+Viktor Arvidsson,8478042,Detroit Red Wings,L,33,UFA,5000000,4313139.0,686861.0,True,False
+Kaedan Korczak,8481527,Pittsburgh Penguins,D,25,RFA,3250000,2563609.0,686391.0,False,False
+Pius Suter,8480459,St Louis Blues,C,30,UFA,4125000,3450752.0,674248.0,False,True
+Josh Doan,8482659,Buffalo Sabres,R,24,RFA,6950000,6276118.0,673882.0,False,False
+Nick Bjugstad,8475760,New Jersey Devils,C,34,UFA,1750000,1078945.0,671055.0,False,True
+Noel Acciari,8478569,Philadelphia Flyers,C,34,UFA,2800000,2139067.0,660933.0,True,False
+Joel Edmundson,8476441,Los Angeles Kings,D,33,UFA,3850000,3217732.0,632268.0,False,False
+Chandler Stephenson,8476905,Seattle Kraken,C,32,UFA,6250000,5621530.0,628470.0,False,False
+Keegan Kolesar,8478434,Detroit Red Wings,R,29,UFA,2500000,1877590.0,622410.0,False,False
+Curtis Douglas,8480876,Seattle Kraken,C,26,RFA,1250000,643046.0,606954.0,True,False
+Connor Zary,8482074,Calgary Flames,C,25,RFA,3775000,3173982.0,601018.0,False,False
+Juuso Parssinen,8481704,New York Rangers,C,25,RFA,1250000,650228.0,599772.0,False,True
+Braden Schneider,8482073,New York Rangers,D,25,RFA,5500000,4904731.0,595269.0,True,True
+Adam Larsson,8476457,Seattle Kraken,D,33,UFA,5250000,4656846.0,593154.0,False,False
+Brandon Carlo,8478443,St Louis Blues,D,29,UFA,3485000,2897716.0,587284.0,False,True
+Jaden Schwartz,8475768,Colorado Avalanche,L,34,UFA,3250000,2662761.0,587239.0,True,False
+Ryan Donato,8477987,Chicago Blackhawks,C,30,UFA,4000000,3420602.0,579398.0,False,False
+Radek Faksa,8476889,Dallas Stars,C,32,UFA,2000000,1421396.0,578604.0,False,False
+Connor Clifton,8477365,Boston Bruins,D,31,UFA,2250000,1686983.0,563017.0,True,False
+William Carrier,8477478,Carolina Hurricanes,L,31,UFA,2150000,1593139.0,556861.0,False,False
+Max Domi,8477503,Toronto Maple Leafs,C,31,UFA,3750000,3196860.0,553140.0,False,False
+Declan Chisholm,8480990,New Jersey Devils,D,26,RFA,1600000,1059861.0,540139.0,False,True
+MacKenzie Weegar,8477346,Utah Mammoth,D,32,UFA,6250000,5714569.0,535431.0,False,False
+Kasperi Kapanen,8477953,Edmonton Oilers,R,30,UFA,2600000,2067450.0,532550.0,True,True
+Dylan Samberg,8480049,Winnipeg Jets,D,27,UFA,5750000,5239148.0,510852.0,False,False
+Nick Jensen,8475324,Anaheim Ducks,D,36,UFA,2250000,1758197.0,491803.0,True,False
+Paul Cotter,8481032,Vancouver Canucks,L,26,RFA,2150000,1662502.0,487498.0,True,True
+Joel Hanley,8477810,Calgary Flames,D,35,UFA,1750000,1278553.0,471447.0,False,True
+Mattias Janmark,8477406,Edmonton Oilers,C,33,UFA,1450000,999224.0,450776.0,False,True
+Arber Xhekaj,8482964,Montreal Canadiens,D,25,RFA,1500000,1052497.0,447503.0,True,True
+Jack Eichel,8478403,Vegas Golden Knights,C,29,UFA,13500000,13053320.0,446680.0,False,False
+Jacob Melanson,8482874,Seattle Kraken,R,23,RFA,1450000,1004141.0,445859.0,True,False
+Dylan DeMelo,8476331,Winnipeg Jets,D,33,UFA,4900000,4456216.0,443784.0,False,False
+Henri Jokiharju,8480035,Boston Bruins,D,27,UFA,3000000,2559330.0,440670.0,False,False
+Nicolas Deslauriers,8475235,Carolina Hurricanes,L,35,UFA,875000,435385.0,439615.0,False,False
+Kaapo Kakko,8481554,Seattle Kraken,R,25,UFA,4525000,4088282.0,436718.0,False,False
+Valeri Nichushkin,8477501,Columbus Blue Jackets,R,31,UFA,6125000,5697395.0,427605.0,False,False
+Tyson Foerster,8482159,Philadelphia Flyers,R,24,RFA,3750000,3330001.0,419999.0,True,False
+Jordan Martinook,8476921,Carolina Hurricanes,L,34,UFA,3125000,2707862.0,417138.0,False,True
+Jared McCann,8477955,Seattle Kraken,L,30,UFA,5000000,4583239.0,416761.0,False,True
+Adam Fox,8479323,New York Rangers,D,28,UFA,9500000,9085948.0,414052.0,False,False
+Tyler Pitlick,8475752,Minnesota Wild,C,34,UFA,850000,447841.0,402159.0,False,True
+Sam Malinski,8484258,Colorado Avalanche,D,28,UFA,4750000,4360264.0,389736.0,False,False
+Logan Stankoven,8482702,Carolina Hurricanes,C,23,RFA,6000000,5615556.0,384444.0,False,False
+Alex Iafallo,8480113,Winnipeg Jets,L,32,UFA,3666667,3286459.0,380208.0,False,False
+Ryan Lomberg,8479066,Columbus Blue Jackets,L,31,UFA,1300000,931836.0,368164.0,True,False
+Trevor Moore,8479675,Los Angeles Kings,L,31,UFA,4200000,3835966.0,364034.0,False,False
+Garnet Hathaway,8477903,Florida Panthers,R,34,UFA,1200000,836571.0,363429.0,False,True
+Erik Gudbranson,8475790,Columbus Blue Jackets,D,34,UFA,1750000,1390719.0,359281.0,True,True
+Sam Lafferty,8478043,Florida Panthers,C,31,UFA,850000,498551.0,351449.0,True,True
+Matt Coronato,8482679,Calgary Flames,R,23,RFA,6500000,6153228.0,346772.0,False,False
+Matt Rempe,8482460,New York Rangers,C,24,RFA,975000,631810.0,343190.0,False,True
+Zach Bogosian,8474567,Minnesota Wild,D,36,UFA,1250000,908187.0,341813.0,True,True
+Cole Sillinger,8482705,Columbus Blue Jackets,C,23,RFA,4625000,4293247.0,331753.0,True,False
+Urho Vaakanainen,8480001,New York Rangers,D,27,UFA,1550000,1222226.0,327774.0,False,True
+Scott Sabourin,8477149,Tampa Bay Lightning,R,34,UFA,850000,541796.0,308204.0,False,True
+Shane Pinto,8481596,Ottawa Senators,C,25,RFA,7500000,7193416.0,306584.0,False,False
+Noah Dobson,8480865,Montreal Canadiens,D,26,UFA,9500000,9212434.0,287566.0,False,False
+Charlie Coyle,8475745,Columbus Blue Jackets,C,34,UFA,6000000,5713319.0,286681.0,False,False
+Marcus Pettersson,8477969,New York Rangers,D,30,UFA,5500000,5217230.0,282770.0,False,False
+Sam Bennett,8477935,Florida Panthers,C,30,UFA,8000000,7723235.0,276765.0,False,False
+Liam O'Brien,8477070,Utah Mammoth,C,32,UFA,1000000,727838.0,272162.0,False,True
+Travis Konecny,8478439,Philadelphia Flyers,R,29,UFA,8750000,8483249.0,266751.0,False,False
+Declan Carlile,8483398,Pittsburgh Penguins,D,26,RFA,1500000,1234359.0,265641.0,True,False
+Jake Christiansen,8481161,Columbus Blue Jackets,D,27,UFA,975000,716746.0,258254.0,False,True
+Joel Armia,8476469,Los Angeles Kings,R,33,UFA,2500000,2249269.0,250731.0,False,True
+Justin Kirkland,8477993,Minnesota Wild,C,30,UFA,850000,619488.0,230512.0,True,True
+Nikita Zadorov,8477507,Boston Bruins,D,31,UFA,5000000,4774807.0,225193.0,False,False
+Vince Dunn,8478407,Seattle Kraken,D,29,UFA,7350000,7128793.0,221207.0,False,True
+Aaron Ekblad,8477932,Florida Panthers,D,30,UFA,6100000,5886713.0,213287.0,False,False
+Filip Forsberg,8476887,Nashville Predators,L,32,UFA,8500000,8291041.0,208959.0,False,False
+Nazem Kadri,8475172,Colorado Avalanche,C,35,UFA,5600000,5396027.0,203973.0,False,False
+Nick Seeler,8476372,Philadelphia Flyers,D,33,UFA,2700000,2511049.0,188951.0,False,False
+Zach Aston-Reese,8479944,Philadelphia Flyers,L,32,UFA,875000,691791.0,183209.0,True,False
+Ben Chiarot,8475279,Detroit Red Wings,D,35,UFA,3850000,3668972.0,181028.0,False,False
+Alex Newhook,8481618,Montreal Canadiens,C,25,RFA,2900000,2726142.0,173858.0,True,False
+Brock Boeser,8478444,Vancouver Canucks,R,29,UFA,7250000,7084486.0,165514.0,False,False
+Mark Jankowski,8476873,Carolina Hurricanes,L,32,UFA,1850000,1708218.0,141782.0,False,False
+Tomas Hertl,8476881,Vegas Golden Knights,C,32,UFA,6750000,6611381.0,138619.0,False,False
+Josh Samanski,8484509,Edmonton Oilers,C,24,RFA,975000,838110.0,136890.0,False,True
+Kevin Stenlund,8478831,Utah Mammoth,C,30,UFA,2750000,2615207.0,134793.0,True,True
+Teddy Blueger,8476927,Toronto Maple Leafs,C,32,UFA,2500000,2365573.0,134427.0,True,False
+Nate Schmidt,8477220,Utah Mammoth,D,35,UFA,3500000,3375642.0,124358.0,False,False
+Ben Jones,8480259,Calgary Flames,C,27,UFA,850000,744152.0,105848.0,True,True
+Alexis Lafrenière,8482109,New York Rangers,L,24,RFA,7450000,7349367.0,100633.0,False,False
+Tony DeAngelo,8477950,New York Islanders,D,30,UFA,4500000,4409423.0,90577.0,False,False
+Colton White,8478841,Columbus Blue Jackets,D,29,UFA,875000,788248.0,86752.0,True,False
+Adam Edstrom,8481726,Nashville Predators,C,25,RFA,975000,888331.0,86669.0,False,True
+Jacob Quillan,8484901,Toronto Maple Leafs,C,24,RFA,850000,767300.0,82700.0,True,True
+Alexandre Texier,8480074,Montreal Canadiens,L,27,UFA,2500000,2421626.0,78374.0,False,False
+Max Jones,8479368,Edmonton Oilers,L,28,UFA,850000,780654.0,69346.0,True,True
+Erik Haula,8475287,Los Angeles Kings,L,35,UFA,3600000,3531818.0,68182.0,True,False
+Nicolas Roy,8478462,Colorado Avalanche,C,29,UFA,3000000,2932795.0,67205.0,False,True
+Jordan Staal,8473533,Carolina Hurricanes,C,38,UFA,2975000,2911399.0,63601.0,True,False
+Kevin Bahl,8480860,Calgary Flames,D,26,RFA,5350000,5293120.0,56880.0,False,False
+Arshdeep Bains,8483395,Vancouver Canucks,L,25,RFA,850000,794552.0,55448.0,False,True
+Radko Gudas,8475462,Florida Panthers,D,36,UFA,1500000,1445820.0,54180.0,True,False
+Matthew Kessel,8482516,New York Islanders,D,26,RFA,850000,811573.0,38427.0,True,True
+Jacob Bernard-Docker,8480879,Detroit Red Wings,D,26,RFA,1600000,1562482.0,37518.0,False,False
+Jaroslav Chmelar,8482877,New York Rangers,R,23,RFA,942500,920297.0,22203.0,False,True
+Mathieu Olivier,8479671,Columbus Blue Jackets,R,29,UFA,3000000,2979350.0,20650.0,False,False
+Mason Lohrei,8482511,Boston Bruins,D,25,RFA,3200000,3187318.0,12682.0,False,True
+Kyle Capobianco,8478476,Dallas Stars,D,29,UFA,875000,862893.0,12107.0,False,False
+Victor Mancini,8483768,Vancouver Canucks,D,24,RFA,1000000,988165.0,11835.0,False,False
+Bo Horvat,8477500,New York Islanders,C,31,UFA,8500000,8503437.0,-3437.0,False,False
+Timothy Liljegren,8480043,Washington Capitals,D,27,UFA,3250000,3256078.0,-6078.0,False,False
+Anthony Cirelli,8478519,Tampa Bay Lightning,C,29,UFA,6250000,6257529.0,-7529.0,False,False
+Alexandre Carrier,8478851,Montreal Canadiens,D,29,UFA,3750000,3762315.0,-12315.0,False,True
+Justin Barron,8482111,Nashville Predators,D,24,RFA,1575000,1591264.0,-16264.0,True,True
+Jordan Eberle,8474586,Seattle Kraken,R,36,UFA,5500000,5527927.0,-27927.0,False,False
+Eric Robinson,8480762,Carolina Hurricanes,L,31,UFA,1700000,1731519.0,-31519.0,False,False
+Stephen Halliday,8483676,Ottawa Senators,C,24,RFA,1075000,1112839.0,-37839.0,False,False
+Alex Steeves,8482634,Boston Bruins,C,26,RFA,1625000,1666923.0,-41923.0,False,False
+Jamie Drysdale,8482142,Philadelphia Flyers,D,24,RFA,6500000,6550984.0,-50984.0,True,False
+Anthony Mantha,8477511,New Jersey Devils,R,32,UFA,4750000,4803713.0,-53713.0,True,False
+Josh Dunne,8482623,Washington Capitals,C,27,UFA,850000,903797.0,-53797.0,True,True
+Blake Lizotte,8481481,Pittsburgh Penguins,C,28,UFA,2250000,2308334.0,-58334.0,False,False
+Zach Metsa,8484305,Buffalo Sabres,D,27,UFA,850000,914966.0,-64966.0,True,False
+Leon Draisaitl,8477934,Edmonton Oilers,C,30,UFA,14000000,14071134.0,-71134.0,False,False
+Jack Finley,8482090,St Louis Blues,C,24,RFA,875000,947444.0,-72444.0,False,False
+Brock Nelson,8475754,Colorado Avalanche,C,34,UFA,7500000,7577300.0,-77300.0,False,False
+Daemon Hunt,8482094,Minnesota Wild,D,24,RFA,900000,987021.0,-87021.0,True,True
+Jacob Bryson,8480196,Detroit Red Wings,D,28,UFA,850000,944014.0,-94014.0,True,True
+Ozzy Wiesblatt,8482103,Nashville Predators,C,24,RFA,850000,951416.0,-101416.0,False,True
+Brayden Pachal,8481167,Calgary Flames,D,27,UFA,1187500,1300080.0,-112580.0,False,True
+Brendan Gaunce,8476867,Boston Bruins,C,32,UFA,875000,995066.0,-120066.0,True,False
+Samuel Helenius,8482726,Los Angeles Kings,C,23,RFA,875000,1001587.0,-126587.0,False,False
+Taylor Ward,8483406,Los Angeles Kings,R,28,UFA,875000,1003859.0,-128859.0,False,False
+Cole Schwindt,8481655,Florida Panthers,R,25,RFA,875000,1005605.0,-130605.0,True,False
+Haydn Fleury,8477938,Winnipeg Jets,D,30,UFA,950000,1081956.0,-131956.0,False,True
+Joel Kiviranta,8481641,Dallas Stars,L,30,UFA,1000000,1133175.0,-133175.0,True,True
+Isaac Howard,8483455,Edmonton Oilers,L,22,RFA,972500,1118376.0,-145876.0,False,False
+Ilya Solovyov,8482470,Pittsburgh Penguins,D,26,RFA,850000,996884.0,-146884.0,False,True
+Robert Thomas,8480023,St Louis Blues,C,27,UFA,8125000,8272448.0,-147448.0,False,False
+Michael Eyssimont,8479591,Boston Bruins,C,30,UFA,1450000,1602620.0,-152620.0,False,True
+Nick Cousins,8476393,Ottawa Senators,C,33,UFA,1587500,1740645.0,-153145.0,False,False
+Jansen Harkins,8478424,Tampa Bay Lightning,C,29,UFA,850000,1003846.0,-153846.0,True,True
+Ryan Poehling,8480068,Anaheim Ducks,C,27,UFA,3750000,3908604.0,-158604.0,False,False
+John Beecher,8481556,Florida Panthers,C,25,RFA,850000,1016112.0,-166112.0,True,True
+Jayden Struble,8481593,Montreal Canadiens,D,25,RFA,1412500,1589933.0,-177433.0,False,True
+Jonatan Berggren,8481013,St Louis Blues,R,26,RFA,2000000,2178717.0,-178717.0,True,True
+Alec Regula,8480831,Edmonton Oilers,D,26,RFA,850000,1029476.0,-179476.0,False,True
+Nick Foligno,8473422,Minnesota Wild,L,38,UFA,900000,1079975.0,-179975.0,True,True
+Nick DeSimone,8480084,Utah Mammoth,D,31,UFA,1000000,1184567.0,-184567.0,False,False
+Conor Timmins,8479982,Buffalo Sabres,D,28,UFA,2200000,2385665.0,-185665.0,False,True
+Nils Lundkvist,8480878,Dallas Stars,D,26,RFA,1750000,1943487.0,-193487.0,False,False
+Ty Dellandrea,8480848,San Jose Sharks,C,26,RFA,1625000,1818640.0,-193640.0,False,False
+Adam Gaudette,8478874,San Jose Sharks,R,29,UFA,2000000,2200650.0,-200650.0,False,True
+Troy Terry,8478873,Anaheim Ducks,R,29,UFA,7000000,7206259.0,-206259.0,False,False
+Jack Roslovic,8478458,Toronto Maple Leafs,C,29,UFA,4000000,4208092.0,-208092.0,True,False
+Arseni Gritsyuk,8481721,New Jersey Devils,R,25,RFA,3250000,3460660.0,-210660.0,False,False
+Jared Wright,8483756,Los Angeles Kings,R,23,RFA,942500,1163391.0,-220891.0,False,True
+Arttu Hyry,8484938,Dallas Stars,R,25,RFA,875000,1098210.0,-223210.0,True,False
+Reid Schaefer,8483513,Nashville Predators,L,23,RFA,886667,1113184.0,-226517.0,False,True
+Hendrix Lapierre,8482148,Pittsburgh Penguins,C,24,RFA,1300000,1527560.0,-227560.0,True,False
+Rasmus Sandin,8480873,Washington Capitals,D,26,UFA,4600000,4827704.0,-227704.0,False,False
+Philip Broberg,8481598,St Louis Blues,D,25,RFA,8000000,8233310.0,-233310.0,False,False
+Noah Gregor,8479393,Winnipeg Jets,L,28,UFA,850000,1087180.0,-237180.0,True,True
+Brad Lambert,8483471,Winnipeg Jets,C,22,RFA,886667,1128828.0,-242161.0,False,True
+Sean Kuraly,8476374,Boston Bruins,C,33,UFA,1850000,2095614.0,-245614.0,False,True
+Jake Evans,8478133,Montreal Canadiens,C,30,UFA,2850000,3099404.0,-249404.0,False,False
+Sam Carrick,8475842,Buffalo Sabres,C,34,UFA,1000000,1263481.0,-263481.0,False,True
+Danton Heinen,8478046,Columbus Blue Jackets,L,31,UFA,1000000,1269488.0,-269488.0,True,True
+Noah Juulsen,8478454,Colorado Avalanche,D,29,UFA,1100000,1370246.0,-270246.0,True,False
+Brett Howden,8479353,Vegas Golden Knights,C,28,UFA,2500000,2773316.0,-273316.0,False,False
+Frank Nazar,8483493,Chicago Blackhawks,C,22,RFA,6599991,6874034.0,-274043.0,False,False
+Lars Eller,8474189,Florida Panthers,C,37,UFA,850000,1125807.0,-275807.0,True,True
+Pierre-Olivier Joseph,8480058,Carolina Hurricanes,D,27,UFA,850000,1128775.0,-278775.0,True,True
+Jake Neighbours,8482089,St Louis Blues,L,24,RFA,3750000,4029334.0,-279334.0,False,True
+Taylor Hall,8475791,Carolina Hurricanes,L,34,UFA,3166667,3453217.0,-286550.0,False,False
+Cole Koepke,8481043,Winnipeg Jets,L,28,UFA,1450000,1738949.0,-288949.0,False,False
+Mattias Ekholm,8475218,Edmonton Oilers,D,36,UFA,4000000,4292701.0,-292701.0,False,False
+Dylan Cozens,8481528,Ottawa Senators,C,25,RFA,7100000,7394685.0,-294685.0,False,False
+Philippe Myers,8479026,Toronto Maple Leafs,D,29,UFA,850000,1154929.0,-304929.0,False,True
+Marc Gatcomb,8483553,Vegas Golden Knights,C,27,UFA,875000,1188400.0,-313400.0,True,False
+Nathan Walker,8477573,St Louis Blues,L,32,UFA,887500,1217119.0,-329619.0,False,False
+Landon Slaggert,8482172,Chicago Blackhawks,L,24,RFA,900000,1231444.0,-331444.0,False,True
+Alex Ovechkin,8471214,Washington Capitals,L,41,UFA,4250000,4582526.0,-332526.0,True,True
+Tyson Kozak,8482896,Buffalo Sabres,C,23,RFA,875000,1211709.0,-336709.0,False,False
+Josh Mahura,8479372,Seattle Kraken,D,28,UFA,907500,1247793.0,-340293.0,False,True
+Dmitriy Simashev,8484386,Utah Mammoth,D,21,RFA,972500,1348426.0,-375926.0,False,False
+Spencer Stastney,8481056,Edmonton Oilers,D,26,RFA,1525000,1901031.0,-376031.0,True,True
+Jani Nyman,8483497,Seattle Kraken,R,22,RFA,891667,1268798.0,-377131.0,False,True
+Mike Reilly,8476422,Carolina Hurricanes,D,33,UFA,850000,1229932.0,-379932.0,True,True
+Tim Washe,8485512,Anaheim Ducks,C,25,RFA,812500,1211437.0,-398937.0,True,False
+Lukas Reichel,8482117,Boston Bruins,L,24,RFA,950000,1349912.0,-399912.0,False,True
+Nate Danielson,8484160,Detroit Red Wings,C,22,RFA,909167,1319232.0,-410065.0,False,False
+Mathieu Joseph,8478472,Edmonton Oilers,R,29,UFA,1000000,1414396.0,-414396.0,True,True
+Ryan Shea,8478854,Edmonton Oilers,D,29,UFA,4000000,4414936.0,-414936.0,True,False
+Joel Nystrom,8482911,Carolina Hurricanes,D,24,RFA,1225000,1642895.0,-417895.0,False,False
+Brady Tkachuk,8480801,Florida Panthers,L,27,UFA,8205714,8625794.0,-420080.0,False,False
+Kailer Yamamoto,8479977,Utah Mammoth,R,27,UFA,1750000,2174200.0,-424200.0,False,False
+Elmer Soderblom,8481725,Pittsburgh Penguins,L,25,RFA,1125000,1551262.0,-426262.0,False,True
+Jesper Boqvist,8480003,New Jersey Devils,C,27,UFA,1500000,1926761.0,-426761.0,False,True
+Taylor Raddysh,8479390,New York Rangers,R,28,UFA,1500000,1933590.0,-433590.0,False,True
+Ethen Frank,8483573,Washington Capitals,R,28,UFA,2000000,2436345.0,-436345.0,False,False
+Mackie Samoskevich,8482713,Seattle Kraken,R,23,RFA,3850000,4292227.0,-442227.0,True,False
+Nikita Grebenkin,8483733,Philadelphia Flyers,R,23,RFA,1100000,1543167.0,-443167.0,True,False
+Kyle MacLean,8481237,New York Islanders,C,27,UFA,850000,1294995.0,-444995.0,False,True
+Jonny Brodzinski,8477380,Washington Capitals,C,33,UFA,850000,1297973.0,-447973.0,True,True
+Adam Klapka,8483609,Calgary Flames,R,26,RFA,1250000,1702348.0,-452348.0,False,True
+Evan Rodrigues,8478542,New Jersey Devils,C,33,UFA,3075000,3529913.0,-454913.0,False,True
+Maxim Shabanov,8485702,Minnesota Wild,R,25,RFA,1600000,2076361.0,-476361.0,True,True
+Alexander Petrovic,8475755,Florida Panthers,D,34,UFA,875000,1360854.0,-485854.0,True,False
+Steven Lorentz,8478904,Toronto Maple Leafs,C,30,UFA,1350000,1839075.0,-489075.0,False,False
+Rutger McGroarty,8483487,Pittsburgh Penguins,R,22,RFA,950000,1439859.0,-489859.0,False,True
+Nikita Nesterenko,8481754,Anaheim Ducks,C,25,RFA,837500,1330582.0,-493082.0,False,True
+Isak Rosen,8482765,Winnipeg Jets,R,23,RFA,925000,1444862.0,-519862.0,False,False
+Emil Andrae,8482126,Toronto Maple Leafs,D,24,RFA,1550000,2080746.0,-530746.0,True,False
+Vincent Iorio,8482861,New York Rangers,D,23,RFA,850000,1384255.0,-534255.0,True,True
+Cale Fleury,8479985,Seattle Kraken,D,27,UFA,890000,1428901.0,-538901.0,False,True
+Alexander Holtz,8482125,Vegas Golden Knights,R,24,RFA,835352,1381897.0,-546545.0,False,True
+Cody Glass,8479996,New Jersey Devils,C,27,UFA,2500000,3048092.0,-548092.0,False,True
+Rasmus Andersson,8478397,Vegas Golden Knights,D,29,UFA,8500000,9049726.0,-549726.0,True,False
+Olen Zellweger,8482803,Buffalo Sabres,D,23,RFA,3100000,3653029.0,-553029.0,True,False
+Artem Zub,8482245,Ottawa Senators,D,30,UFA,4600000,5163388.0,-563388.0,False,True
+Colton Dach,8482703,Edmonton Oilers,C,23,RFA,1200000,1766736.0,-566736.0,True,False
+Shakir Mukhamadullin,8482166,Edmonton Oilers,D,24,RFA,1750000,2318826.0,-568826.0,True,False
+Cole Reinhardt,8481133,Florida Panthers,L,26,RFA,812500,1389835.0,-577335.0,False,True
+Colin Blackwell,8476278,Dallas Stars,C,33,UFA,850000,1452258.0,-602258.0,False,True
+Lenni Hameenaho,8484177,New Jersey Devils,R,21,RFA,972500,1586478.0,-613978.0,False,False
+Zachary L'Heureux,8482742,Colorado Avalanche,L,23,RFA,875000,1502816.0,-627816.0,False,False
+Isac Lundestrom,8480806,Columbus Blue Jackets,C,26,UFA,1300000,1928613.0,-628613.0,False,True
+Carl Grundstrom,8479336,Philadelphia Flyers,R,28,UFA,1000000,1652826.0,-652826.0,False,True
+Ivan Barbashev,8477964,Vegas Golden Knights,L,30,UFA,5000000,5655547.0,-655547.0,False,False
+Joel Farabee,8480797,Calgary Flames,L,26,UFA,5000000,5658114.0,-658114.0,False,False
+Ryan Hartman,8477451,Minnesota Wild,R,32,UFA,4000000,4664231.0,-664231.0,False,True
+Morgan Frost,8480028,Calgary Flames,C,27,UFA,4375000,5042080.0,-667080.0,False,True
+Oskar Sundqvist,8476897,St Louis Blues,C,32,UFA,850000,1520673.0,-670673.0,True,True
+Tye Kartye,8481789,New York Rangers,L,25,RFA,1250000,1924141.0,-674141.0,False,True
+Ian Moore,8482178,Anaheim Ducks,D,24,RFA,1150000,1825173.0,-675173.0,False,False
+Gustav Forsling,8478055,Florida Panthers,D,30,UFA,5750000,6425735.0,-675735.0,False,False
+Scott Morrow,8482666,New York Rangers,D,23,RFA,850000,1532191.0,-682191.0,True,True
+Ilya Mikheyev,8481624,Tampa Bay Lightning,R,31,UFA,3850000,4535161.0,-685161.0,True,False
+Jonas Siegenthaler,8478399,New Jersey Devils,D,29,UFA,3400000,4097694.0,-697694.0,False,False
+Donovan Sebrango,8482131,Florida Panthers,D,24,RFA,850000,1567803.0,-717803.0,True,True
+Morgan Barron,8480289,Winnipeg Jets,C,27,UFA,1850000,2579121.0,-729121.0,False,True
+Oliver Ekman-Larsson,8475171,Toronto Maple Leafs,D,35,UFA,3500000,4231891.0,-731891.0,False,False
+Ty Emberson,8480834,Edmonton Oilers,D,26,RFA,1300000,2036201.0,-736201.0,False,True
+Gavin Brindley,8484149,Colorado Avalanche,C,21,RFA,875000,1612835.0,-737835.0,False,False
+Sebastian Aho,8478427,Carolina Hurricanes,C,29,UFA,9750000,10500099.0,-750099.0,False,False
+Max Sasson,8484136,Vancouver Canucks,C,26,RFA,1000000,1764200.0,-764200.0,False,False
+Ryan Nugent-Hopkins,8476454,Edmonton Oilers,C,33,UFA,5125000,5894496.0,-769496.0,False,False
+Alex Vlasic,8481568,Chicago Blackhawks,D,25,RFA,4600000,5384720.0,-784720.0,False,False
+Mikael Backlund,8474150,Calgary Flames,C,37,UFA,3250000,4039946.0,-789946.0,False,False
+Danil But,8484388,Utah Mammoth,L,21,RFA,972500,1762738.0,-790238.0,False,False
+Owen Tippett,8480015,Philadelphia Flyers,R,27,UFA,6200000,7001817.0,-801817.0,False,False
+Ben Meyers,8483570,Seattle Kraken,C,27,UFA,1000000,1823429.0,-823429.0,False,False
+Yanni Gourde,8476826,Tampa Bay Lightning,C,34,UFA,2333333,3158085.0,-824752.0,False,False
+Bobby Brink,8481553,Minnesota Wild,R,25,RFA,2750000,3588532.0,-838532.0,False,True
+Linus Karlsson,8481024,Vancouver Canucks,C,26,RFA,2250000,3099549.0,-849549.0,False,False
+Nikolas Matinpalo,8484321,Ottawa Senators,D,27,UFA,875000,1739167.0,-864167.0,False,True
+Fedor Svechkov,8482768,Colorado Avalanche,C,23,RFA,1250000,2121646.0,-871646.0,False,False
+Vincent Trocheck,8476389,Utah Mammoth,C,33,UFA,5625000,6497969.0,-872969.0,False,False
+Dominic James,8483752,Tampa Bay Lightning,C,24,RFA,910000,1784578.0,-874578.0,False,True
+Alex Turcotte,8481532,Los Angeles Kings,C,25,RFA,850000,1735187.0,-885187.0,False,True
+John Marino,8478507,Utah Mammoth,D,29,UFA,4400000,5286908.0,-886908.0,True,False
+Oskar Back,8480840,Dallas Stars,C,26,RFA,825000,1716927.0,-891927.0,False,True
+Jake DeBrusk,8478498,Vancouver Canucks,L,29,UFA,5500000,6393879.0,-893879.0,False,False
+Jack St. Ivany,8481030,Winnipeg Jets,D,27,UFA,800000,1724257.0,-924257.0,False,True
+Jalen Chatfield,8478970,Carolina Hurricanes,D,30,UFA,3075000,4000506.0,-925506.0,False,True
+Darren Raddysh,8478178,Toronto Maple Leafs,D,30,UFA,8500000,9459989.0,-959989.0,False,False
+Jesper Bratt,8479407,New Jersey Devils,L,28,UFA,7875000,8840864.0,-965864.0,False,False
+Tom Wilson,8476880,Washington Capitals,R,32,UFA,6540000,7506828.0,-966828.0,False,False
+Tyler Tucker,8481006,St Louis Blues,D,26,RFA,925000,1898336.0,-973336.0,False,True
+Hunter Brzustewicz,8484150,Calgary Flames,D,21,RFA,950000,1928839.0,-978839.0,False,True
+Corey Perry,8470621,Los Angeles Kings,R,41,UFA,1000000,1985187.0,-985187.0,True,True
+Conor Sheary,8477839,Buffalo Sabres,L,34,UFA,850000,1837630.0,-987630.0,True,True
+Ivan Provorov,8478500,Columbus Blue Jackets,D,29,UFA,8500000,9508844.0,-1008844.0,False,False
+Jake McCabe,8476931,Toronto Maple Leafs,D,32,UFA,4491898,5505841.0,-1013943.0,False,False
+Lawson Crouse,8478474,Utah Mammoth,L,29,UFA,4300000,5329688.0,-1029688.0,False,True
+Ryker Evans,8482858,Seattle Kraken,D,24,RFA,2050000,3080001.0,-1030001.0,False,True
+Rickard Rakell,8476483,Pittsburgh Penguins,R,33,UFA,5000000,6030264.0,-1030264.0,False,False
+Lian Bichsel,8483425,Dallas Stars,D,22,RFA,918333,1957389.0,-1039056.0,False,True
+Kent Johnson,8482660,Columbus Blue Jackets,C,23,RFA,1800000,2842761.0,-1042761.0,False,True
+Ryan Winterton,8482751,Seattle Kraken,C,23,RFA,1125000,2176735.0,-1051735.0,False,False
+Michael Carcone,8479619,Utah Mammoth,L,30,UFA,1750000,2814017.0,-1064017.0,False,False
+Otto Stenberg,8484230,St Louis Blues,C,21,RFA,940833,2007796.0,-1066963.0,False,False
+Tyler Myers,8474574,Dallas Stars,D,36,UFA,1500000,2611062.0,-1111062.0,False,True
+Aatu Raty,8482691,Vancouver Canucks,C,23,RFA,850000,1985860.0,-1135860.0,False,True
+Vladislav Gavrikov,8478882,New York Rangers,D,30,UFA,7000000,8149941.0,-1149941.0,False,False
+Nick Perbix,8480246,Nashville Predators,D,28,UFA,2750000,3910972.0,-1160972.0,False,True
+Mikey Anderson,8479998,Los Angeles Kings,D,27,UFA,4125000,5297497.0,-1172497.0,False,False
+Jamie Benn,8473994,Dallas Stars,L,37,UFA,850000,2042356.0,-1192356.0,True,True
+Shayne Gostisbehere,8476906,Carolina Hurricanes,D,33,UFA,3200000,4416401.0,-1216401.0,False,True
+Uvis Balinskis,8484304,Florida Panthers,D,30,UFA,875000,2101185.0,-1226185.0,False,False
+Lucas Raymond,8482078,Detroit Red Wings,L,24,RFA,8075000,9302820.0,-1227820.0,False,False
+Alexander Wennberg,8477505,San Jose Sharks,C,32,UFA,6000000,7235081.0,-1235081.0,False,False
+Mark Kastelic,8480355,Boston Bruins,C,27,UFA,1566667,2803574.0,-1236907.0,False,False
+Victor Olofsson,8478109,Vegas Golden Knights,L,31,UFA,1638330,2879398.0,-1241068.0,True,True
+Simon Holmstrom,8481601,New York Islanders,R,25,RFA,3625000,4884951.0,-1259951.0,False,True
+Claude Giroux,8473512,Ottawa Senators,R,38,UFA,2000000,3270645.0,-1270645.0,True,True
+Matty Beniers,8482665,Seattle Kraken,C,23,RFA,7142857,8414394.0,-1271537.0,False,False
+Connor Dewar,8480980,Pittsburgh Penguins,C,27,UFA,2250000,3530476.0,-1280476.0,False,False
+Matt Grzelcyk,8476891,Buffalo Sabres,D,32,UFA,850000,2146035.0,-1296035.0,True,True
+Mika Zibanejad,8476459,New York Rangers,C,33,UFA,8500000,9797095.0,-1297095.0,False,False
+Vasily Podkolzin,8481617,Edmonton Oilers,R,25,RFA,2950000,4247663.0,-1297663.0,False,False
+Anthony Beauvillier,8478463,Washington Capitals,R,29,UFA,2750000,4048404.0,-1298404.0,False,True
+Drew O'Connor,8482055,Vancouver Canucks,L,28,UFA,2500000,3809591.0,-1309591.0,False,True
+Pontus Holmberg,8480995,Tampa Bay Lightning,R,27,UFA,1550000,2863857.0,-1313857.0,False,True
+Elias Pettersson,8483678,Vancouver Canucks,D,22,RFA,913333,2229798.0,-1316465.0,False,True
+Andrei Svechnikov,8480830,Carolina Hurricanes,R,26,UFA,7750000,9074854.0,-1324854.0,False,False
+Drew Helleson,8481563,Anaheim Ducks,D,25,RFA,1100000,2425164.0,-1325164.0,False,True
+Simon Benoit,8481122,Philadelphia Flyers,D,28,UFA,1350000,2678120.0,-1328120.0,False,True
+Eetu Luostarinen,8480185,Florida Panthers,C,28,UFA,3000000,4343351.0,-1343351.0,True,False
+Matias Maccelli,8481711,New York Islanders,L,25,RFA,2250000,3601448.0,-1351448.0,True,True
+Mathew Barzal,8478445,New York Islanders,C,29,UFA,9150000,10511409.0,-1361409.0,False,False
+Ryan McLeod,8480802,Buffalo Sabres,C,27,UFA,5000000,6380515.0,-1380515.0,False,False
+Albert Johansson,8481607,Detroit Red Wings,D,25,RFA,1125000,2511369.0,-1386369.0,False,True
+Elias Salomonsson,8483510,Winnipeg Jets,D,22,RFA,865000,2251915.0,-1386915.0,False,True
+Collin Graf,8484911,San Jose Sharks,R,24,RFA,4250000,5641270.0,-1391270.0,True,False
+Michael Amadio,8478020,Ottawa Senators,R,30,UFA,2600000,3994629.0,-1394629.0,False,True
+Nick Lardis,8484185,Chicago Blackhawks,L,21,RFA,925000,2332425.0,-1407425.0,False,False
+Denver Barkey,8484142,Philadelphia Flyers,C,21,RFA,925833,2361810.0,-1435977.0,False,False
+Blake Coleman,8476399,Minnesota Wild,L,34,UFA,2450000,3909936.0,-1459936.0,False,True
+Emil Lilleberg,8482929,Tampa Bay Lightning,D,25,RFA,825000,2293878.0,-1468878.0,False,True
+Cam York,8481546,Philadelphia Flyers,D,25,RFA,5150000,6630432.0,-1480432.0,False,False
+Oliver Moore,8484197,Chicago Blackhawks,C,21,RFA,941667,2428222.0,-1486555.0,True,False
+Christian Dvorak,8477989,Philadelphia Flyers,C,30,UFA,5150000,6643884.0,-1493884.0,False,False
+Tyler Kleven,8482095,Ottawa Senators,D,24,RFA,1600000,3093930.0,-1493930.0,False,True
+Troy Stecher,8479442,Toronto Maple Leafs,D,32,UFA,1350000,2844486.0,-1494486.0,False,False
+Esa Lindell,8476902,Dallas Stars,D,32,UFA,5250000,6757151.0,-1507151.0,False,False
+Dylan Larkin,8477946,Detroit Red Wings,C,30,UFA,8700000,10257073.0,-1557073.0,False,False
+Adam Wilsby,8482482,Nashville Predators,D,26,RFA,850000,2413444.0,-1563444.0,False,True
+Parker Kelly,8480448,Colorado Avalanche,C,27,UFA,1700000,3272741.0,-1572741.0,False,False
+Justin Brazeau,8479638,Pittsburgh Penguins,R,28,UFA,1500000,3088859.0,-1588859.0,False,True
+Zemgus Girgensons,8476878,Tampa Bay Lightning,C,32,UFA,925000,2528107.0,-1603107.0,False,True
+Liam Ohgren,8483499,Vancouver Canucks,L,22,RFA,886667,2489884.0,-1603217.0,False,True
+Gage Goncalves,8482201,Tampa Bay Lightning,C,25,RFA,1200000,2809292.0,-1609292.0,False,True
+Mario Ferraro,8479983,Winnipeg Jets,D,28,UFA,4000000,5617408.0,-1617408.0,True,False
+Jonathan Aspirot,8481219,Boston Bruins,D,27,UFA,887500,2520791.0,-1633291.0,False,False
+Charlie McAvoy,8479325,Boston Bruins,D,28,UFA,9500000,11163237.0,-1663237.0,False,False
+Mike Matheson,8476875,Montreal Canadiens,D,32,UFA,6000000,7670319.0,-1670319.0,False,False
+Matthew Knies,8482720,Toronto Maple Leafs,L,23,RFA,7750000,9421948.0,-1671948.0,False,False
+Zach Whitecloud,8480727,Calgary Flames,D,29,UFA,2750000,4441672.0,-1691672.0,False,False
+Zayne Parekh,8484768,Calgary Flames,D,20,RFA,953750,2646864.0,-1693114.0,False,False
+Nick Schmaltz,8477951,Utah Mammoth,C,30,UFA,8000000,9704035.0,-1704035.0,False,False
+Sam Reinhart,8477933,Florida Panthers,C,30,UFA,8625000,10359893.0,-1734893.0,False,False
+Ridly Greig,8482092,Ottawa Senators,C,24,RFA,3250000,4998079.0,-1748079.0,False,False
+Brent Burns,8470613,Colorado Avalanche,D,41,UFA,850000,2598678.0,-1748678.0,False,True
+Bowen Byram,8481524,Chicago Blackhawks,D,25,RFA,6250000,8008228.0,-1758228.0,True,False
+Dylan Strome,8478440,Washington Capitals,C,29,UFA,5000000,6782748.0,-1782748.0,False,False
+Noah Cates,8480220,Philadelphia Flyers,L,27,UFA,4000000,5810037.0,-1810037.0,False,False
+Connor Brown,8477015,New Jersey Devils,R,32,UFA,3000000,4813069.0,-1813069.0,False,False
+Berkly Catton,8484800,Seattle Kraken,C,20,RFA,953750,2769606.0,-1815856.0,False,False
+Will Cuylle,8482157,New York Rangers,L,24,RFA,3900000,5733375.0,-1833375.0,False,True
+Tyler Bertuzzi,8477479,Chicago Blackhawks,L,31,UFA,5500000,7346784.0,-1846784.0,False,False
+Artturi Lehkonen,8477476,Colorado Avalanche,L,31,UFA,4500000,6418148.0,-1918148.0,False,True
+Anton Lundell,8482113,Florida Panthers,C,24,RFA,5000000,6920040.0,-1920040.0,False,False
+Logan Mailloux,8482733,St Louis Blues,D,23,RFA,850000,2776951.0,-1926951.0,False,True
+Sam Steel,8479351,Dallas Stars,C,28,UFA,2100000,4059891.0,-1959891.0,True,False
+Jack Quinn,8482097,Buffalo Sabres,R,25,RFA,3375000,5357792.0,-1982792.0,False,True
+Michael Misa,8485402,San Jose Sharks,C,19,RFA,986250,3032929.0,-2046679.0,False,False
+Noah Ostlund,8483500,Buffalo Sabres,C,22,RFA,886667,2938811.0,-2052144.0,True,False
+Noah Laba,8483690,New York Rangers,C,23,RFA,945000,3009170.0,-2064170.0,False,True
+Jackson Blake,8482809,Carolina Hurricanes,R,23,RFA,5117002,7182920.0,-2065918.0,False,False
+Justin Hryckowian,8484829,Dallas Stars,C,25,RFA,950000,3051897.0,-2101897.0,False,False
+Pavel Zacha,8478401,Boston Bruins,C,29,UFA,4750000,6863651.0,-2113651.0,False,True
+Matthew Robertson,8481525,New York Rangers,D,25,RFA,850000,2994469.0,-2144469.0,False,True
+Jakob Chychrun,8479345,Washington Capitals,D,28,UFA,9000000,11150430.0,-2150430.0,False,False
+Dylan Guenther,8482699,Utah Mammoth,R,23,RFA,7142857,9326325.0,-2183468.0,False,False
+David Pastrnak,8477956,Boston Bruins,R,30,UFA,11250000,13440669.0,-2190669.0,False,False
+Morgan Geekie,8479987,Boston Bruins,C,28,UFA,5500000,7699989.0,-2199989.0,False,False
+Axel Sandin-Pellikka,8484223,Detroit Red Wings,D,21,RFA,940833,3157510.0,-2216677.0,False,False
+John Tavares,8475166,Toronto Maple Leafs,C,36,UFA,4380000,6628368.0,-2248368.0,False,False
+Danila Yurov,8483525,Minnesota Wild,R,22,RFA,972500,3224810.0,-2252310.0,False,False
+Quinton Byfield,8482124,Los Angeles Kings,R,24,RFA,6250000,8547345.0,-2297345.0,False,False
+Gabriel Vilardi,8480014,Winnipeg Jets,C,27,UFA,7500000,9801690.0,-2301690.0,False,False
+Sam Rinzel,8483506,Chicago Blackhawks,D,22,RFA,941667,3249596.0,-2307929.0,False,True
+Matthew Wood,8484241,Nashville Predators,R,21,RFA,950000,3283627.0,-2333627.0,False,True
+Braeden Bowman,8483890,Vegas Golden Knights,R,23,RFA,912500,3255768.0,-2343268.0,True,False
+Matvei Gridin,8484860,Calgary Flames,R,20,RFA,953750,3299730.0,-2345980.0,False,False
+Sean Walker,8480336,Carolina Hurricanes,D,31,UFA,3625000,5976855.0,-2351855.0,False,False
+Zach Hyman,8475786,Edmonton Oilers,L,34,UFA,5500000,7865132.0,-2365132.0,False,False
+Joel Eriksson Ek,8478493,Minnesota Wild,C,29,UFA,5250000,7621621.0,-2371621.0,False,False
+William Eklund,8482667,Ottawa Senators,L,23,RFA,5600000,7975597.0,-2375597.0,False,False
+Dalibor Dvorsky,8484164,St Louis Blues,R,21,RFA,909167,3329357.0,-2420190.0,False,False
+Marco Kasper,8483464,Detroit Red Wings,C,22,RFA,886667,3336434.0,-2449767.0,False,True
+Chris Kreider,8475184,Montreal Canadiens,L,35,UFA,2150000,4614908.0,-2464908.0,True,True
+Louis Crevier,8481806,Buffalo Sabres,D,25,RFA,900000,3367743.0,-2467743.0,False,True
+Sam Dickinson,8484806,San Jose Sharks,D,20,RFA,953750,3424746.0,-2470996.0,False,False
+Travis Sanheim,8477948,Philadelphia Flyers,D,30,UFA,6250000,8753203.0,-2503203.0,False,False
+Jackson LaCombe,8481605,Anaheim Ducks,D,25,RFA,9000000,11540974.0,-2540974.0,False,False
+Tom Willander,8484240,Vancouver Canucks,D,21,RFA,972500,3517145.0,-2544645.0,False,False
+Bryan Rust,8475810,Pittsburgh Penguins,R,34,UFA,5125000,7695830.0,-2570830.0,False,False
+Kyle Connor,8478398,Winnipeg Jets,L,29,UFA,12000000,14571991.0,-2571991.0,False,False
+Seth Jarvis,8482093,Carolina Hurricanes,R,24,RFA,7420087,10029865.0,-2609778.0,False,False
+Shane Wright,8483524,Seattle Kraken,C,22,RFA,886667,3558981.0,-2672314.0,False,True
+Wyatt Kaiser,8482176,Chicago Blackhawks,D,24,RFA,1700000,4372668.0,-2672668.0,False,True
+Marat Khusnutdinov,8482177,Boston Bruins,C,24,RFA,925000,3613399.0,-2688399.0,False,True
+Calum Ritchie,8484221,New York Islanders,C,21,RFA,940833,3647592.0,-2706759.0,False,False
+Mikhail Sergachev,8479410,Utah Mammoth,D,28,UFA,8500000,11217116.0,-2717116.0,False,False
+Jake Guentzel,8477404,Tampa Bay Lightning,C,31,UFA,9000000,11827654.0,-2827654.0,False,False
+Easton Cowan,8484158,Toronto Maple Leafs,R,21,RFA,900000,3758416.0,-2858416.0,False,False
+Yan Kuznetsov,8482165,Calgary Flames,D,24,RFA,812500,3680257.0,-2867757.0,False,True
+Igor Chernyshov,8484994,San Jose Sharks,L,20,RFA,945417,3822444.0,-2877027.0,False,False
+Dawson Mercer,8482110,New Jersey Devils,C,24,RFA,4000000,6961458.0,-2961458.0,False,True
+Andrew Peeke,8479369,Utah Mammoth,D,28,UFA,1000000,3982455.0,-2982455.0,True,True
+Brock Faber,8482122,Minnesota Wild,D,24,RFA,8500000,11493540.0,-2993540.0,False,False
+Alex Laferriere,8482155,Los Angeles Kings,R,24,RFA,4100000,7099111.0,-2999111.0,False,False
+Mats Zuccarello,8475692,Los Angeles Kings,R,39,UFA,1000000,4042508.0,-3042508.0,True,True
+Drake Batherson,8480208,Ottawa Senators,R,28,UFA,4975000,8043278.0,-3068278.0,True,False
+Justin Sourdif,8482088,Washington Capitals,C,24,RFA,825000,3979059.0,-3154059.0,True,False
+Eeli Tolvanen,8480009,New York Rangers,R,27,UFA,1500000,4694778.0,-3194778.0,True,True
+Charle-Édouard D'Astous,8480426,Tampa Bay Lightning,D,28,UFA,875000,4075259.0,-3200259.0,False,True
+Rasmus Dahlin,8480839,Buffalo Sabres,D,26,UFA,11000000,14222788.0,-3222788.0,False,False
+Cole Caufield,8481540,Montreal Canadiens,R,25,RFA,7850000,11106284.0,-3256284.0,False,False
+Ryan O'Reilly,8475158,Nashville Predators,C,35,UFA,4500000,7770849.0,-3270849.0,False,True
+Mattias Samuelsson,8480807,Buffalo Sabres,D,26,RFA,4285714,7587207.0,-3301493.0,False,False
+Luke Evangelista,8482146,New Jersey Devils,R,24,RFA,3000000,6322359.0,-3322359.0,True,False
+Oliver Kapanen,8482775,Montreal Canadiens,C,23,RFA,942500,4358621.0,-3416121.0,False,True
+Jake Sanderson,8482105,Ottawa Senators,D,24,RFA,8050000,11483859.0,-3433859.0,False,False
+Gabe Perreault,8484210,New York Rangers,R,21,RFA,941667,4394375.0,-3452708.0,False,True
+Josh Morrissey,8477504,Winnipeg Jets,D,31,UFA,6250000,9780850.0,-3530850.0,False,False
+Jason Robertson,8480027,Dallas Stars,L,27,UFA,12000000,15626371.0,-3626371.0,True,True
+Aliaksei Protas,8481656,Washington Capitals,L,25,RFA,3375000,7014545.0,-3639545.0,False,False
+Alex DeBrincat,8479337,Detroit Red Wings,R,28,UFA,7875000,11700760.0,-3825760.0,False,True
+Clayton Keller,8479343,Utah Mammoth,R,28,UFA,7150000,11044046.0,-3894046.0,False,False
+Fraser Minten,8483489,Boston Bruins,C,22,RFA,879167,4787500.0,-3908333.0,True,False
+Mark Scheifele,8476460,Winnipeg Jets,C,33,UFA,8500000,12411608.0,-3911608.0,False,False
+Emil Heineman,8482476,New York Islanders,L,24,RFA,1100000,5022668.0,-3922668.0,False,True
+Matthew Savoie,8483512,Edmonton Oilers,C,22,RFA,886667,4867514.0,-3980847.0,False,True
+Ryan Leonard,8484186,Washington Capitals,R,21,RFA,950000,5025941.0,-4075941.0,True,False
+Juraj Slafkovsky,8483515,Montreal Canadiens,L,22,RFA,7600000,11683943.0,-4083943.0,False,False
+Emmitt Finnie,8484471,Detroit Red Wings,C,21,RFA,921667,5028407.0,-4106740.0,False,False
+Ryan Greene,8483450,Chicago Blackhawks,C,22,RFA,950000,5112375.0,-4162375.0,False,True
+Tim Stützle,8482116,Ottawa Senators,C,24,RFA,8350000,12603349.0,-4253349.0,False,False
+Filip Hronek,8479425,Vancouver Canucks,D,28,UFA,7250000,11524982.0,-4274982.0,False,False
+Denton Mateychuk,8483485,Columbus Blue Jackets,D,22,RFA,886667,5179703.0,-4293036.0,False,True
+Artyom Levshunov,8484783,Chicago Blackhawks,D,20,RFA,975000,5276758.0,-4301758.0,False,True
+Tage Thompson,8479420,Buffalo Sabres,C,28,UFA,7142857,11610391.0,-4467534.0,False,False
+Moritz Seider,8481542,Detroit Red Wings,D,25,RFA,8550000,13138740.0,-4588740.0,False,False
+Martin Necas,8480039,Colorado Avalanche,C,27,UFA,11500000,16103099.0,-4603099.0,False,False
+Kirill Marchenko,8480893,Columbus Blue Jackets,R,26,RFA,3850000,8477345.0,-4627345.0,False,True
+Nico Hischier,8480002,New Jersey Devils,C,27,UFA,7250000,11926515.0,-4676515.0,True,False
+Zeev Buium,8484798,Vancouver Canucks,D,20,RFA,966500,5689750.0,-4723250.0,True,False
+Matvei Michkov,8484387,Philadelphia Flyers,R,21,RFA,950000,5783727.0,-4833727.0,False,True
+Lane Hutson,8483457,Montreal Canadiens,D,22,RFA,8850000,14046807.0,-5196807.0,False,False
+Brandon Hagel,8479542,Tampa Bay Lightning,L,28,UFA,6500000,11751479.0,-5251479.0,False,False
+Miro Heiskanen,8480036,Dallas Stars,D,27,UFA,8450000,13925562.0,-5475562.0,False,False
+Jimmy Snuggerud,8483516,St Louis Blues,R,22,RFA,950000,6693626.0,-5743626.0,False,True
+Matt Boldy,8481557,Minnesota Wild,L,25,RFA,7000000,12832163.0,-5832163.0,False,False
+Wyatt Johnston,8482740,Dallas Stars,C,23,RFA,8400000,14373809.0,-5973809.0,False,False
+Ivan Demidov,8484984,Montreal Canadiens,R,20,RFA,940833,7187698.0,-6246865.0,True,False
+Nikita Kucherov,8476453,Tampa Bay Lightning,R,33,UFA,9500000,15855097.0,-6355097.0,False,True
+Cale Makar,8480069,Colorado Avalanche,D,27,UFA,9000000,15585400.0,-6585400.0,True,False
+Jack Hughes,8481559,New Jersey Devils,C,25,UFA,8000000,14812352.0,-6812352.0,False,False
+Evan Bouchard,8480803,Edmonton Oilers,D,26,UFA,10500000,17593602.0,-7093602.0,False,False
+Nathan MacKinnon,8477492,Colorado Avalanche,C,31,UFA,12604000,20004725.0,-7400725.0,False,False
+Zach Werenski,8478460,Columbus Blue Jackets,D,29,UFA,9583333,17116120.0,-7532787.0,False,False
+Nick Suzuki,8480018,Montreal Canadiens,C,27,UFA,7875000,15654031.0,-7779031.0,False,False
+Will Smith,8484227,San Jose Sharks,C,21,RFA,950000,8761348.0,-7811348.0,False,True
+Beckett Sennecke,8484762,Anaheim Ducks,R,20,RFA,953750,9702209.0,-8748459.0,False,False
+Quinn Hughes,8480800,Minnesota Wild,D,26,UFA,7850000,20862345.0,-13012345.0,False,True
+Connor McDavid,8478402,Edmonton Oilers,C,29,UFA,12500000,25739260.0,-13239260.0,False,False
+Matthew Schaefer,8485366,New York Islanders,D,19,RFA,986250,16764692.0,-15778442.0,False,False
+Macklin Celebrini,8484801,San Jose Sharks,C,20,RFA,975000,22099630.0,-21124630.0,True,False
