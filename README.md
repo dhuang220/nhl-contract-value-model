@@ -87,8 +87,8 @@ The flow is **fetch -> build -> model -> generate_rankings -> app**.
 
 ## Dashboards
 
+- **Streamlit** (interactive, hosted) - [live app](https://nhl-contract-value-model-bjqvtgnssksljixtprw2dz.streamlit.app/) (or run locally: `streamlit run app.py`)
 - **Tableau Public** (interactive, hosted) - [live dashboard](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/NHLContractValueModel)
-- **Streamlit** (local, Python) - `streamlit run app.py`
 
 [![Tableau dashboard preview](docs/tableau_dashboard.png)](https://public.tableau.com/app/profile/darren.huang6974/viz/NHLContractValueModel/NHLContractValueModel)
 
